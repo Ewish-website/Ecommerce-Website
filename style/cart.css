@@ -1,0 +1,54 @@
+@import url("root.css");
+
+.cart-section {
+  background: url(../IMG-20230221-WA0109.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-y: center;
+}
+
+.shopping-cart-container{
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.cart-backToShopping a:hover{
+  color: #4F95DA!important;
+  transition: 1s ease-in-out;
+}
+
+.shopping-summary {
+  background-color: var(--primary-color);
+}
+
+.shopping-summary .form-outline{
+  position: relative !important;
+}
+
+.shopping-summary .form-control{
+  background-color: transparent !important;
+}
+
+.shopping-summary .form-label{
+  position: absolute;
+  top: -.75rem;
+  left: 1rem;
+  z-index: 2;
+  background-color: var(--primary-color);
+}
+
+input{
+  border: 1px solid #ced4da!important;
+}
+
+.shopping-summary .prompCodeBtn{
+  cursor: pointer;
+  background: transparent;
+  color: black;
+  border: 1px solid #ced4da;
+  transition: 1s ease-in-out;
+}
+
+.shopping-summary .prompCodeBtn:hover {
+  transition: 1s ease-in-out;
+  background: #ced4da;
+}
