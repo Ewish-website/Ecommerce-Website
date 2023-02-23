@@ -1,10 +1,13 @@
 @import url("root.css");
+@import url("navbar.css");
+@import url("footer.css");
 
 .cart-section {
   background: url(../assets/shopping-bag.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position-y: center;
+  padding: 90px 0;
 }
 
 .shopping-cart-container {
@@ -45,7 +48,6 @@ input[form1] {
   background: transparent;
   color: black;
   border: 1px solid #ced4da;
-  transition: 1s ease-in-out;
 }
 
 .shopping-summary .prompCodeBtn:hover {
