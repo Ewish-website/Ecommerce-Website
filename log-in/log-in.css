@@ -1,0 +1,13 @@
+@import url(./../style/root.css);
+@import url(./../style/reset-min.css);
+.gradient-custom {
+    background-image: url("photo-1561715276-a2d087060f1d.jfif");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 100vh;      
+  }
+.text-white{
+    background-color:var(--primary-color)  !important; 
+      backdrop-filter: saturate(200%) blur(25px);
+      opacity:0.8;
+}
