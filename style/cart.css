@@ -36,7 +36,7 @@
   background-color: var(--primary-color);
 }
 
-input {
+input[form1] {
   border: 1px solid #ced4da !important;
 }
 
