@@ -1,18 +1,18 @@
 @import url("root.css");
 
 .cart-section {
-  background: url(../IMG-20230221-WA0109.jpg);
+  background: url(../assets/shopping-bag.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position-y: center;
 }
 
-.shopping-cart-container{
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+.shopping-cart-container {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.cart-backToShopping a:hover{
-  color: #4F95DA!important;
+.cart-backToShopping a:hover {
+  color: #4f95da !important;
   transition: 1s ease-in-out;
 }
 
@@ -20,27 +20,27 @@
   background-color: var(--primary-color);
 }
 
-.shopping-summary .form-outline{
+.shopping-summary .form-outline {
   position: relative !important;
 }
 
-.shopping-summary .form-control{
+.shopping-summary .form-control {
   background-color: transparent !important;
 }
 
-.shopping-summary .form-label{
+.shopping-summary .form-label {
   position: absolute;
-  top: -.75rem;
+  top: -0.75rem;
   left: 1rem;
   z-index: 2;
   background-color: var(--primary-color);
 }
 
-input{
-  border: 1px solid #ced4da!important;
+input {
+  border: 1px solid #ced4da !important;
 }
 
-.shopping-summary .prompCodeBtn{
+.shopping-summary .prompCodeBtn {
   cursor: pointer;
   background: transparent;
   color: black;
