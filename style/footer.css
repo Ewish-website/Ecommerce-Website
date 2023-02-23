@@ -7,24 +7,18 @@
     box-sizing: border-box;
 }
 
-/* body{
-    background-color: var(--primary-color);
-} */
 footer{
     width: 100%;
-    /* position: absolute; */
     bottom: 0;
     background-color: var(--dark-color);
     color: var(--secondary-color);
     padding: 100px 0 30px;
     font-size: 15px;
     line-height: 25px;
-    /* heig ht: 65%; */
 }
 .row{
     width:80%;
     margin: auto;
-    /* margin-left: 200px; */
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -39,7 +33,6 @@ footer{
     width: fit-content;
     margin-bottom: 40px;
     position: relative;
-    /* font-size: x-large; */
 
 }
 ul li{
