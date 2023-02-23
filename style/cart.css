@@ -39,9 +39,9 @@
   background-color: var(--primary-color);
 }
 
-input[form1] {
+ .form3 input {
   border: 1px solid #ced4da !important;
-}
+} 
 
 .shopping-summary .prompCodeBtn {
   cursor: pointer;
