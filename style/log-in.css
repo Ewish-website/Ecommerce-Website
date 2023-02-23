@@ -1,7 +1,7 @@
-@import url(./../style/root.css);
-@import url(./../style/reset-min.css);
+@import url("root.css");
+@import url("reset-min.css");
 .gradient-custom {
-    background-image: url("photo-1561715276-a2d087060f1d.jfif");
+    background-image: url("/assets/shopping-bag.jfif");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     min-height: 100vh;      
