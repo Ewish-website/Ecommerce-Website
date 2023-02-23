@@ -1,0 +1,16 @@
+@import url("root.css");
+
+nav {
+  background-color: transparent;
+}
+
+.nav-link {
+  color: var(--primary-color);
+}
+
+.container-fluid a.active {
+
+  border-bottom: 3px solid black;
+  color: black !important;
+
+}

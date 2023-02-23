@@ -9,11 +9,81 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="style/reset-min.css">
-    <link rel="stylesheet" href="style/root.css">
+    <link rel="stylesheet" href="style/homePage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
 
 <body>
+    <!-- navbar -->
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light p-3 col-12 col-md-12 px-5" id="nav">
+        <div class="container-fluid">
+            <a class="navbar-brand col-2" href="#">E-wish</a>
+
+            <button class="navbar-toggler" type="navbarNav" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse col-10 col-md-10 justify-content-between" id="navbarNav">
+                <div class="navbar-nav col-8 col-md-8 justify-content-evenly">
+
+                    <a class="nav-link active" href="index.html">Home</a>
+
+
+                    <a class="nav-link" href="#">About</a>
+
+                    <a class="nav-link" href="products.html">Products</a>
+
+
+                    <a class="nav-link" href="#">Contact us</a>
+
+                </div>
+                <div class="loginCart col-2 col-md-2 d-flex justify-content-end gap-2">
+
+                    <a class="nav-link" href="cart.html">🛒</a>
+
+                    <a class="nav-link" href="log-in.html"><i class="fa fa-fw fa-user"></i></a>
+
+                </div>
+            </div>
+
+
+        </div>
+    </nav>
+    <section class="header-conatiner">
+        <div class="header">
+            <p id="firstHeader">Each purchase will be made with pleasure</p>
+            <p id="secHeader">An exciting place for the whole family to shop.<br>
+                "Transforming shopping into an experience"</p>
+
+        </div>
+
+
+        <div class="shop">
+            <div class="center"><button class="shopNow">
+                    <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                    </svg>
+                    <span>Shop now</span>
+                </button></div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
 
 </body>
 
