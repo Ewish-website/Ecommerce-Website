@@ -12,7 +12,7 @@
 } */
 footer{
     width: 100%;
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     background-color: var(--dark-color);
     color: var(--secondary-color);

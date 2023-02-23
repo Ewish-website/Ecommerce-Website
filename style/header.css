@@ -1,7 +1,7 @@
 @import url("root.css");
 
 .header-conatiner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("/assets/background.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("./assets/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
