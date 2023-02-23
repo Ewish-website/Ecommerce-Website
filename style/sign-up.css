@@ -13,4 +13,8 @@
       backdrop-filter: saturate(200%) blur(25px);
       opacity:0.8;
    }
+   .link{
+      text-decoration: none !important;
+      color: white !important;
+    }
 
