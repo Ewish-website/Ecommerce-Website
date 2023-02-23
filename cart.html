@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/reset-min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+        crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="style/cart.css">
+</head>
+<body>
+    <section class="h-100 h-custom cart-section">
+        <div class="container py-5 h-100 col-md-11 col-lg-9">
+            <div class="shopping-cart-container row d-md-flex justify-content-md-between align-items-sm-start h-100 bg-white rounded-4 overflow-hidden">
+                <div class="shopping-cart col-12 col-lg-8 p-5">
+                    <div class="shopping-cart-heading d-flex justify-content-between align-items-center mb-5">
+                        <h3 class="fw-bold mb-0 text-black">Shopping Cart</h3>
+                        <h6 class="mb-0 text-muted">3 items</h6>
+                    </div>
+                    <hr class="my-4">
+
+                    <div class="row mb-4 d-flex justify-content-between align-items-center">
+                        <div class="col-2 p-0">
+                            <img
+                                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
+                                class="cart-product-image img-fluid rounded-3" alt="Cotton T-shirt">
+                        </div>
+                        <div class="col-2 col-lg-3 p-0">
+                            <h6 class="cart-product-category text-muted">Shirt</h6>
+                            <h6 class="cart-product-name text-black mb-0">Cotton T-shirt</h6>
+                        </div>
+                        <div class="col-4 col-sm-3 d-flex p-0">
+                            <button class="minusbtn btn btn-link p-0 pe-2">
+                                <i class="bi bi-dash fs-5"></i>
+                            </button>
+
+                            <input id="form1" min="0" name="quantity" value="1" type="number"
+                                class="quantityBtn form-control form-control-sm" />
+
+                            <button class="plusbtn btn btn-link p-0 ps-2">
+                                <i class="bi bi-plus fs-5"></i>
+                            </button>
+                        </div>
+                        <div class="col-2 p-0">
+                            <h6 class="cart-product-price mb-0 text-center">€ 44.00</h6>
+                        </div>
+                        <div class="col-1 p-0">
+                            <a href="#" class="text-muted cart-delete-product">
+                                <i class="bi bi-x fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+
+                    <div class="row mb-4 d-flex justify-content-between align-items-center">
+                        <div class="col-2 p-0">
+                            <img
+                                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
+                                class="cart-product-image img-fluid rounded-3" alt="Cotton T-shirt">
+                        </div>
+                        <div class="col-2 col-lg-3 p-0">
+                            <h6 class="cart-product-category text-muted">Shirt</h6>
+                            <h6 class="cart-product-name text-black mb-0">Cotton T-shirt</h6>
+                        </div>
+                        <div class="col-4 col-sm-3 d-flex p-0">
+                            <button class="minusbtn btn btn-link p-0 pe-2">
+                                <i class="bi bi-dash fs-5"></i>
+                            </button>
+
+                            <input id="form1" min="0" name="quantity" value="1" type="number"
+                                class="quantityBtn form-control form-control-sm" />
+
+                            <button class="plusbtn btn btn-link p-0 ps-2">
+                                <i class="bi bi-plus fs-5"></i>
+                            </button>
+                        </div>
+                        <div class="col-2 p-0">
+                            <h6 class="cart-product-price mb-0 text-center">€ 44.00</h6>
+                        </div>
+                        <div class="col-1 p-0">
+                            <a href="#" class="text-muted cart-delete-product">
+                                <i class="bi bi-x fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+
+                    <div class="row mb-4 d-flex justify-content-between align-items-center">
+                        <div class="col-2 p-0">
+                            <img
+                                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
+                                class="cart-product-image img-fluid rounded-3" alt="Cotton T-shirt">
+                        </div>
+                        <div class="col-2 col-lg-3 p-0">
+                            <h6 class="cart-product-category text-muted">Shirt</h6>
+                            <h6 class="cart-product-name text-black mb-0">Cotton T-shirt</h6>
+                        </div>
+                        <div class="col-4 col-sm-3 d-flex p-0">
+                            <button class="minusbtn btn btn-link p-0 pe-2">
+                                <i class="bi bi-dash fs-5"></i>
+                            </button>
+
+                            <input id="form1" min="0" name="quantity" value="1" type="number"
+                                class="quantityBtn form-control form-control-sm" />
+
+                            <button class="plusbtn btn btn-link p-0 ps-2">
+                                <i class="bi bi-plus fs-5"></i>
+                            </button>
+                        </div>
+                        <div class="col-2 p-0">
+                            <h6 class="cart-product-price mb-0 text-center">€ 44.00</h6>
+                        </div>
+                        <div class="col-1 p-0">
+                            <a href="#" class="text-muted cart-delete-product">
+                                <i class="bi bi-x fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+
+                    <div class="row mb-4 d-flex justify-content-between align-items-center">
+                        <div class="col-2 p-0">
+                            <img
+                                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
+                                class="cart-product-image img-fluid rounded-3" alt="Cotton T-shirt">
+                        </div>
+                        <div class="col-2 col-lg-3 p-0">
+                            <h6 class="cart-product-category text-muted">Shirt</h6>
+                            <h6 class="cart-product-name text-black mb-0">Cotton T-shirt</h6>
+                        </div>
+                        <div class="col-4 col-sm-3 d-flex p-0">
+                            <button class="minusbtn btn btn-link p-0 pe-2">
+                                <i class="bi bi-dash fs-5"></i>
+                            </button>
+
+                            <input id="form1" min="0" name="quantity" value="1" type="number"
+                                class="quantityBtn form-control form-control-sm" />
+
+                            <button class="plusbtn btn btn-link p-0 ps-2">
+                                <i class="bi bi-plus fs-5"></i>
+                            </button>
+                        </div>
+                        <div class="col-2 p-0">
+                            <h6 class="cart-product-price mb-0 text-center">€ 44.00</h6>
+                        </div>
+                        <div class="col-1 p-0">
+                            <a href="#" class="text-muted cart-delete-product">
+                                <i class="bi bi-x fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+
+                    <div class="cart-backToShopping">
+                        <h6 class="mb-0">
+                            <a href="#!" class="text-decoration-none text-black border-1">
+                                <i class="bi bi-arrow-left "></i> Back to shopping
+                            </a>
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="shopping-summary col-12 col-lg-4">
+                    <div class="py-5 px-3">
+                        <h3 class="shopping-summary-heading fw-bold mb-5">Summary</h3>
+                        <hr class="my-4">
+                        
+                        <form class="pt-3">
+                            <div class="cart-promoCode d-flex flex-column justify-content-center">
+                                <div class="form-outline col-6 col-md-12">
+                                    <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form3Examplea2">Promo code</label>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-lg col-3 col-md-12 mt-2 prompCodeBtn"> 
+                                    Apply
+                                </button>
+                            </div>
+                        </form>
+                        <hr class="my-4">
+
+                        <div class="cart-price mb-5">
+                            <div class="d-flex justify-content-between">
+                                <h5>Products</h5>
+                                <h5>€ 132.00</h5>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <h5>Shipping</h5>
+                                <h5>€ 5.00</h5>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <h5>Discount</h5>
+                                <h5>€ 0.00</h5>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <h5>Total</h5>
+                                <h5>€ 137.00</h5>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-dark btn-block btn-lg col-md-12 checkoutBtn"
+                            data-mdb-ripple-color="dark">checkout
+                        </button>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
