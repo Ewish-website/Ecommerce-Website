@@ -1,0 +1,16 @@
+/* this is another way to import css instead of html import */
+@import url("root.css");
+@import url("reset-min.css");
+ .background-radial-gradient {
+      background-image: url("/assets/shopping-bag.jfif");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      min-height: 100vh;      
+    }
+  
+ .bg-glass {
+      background-color:var(--primary-color)  !important; 
+      backdrop-filter: saturate(200%) blur(25px);
+      opacity:0.8;
+   }
+
