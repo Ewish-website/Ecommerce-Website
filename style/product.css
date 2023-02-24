@@ -104,9 +104,8 @@
   transform: translateY(-15px);
 }
 
-
 .card{
-  /* width: 100%; */
+  display: block;
   border:none;
 }
 
@@ -131,6 +130,10 @@
 
 .cart:hover {
   background: var(--medium-color);
+}
+
+.cart::before{
+  vertical-align: middle !important;
 }
 
 .card-title h5 {
