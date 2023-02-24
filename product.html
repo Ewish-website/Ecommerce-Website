@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/reset-min.css" />
+    <link rel="stylesheet" href="style/root.css" />
+    <link rel="stylesheet" href="style/product.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="product-container">
+    <div
+      id="carouselExampleCaption"
+      class="carousel slide my-5"
+      data-bs-ride="false"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="images/enthusiastic-smiling-asian-girl-sunglasses-holding-mobile-phone-dancing-laughing-with-smartphone-standing-blue-background.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-md-block">
+            <div class="custom-carousel-content">
+              <h2>
+                <span>NEW COLLECTION</span>
+              </h2>
+              <p>
+                We offer an industry-driven and successful digital marketing
+                strategy that helps our clients in achieving a strong online
+                presence and maximum company profit.
+              </p>
+              <button type="button" class="btn btn-secondary shop" style="opacity: 0.5;">SHOP NOW</button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="images/enthusiastic-asian-girl-stylish-sunglasses-pointing-finger-smartphone-showing-mobile-phone-standing-blue-background.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-md-block">
+            <div class="custom-carousel-content">
+              <h2>
+                <span>SALE UP TO 50%</span>
+              </h2>
+              <p>
+                We offer an industry-driven and successful digital marketing
+                strategy that helps our clients in achieving a strong online
+                presence and maximum company profit.
+              </p>
+              <button type="button" class="btn btn-secondary shop" style="opacity: 0.5;">SHOP NOW</button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="images/smiling-asian-girl-sunglasses-using-smartphone-app-holding-mobile-phone-standing-blue-background.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-md-block">
+            <div class="custom-carousel-content">
+              <h2>
+                <span>BUY 1 AND GET 2 FREE</span>
+              </h2>
+              <p>
+                We offer an industry-driven and successful digital marketing
+                strategy that helps our clients in achieving a strong online
+                presence and maximum company profit.
+              </p>
+              <button type="button" class="btn btn-secondary shop" style="opacity: 0.5;">SHOP NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaption"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaption"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="all-products container">
+      <div class="featured mx-5" style="text-align: center">
+        <h4 class="product-title">BEST SELLERS</h4>
+        <span class="word"
+          >Collection of best seller products from all categories</span
+        >
+      </div>
+      <div class="row form-group justify-content-between">
+        <div class="col-12 col-md-6 col-lg-3 item my-2">
+          <div class="card box-shadow my-5 p-2">
+            <img
+              src="https://source.unsplash.com/collection/190727/2000x2500"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <div
+                class="card-title d-flex justify-content-evenly align-baseline"
+              >
+                <h5>T-shirt</h5>
+                <span class="card-text price">400£</span>
+              </div>
+              <div class="rates">
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+              </div>
+              <p class="card-text prand">ZARA</p>
+              <a href=""
+              ><i class="bx bx-cart-add cart" style="font-size: x-large"></i
+            ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 item my-2">
+          <div class="card box-shadow my-5 p-2">
+            <img
+              src="https://source.unsplash.com/collection/190727/2000x2500"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <div
+                class="card-title d-flex justify-content-evenly align-baseline"
+              >
+                <h5>T-shirt</h5>
+                <span class="card-text price">400£</span>
+              </div>
+              <div class="rates">
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+              </div>
+              <p class="card-text prand">ZARA</p>
+              <a href=""
+              ><i class="bx bx-cart-add cart" style="font-size: x-large"></i
+            ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 item my-2">
+          <div class="card box-shadow my-5 p-2">
+            <img
+              src="https://source.unsplash.com/collection/190727/2000x2500"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <div
+                class="card-title d-flex justify-content-evenly align-baseline"
+              >
+                <h5>T-shirt</h5>
+                <span class="card-text price">400£</span>
+              </div>
+              <div class="rates">
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+              </div>
+              <p class="card-text prand">ZARA</p>
+              <a href=""
+              ><i class="bx bx-cart-add cart" style="font-size: x-large"></i
+            ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 item my-2">
+          <div class="card box-shadow my-5 p-2">
+            <img
+              src="https://source.unsplash.com/collection/190727/2000x2500"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <div
+                class="card-title d-flex justify-content-evenly align-baseline"
+              >
+                <h5>T-shirt</h5>
+                <span class="card-text price">400£</span>
+              </div>
+              <div class="rates">
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+              </div>
+              <p class="card-text prand">ZARA</p>
+              <a href=""
+              ><i class="bx bx-cart-add cart" style="font-size: x-large"></i
+            ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row form-group justify-content-between">
+                <div class="col-12 col-md-6 col-lg-3 item my-2">
+          <div class="card box-shadow my-5 p-2">
+            <img
+              src="https://source.unsplash.com/collection/190727/2000x2500"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <div
+                class="card-title d-flex justify-content-evenly align-baseline"
+              >
+                <h5>T-shirt</h5>
+                <span class="card-text price">400£</span>
+              </div>
+              <div class="rates">
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+              </div>
+              <p class="card-text prand">ZARA</p>
+              <a href=""
+              ><i class="bx bx-cart-add cart" style="font-size: x-large"></i
+            ></a>
+            </div>
+          </div>
+        </div>
+
+         <div class="col-12 col-md-6 col-lg-3 item my-2">
+          <div class="card box-shadow my-5 p-2">
+            <img
+              src="https://source.unsplash.com/collection/190727/2000x2500"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <div
+                class="card-title d-flex justify-content-evenly align-baseline"
+              >
+                <h5>T-shirt</h5>
+                <span class="card-text price">400£</span>
+              </div>
+              <div class="rates">
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+              </div>
+              <p class="card-text prand">ZARA</p>
+              <a href=""
+              ><i class="bx bx-cart-add cart" style="font-size: x-large"></i
+            ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 item my-2">
+          <div class="card box-shadow my-5 p-2">
+            <img
+              src="https://source.unsplash.com/collection/190727/2000x2500"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <div
+                class="card-title d-flex justify-content-evenly align-baseline"
+              >
+                <h5>T-shirt</h5>
+                <span class="card-text price">400£</span>
+              </div>
+              <div class="rates">
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+              </div>
+              <p class="card-text prand">ZARA</p>
+              <a href=""
+              ><i class="bx bx-cart-add cart" style="font-size: x-large"></i
+            ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 item my-2">
+          <div class="card box-shadow my-5 p-2">
+            <img
+              src="https://source.unsplash.com/collection/190727/2000x2500"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <div
+                class="card-title d-flex justify-content-evenly align-baseline"
+              >
+                <h5>T-shirt</h5>
+                <span class="card-text price">400£</span>
+              </div>
+              <div class="rates">
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+              </div>
+              <p class="card-text prand">ZARA</p>
+              <a href=""
+              ><i class="bx bx-cart-add cart" style="font-size: x-large"></i
+            ></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row form-group justify-content-between">
+        <div class="col-12 col-md-6 col-lg-3 item my-2">
+          <div class="card box-shadow my-5 p-2">
+            <img
+              src="https://source.unsplash.com/collection/190727/2000x2500"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <div
+                class="card-title d-flex justify-content-evenly align-baseline"
+              >
+                <h5>T-shirt</h5>
+                <span class="card-text price">400£</span>
+              </div>
+              <div class="rates">
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+              </div>
+              <p class="card-text prand">ZARA</p>
+              <a href=""
+              ><i class="bx bx-cart-add cart" style="font-size: x-large"></i
+            ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 item my-2">
+          <div class="card box-shadow my-5 p-2">
+            <img
+              src="https://source.unsplash.com/collection/190727/2000x2500"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <div
+                class="card-title d-flex justify-content-evenly align-baseline"
+              >
+                <h5>T-shirt</h5>
+                <span class="card-text price">400£</span>
+              </div>
+              <div class="rates">
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+              </div>
+              <p class="card-text prand">ZARA</p>
+              <a href=""
+              ><i class="bx bx-cart-add cart" style="font-size: x-large"></i
+            ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 item my-2">
+          <div class="card box-shadow my-5 p-2">
+            <img
+              src="https://source.unsplash.com/collection/190727/2000x2500"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <div
+                class="card-title d-flex justify-content-evenly align-baseline"
+              >
+                <h5>T-shirt</h5>
+                <span class="card-text price">400£</span>
+              </div>
+              <div class="rates">
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+              </div>
+              <p class="card-text prand">ZARA</p>
+              <a href=""
+              ><i class="bx bx-cart-add cart" style="font-size: x-large"></i
+            ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 item my-2">
+          <div class="card box-shadow my-5 p-2">
+            <img
+              src="https://source.unsplash.com/collection/190727/2000x2500"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <div
+                class="card-title d-flex justify-content-evenly align-baseline"
+              >
+                <h5>T-shirt</h5>
+                <span class="card-text price">400£</span>
+              </div>
+              <div class="rates">
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+                <i class="bx bxs-star rate" style="color: #eee20b"></i>
+              </div>
+              <p class="card-text prand">ZARA</p>
+              <a href=""
+              ><i class="bx bx-cart-add cart" style="font-size: x-large"></i
+            ></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  </body>
+</html>
