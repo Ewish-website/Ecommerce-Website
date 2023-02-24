@@ -1,9 +1,5 @@
 @import url("./root.css");
 
-.Details-modal{
-    position: relative;
-}
-
 .Details-model-close{
     position: absolute;
     right: 1.25rem;
@@ -11,24 +7,66 @@
     z-index: 2;
 }
 
-.productDetailsImage{
+/* .productDetailsImage{
     width: 100%;
-    height: fit-content;
 }
 
-.activeDetailsImage{
-    height: max-content;
-}
-
-.inActivePDetailsImage{
+.AllProductImage{
     width: calc((100% - 1.5rem)/4);
-    height: max-content;
+    border: 1px solid #111;
 }
 
-.inActivePDetailsImage:not(:last-child){
+.AllProductImage:not(:last-child){
     margin-right: 0.5rem;
+} */
+
+.DetailsImage {
+	position: relative;
 }
 
-.product-Details-price{
-    color: var(--medium-color);
+.DetailsImage .Image-container {
+	width: 100%;
+	border-radius: 6px;
+}
+
+.DetailsLargeScreen{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-25%, -50%);
+	box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+}
+
+.ActiveDetailsImage {
+	border-radius: 6px 6px 0 0;
+	/* background-color: var(--primary-color); */
+    background-color: white;
+}
+
+.ActiveDetailsImage img {
+	width: 100%;
+}
+
+.DetailsImageAlbum {
+	padding: 0.7em 1em;
+	border-radius: 0 0 6px 6px;
+	background-color: var(--primary-color);
+}
+
+.DetailsImageAlbum .DetailsImageList {
+    display: flex;
+    justify-content: space-between;
+}
+
+.DetailsImageAlbum li {
+    width: 55px;
+    height: 55px;
+    padding: 7px;
+    border: 1px solid var(--dark-color);
+    border-radius: 3px;
+    list-style: none;
+}
+
+.DetailsImageAlbum li img{
+    width: 100%;
 }

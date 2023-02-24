@@ -46,7 +46,7 @@ ul li a{
     text-decoration: none;
     color: var(--secondary-color);
 }
-form{
+.form1{
     padding-bottom: 15px;
     display: flex;
     align-items: center;
@@ -55,12 +55,12 @@ form{
     margin-bottom: 50px;
 }
 
-form .bxs-paper-plane{
+.form1 .bxs-paper-plane{
     font-size: 18px;
     margin-right: 10px;
     color:var(--primary-color);
 }
-form input{
+.form1 .input2{
     width: 100%;
     background: transparent;
     color: #fffbfb;
@@ -70,13 +70,13 @@ form input{
 ::placeholder{
     color: var(--primary-color);
 }
-form button{
+.form1 button{
     background: transparent;
     border: 0;
     outline: none;
     cursor: pointer;
 }
-form button .bxs-send{
+.form1 button .bxs-send{
     font-size: 16px;
     color: var(--primary-color);
 }
@@ -140,5 +140,5 @@ hr{
     .col:nth-child(2), .col:nth-child(3){
         flex-basis: 100%;
     }
-    
+
 }
