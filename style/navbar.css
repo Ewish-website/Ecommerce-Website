@@ -14,3 +14,7 @@ nav {
   color: black !important;
 
 }
+.sticky{
+  background-color: var(--dark-color);
+}
+
