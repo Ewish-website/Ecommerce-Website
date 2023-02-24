@@ -17,3 +17,11 @@ const headerObserver = new IntersectionObserver(stickyNav,
 
 
 headerObserver.observe(header)
+
+
+
+const user = document.querySelector("#user")
+
+// check if their is a user logged in?
+//user logged in? show small pop up window on hover with user name
+//no user logged in? redirect to signup/login

@@ -4,17 +4,18 @@ nav {
   background-color: transparent;
 }
 
-.nav-link {
+.nav-link, .navbar-brand {
   color: var(--primary-color);
 }
 
 .container-fluid a.active {
 
-  border-bottom: 3px solid black;
-  color: black !important;
+  border-bottom: 3px solid white;
+  color: white !important;
 
 }
 .sticky{
   background-color: var(--dark-color);
+  
 }
 
