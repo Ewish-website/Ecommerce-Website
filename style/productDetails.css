@@ -1,0 +1,34 @@
+@import url("./root.css");
+
+.Details-modal{
+    position: relative;
+}
+
+.Details-model-close{
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+    z-index: 2;
+}
+
+.productDetailsImage{
+    width: 100%;
+    height: fit-content;
+}
+
+.activeDetailsImage{
+    height: max-content;
+}
+
+.inActivePDetailsImage{
+    width: calc((100% - 1.5rem)/4);
+    height: max-content;
+}
+
+.inActivePDetailsImage:not(:last-child){
+    margin-right: 0.5rem;
+}
+
+.product-Details-price{
+    color: var(--medium-color);
+}

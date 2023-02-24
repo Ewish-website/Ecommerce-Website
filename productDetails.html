@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./style/productDetails.css">
+</head>
+<body>
+    <div class="container">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Launch demo modal
+        </button>
+
+        <div class="Details-modal modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog rounded-4 "><!--  modal-fullscreen-sm-down -->
+                <div class="modal-content p-4 p-lg-5">
+                    <button type="button" class="Details-model-close btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-body col-12 d-lg-flex justify-content-between p-0 ">
+                        <div class="col-12 col-lg-5 DetailsImage d-flex flex-wrap h-100 my-auto">
+                            <div class="activeDetailsImage p-0 col-12 mb-3">
+                                <img class="productDetailsImage rounded-3" src="./assets/shopping-bag.jpg" alt="">
+                            </div>
+                            <div class="inActivePDetailsImage p-0">
+                                <img class="productDetailsImage rounded-3" src="./assets/shopping-bag.jpg" alt="">
+                            </div>
+                            <div class="inActivePDetailsImage p-0">
+                                <img class="productDetailsImage rounded-3" src="./assets/shopping-bag.jpg" alt="">
+                            </div>
+                            <div class="inActivePDetailsImage p-0">
+                                <img class="productDetailsImage rounded-3" src="./assets/shopping-bag.jpg" alt="">
+                            </div>
+                            <div class="inActivePDetailsImage p-0">
+                                <img class="productDetailsImage rounded-3" src="./assets/shopping-bag.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-7 ps-lg-5 pt-4 pt-lg-0 DetailsText">
+                            <h3 class="">product title</h3>
+                            <div class="ProductDetails-rating py-2">
+                                <i class="bi bi-star-fill text-warning-emphasis"></i>
+                                <i class="bi bi-star-fill text-warning-emphasis"></i>
+                                <i class="bi bi-star-fill text-warning-emphasis"></i>
+                                <i class="bi bi-star-fill text-warning-emphasis"></i>
+                                <i class="bi bi-star-fill text-warning-emphasis"></i>
+                            </div>
+                            <h5 class="product-Details-price py-1">$ 33.6</h6>
+                            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, sunt ratione sequi eaque magnam eos officiis!</p>
+                            <p class="pb-1 m-0"><b>Brand:</b> zara</p>
+                            <p class="pb-1 m-0"><b>Category:</b> brad category</p>
+                            <p class="pb-1 m-0"><b>Availabilty:</b> in stock</p>
+                            <div class="productDetailsForm d-flex justify-content-between pt-3">
+                                <div class="d-flex p-0 col-4">
+                                    <button class="minusbtn btn btn-link p-0 pe-2">
+                                        <i class="bi bi-dash fs-5"></i>
+                                    </button>
+
+                                    <input id="form1" min="0" name="quantity" value="1" type="number"
+                                        class="quantityBtn form-control form-control-sm" />
+
+                                    <button class="plusbtn btn btn-link p-0 ps-2">
+                                        <i class="bi bi-plus fs-5"></i>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-primary col-6"> 
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

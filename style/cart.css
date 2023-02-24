@@ -39,7 +39,7 @@
   background-color: var(--primary-color);
 }
 
-input {
+.shopping-summary .promoInput {
   border: 1px solid #ced4da !important;
 }
 
