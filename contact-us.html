@@ -51,7 +51,7 @@
     </nav>
     <!--End of Nav-->
    
-    <section class="contact">
+    <section class="contact" id="blur">
         <div class="content-contact-form">
             <h2 >Contact Us</h2>
             <p >Email us with any question or inquiries or call 999-999-999-9999. We eould be happy to 
@@ -105,13 +105,20 @@
                         <span>Type your Message...</span>
                     </div>
                     <div class="inputBox">
-                        <input type="submit" name="" value="Send">
+                        <input id="popup-send" type="submit" name="" value="Send" onclick="toggle()">
                         
                     </div>
                 </form>
             </div>
+            
         </div>
     </section>
+    <div id="popup">
+        <img src="assets/pop-up.png">
+        <h2>Thank You!</h2>
+        <p>Your Message has been successfully submited.</p>
+        <button id="ok-btn" onclick="toggle()">OK</button>
+    </div>
 
 
 

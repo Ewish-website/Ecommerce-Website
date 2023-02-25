@@ -1,20 +1,8 @@
-const contactForm = document.querySelector(".content-contact-form");
-const nav = document.querySelector("nav");
+function toggle(){
+    var blur=document.getElementById("blur");
+    blur.classList.toggle("active");
 
-console.log(contactForm);
-console.log(nav);
-const stickyNav = function (entries) {
-    const [entry] = entries;
-    if (!entry.isIntersecting) nav.classList.add('sticky');
-    else nav.classList.remove('sticky');
+    var popup=document.getElementById("popup");
+    popup.classList.toggle("active");
 
 }
-const contactObserver = new IntersectionObserver(stickyNav,
-    {
-        root: null,
-        threshold: 1
-    }
-);
-
-
-contactObserver.observe(contactForm)
