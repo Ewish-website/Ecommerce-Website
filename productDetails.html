@@ -15,69 +15,11 @@
 </head>
 <body>
     <div class="container">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        <button type="button" id="ProductDetailsBtn" class="btn btn-primary"> 
             Open modal
         </button>
-        <!-- use js to add and remove DetailsLargeScreen according to window size-->
-        <!-- images slider  -->
-        <div class="modal fade modal-lg Details-modal mt-md-5" id="myModal">
-            <div class="modal-dialog ">
-                <div class="modal-content p-4 p-lg-5">
-                    <button type="button" class="Details-model-close btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="modal-body row col-12 d-lg-flex justify-content-between p-0 py-4 ">
-                        <div class="col-12 col-md-5 DetailsImage my-auto ml-lg-auto">
-                            <div class="Image-container DetailsLargeScreen">
-                                <div class="ActiveDetailsImage">
-                                    <img src="https://res.cloudinary.com/john-mantas/image/upload/v1537291846/codepen/delicious-apples/green-apple-with-slice.png" alt="green apple slice">
-                                </div>
-                                <div class="DetailsImageAlbum col-12 ">
-                                    <ul class="DetailsImageList p-0">
-                                        <li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png" alt="green apple"></li>
-                                        <li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537303532/codepen/delicious-apples/half-apple.png" alt="half apple"></li>
-                                        <li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537303160/codepen/delicious-apples/green-apple-flipped.png" alt="green apple"></li>
-                                        <li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537303708/codepen/delicious-apples/apple-top.png" alt="apple top"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-7 DetailsText my-auto pt-4 p-md-0 ml-lg-auto">
-                            <h3 class="fs-3 text-uppercase">iphone 11</h3>
-                            <div class="ProductDetails-rating pb-2">
-                                <i class="bi bi-star-fill text-warning-emphasis"></i>
-                                <i class="bi bi-star-fill text-warning-emphasis"></i>
-                                <i class="bi bi-star-fill text-warning-emphasis"></i>
-                                <i class="bi bi-star-fill text-warning-emphasis"></i>
-                                <i class="bi bi-star-fill text-warning-emphasis"></i>
-                            </div>
-                            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, sunt ratione sequi eaque magnam eos officiis!</p>
-                            <p class="pb-1 m-0"><b>price:</b> $250</p>
-                            <p class="pb-1 m-0"><b>Brand:</b> Apple</p>
-                            <p class="pb-1 m-0"><b>Category:</b> Electronics</p>
-                            <p class="pb-1 m-0"><b>Availabilty:</b> in stock</p>
-                            <div class="productDetailsForm d-flex justify-content-between pt-3">
-                                <div class="d-flex p-0 col-5 col-md-6 col-lg-4">
-                                    <button class="minusbtn btn btn-link p-0 pe-2">
-                                        <i class="bi bi-dash fs-5"></i>
-                                    </button>
-
-                                    <input id="form1" min="0" name="quantity" value="1" type="number"
-                                        class="quantityBtn form-control form-control-sm" />
-
-                                    <button class="plusbtn btn btn-link p-0 ps-2">
-                                        <i class="bi bi-plus fs-5"></i>
-                                    </button>
-                                </div>
-                                <button type="button" class="btn btn-primary col-5 col-md-6 col-lg-4"> 
-                                    Add to cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+    <script src="/script/productDetails.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
