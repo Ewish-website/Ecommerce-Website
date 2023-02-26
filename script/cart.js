@@ -9,6 +9,8 @@ class Cart {
   #QuantityBtn;
   #deleteCart;
   #itemsCount;
+  #activeUser;
+  #promoButtom
   constructor() {
     this.#cartItems = document.querySelector(".cartItems");
     this.renderCartList();
@@ -30,6 +32,7 @@ class Cart {
     this.#QuantityBtn = document.querySelectorAll(".quantityBtn");
     this.#QuantityContainer = document.querySelectorAll(".QuantityContainer");
     this.#deleteCart = document.querySelectorAll(".cart-delete-product");
+    this.#promoButtom=document.querySelector(".prompCodeBtn");
 
     this.#QuantityContainer.forEach((container, i) => {
       container.addEventListener("change", (e) => {
@@ -46,6 +49,16 @@ class Cart {
         this.RemoveItem(e, i);
       });
     });
+  this.#promoButtom.addEventListener("click",(e)=>{
+    e.preventDefault();
+    let discountValue=0;
+        let input =document.querySelector(".promoInput").value;
+       if(input=="123"){
+         discountValue=0.05;
+        }
+        this.displayPrice(discountValue);
+
+  })  
   }
 
   AddItem(item) {
@@ -62,7 +75,7 @@ class Cart {
                     <h6 class="cart-product-category text-muted">${item.category}</h6>
                 </div>
                 <div class="col-4 col-sm-3 d-flex p-0 QuantityContainer">
-                    <button class="minusbtn btn btn-link p-0 pe-2">
+                    <button class="minusbtn btn btn-link p-0 pe-2" id="minusbtn">
                         <i class="bi bi-dash fs-5"></i>
                     </button>
 
@@ -90,6 +103,11 @@ class Cart {
     // -------------------------------------------------
     // remove cart list of index i from local storage
     // -------------------------------------------------
+    // console.log(this.#userCartList[this.#activeUser].cartList);
+    this.#userCartList[this.#activeUser].cartList.splice(i,1);
+    console.log(this.#userCartList[this.#activeUser].cartList);
+    localStorage.setItem("users", JSON.stringify(this.#userCartList));
+
     let child = document.querySelectorAll(".cartItems div");
     let hr = this.#cartItems.querySelectorAll(".cartItems hr");
     this.#cartItems.removeChild(child[i]);
@@ -102,29 +120,55 @@ class Cart {
     if (e.target.classList.contains("bi")) {
       let clickedElement = e.target.closest("button");
       if (clickedElement.classList.contains("minusbtn")) {
+        if(this.#userCartList[this.#activeUser].cartList[i].quantity>1){
+          this.#userCartList[this.#activeUser].cartList[i].quantity--;
+        this.#QuantityBtn[i].value=this.#userCartList[this.#activeUser].cartList[i].quantity;;
+        }
         // --------------------------------------------------------
         // check if quantity in local storage is less than1
         // if yes: decrement it and insert the value in input value
         // ---------------------------------------------------------
       } else if (clickedElement.classList.contains("plusbtn")) {
+        this.#userCartList[this.#activeUser].cartList[i].quantity++;
+        this.#QuantityBtn[i].value=this.#userCartList[this.#activeUser].cartList[i].quantity;
         // -----------------------------------------------
         // increment quantity value in local storage
         // insert the new value in input value
         // ------------------------------------------------
       }
     } else if (e.target.classList.contains("quantityBtn")) {
+      this.#userCartList[this.#activeUser].cartList[i].quantity=this.#QuantityBtn[i].value;
+
       // --------------------------------------------------
       // insert the input value in quantity local storage
       // --------------------------------------------------
     }
     localStorage.setItem("users", JSON.stringify(this.#userCartList));
+    this.displayPrice();
     // console.log(localStorage.setItem("users", JSON.stringify(this.#userCartList)));
   }
 
   // -------------------------------------------------------------
   // Display price
   // -------------------------------------------------------------
-  displayPrice(item) {}
+  
+  displayPrice(discountValue=0) {
+    let productPrice=0;
+    this.#userCartList[this.#activeUser].cartList.forEach((item)=>{
+      productPrice+=item.quantity*item.price;
+    }
+
+    )
+    let product=document.querySelector(".product");
+    let total=document.querySelector(".total");
+    let discount=document.querySelector(".discount");
+    product.innerHTML = ` ${"$ "+productPrice.toFixed(2)}`;
+    discountValue*=-productPrice;
+    discount.innerHTML=`${"$ "+discountValue.toFixed(2)}`;
+    total.innerHTML = ` ${"$ "+(productPrice+discountValue-5).toFixed(2)}`;
+
+
+  }
 
   renderCartList() {
     this.#userCartList = JSON.parse(localStorage.getItem("users"));
@@ -135,11 +179,13 @@ class Cart {
         modalWrap.querySelector("#exampleModal")
       );
       modal.show();
+      this.#activeUser=0;
       this.#userCartList[0].cartList.forEach((item) => {
         this.AddItem(item);
       });
     }
     this.cartEventListener();
+    this.displayPrice();
   }
 }
 
