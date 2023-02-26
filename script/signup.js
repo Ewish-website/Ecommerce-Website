@@ -34,7 +34,6 @@ class SignUp {
 
     localStorage() {
         let users = [];
-        // users = localStorage.getItem('users');
         if (JSON.parse(localStorage.getItem('users'))) {
             users = JSON.parse(localStorage.getItem('users'));
             this.user = new User(uuidv4(), emailInput.value, passwordInput.value, firstNameInput.value, lastNameInput.value, [], false);
