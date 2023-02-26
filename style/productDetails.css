@@ -1,0 +1,67 @@
+@import url("./root.css");
+
+.Details-model-close{
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+    z-index: 2;
+}
+
+.DetailsImage {
+	position: relative;
+}
+
+.DetailsImage .Image-container {
+	width: 100%;
+	border-radius: 6px;
+}
+
+.DetailsLargeScreen{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-25%, -50%);
+	box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+}
+
+.ActiveDetailsImage {
+	border-radius: 6px 6px 0 0;
+	/* background-color: var(--primary-color); */
+    background-color: white;
+}
+
+.ActiveDetailsImage img {
+	width: 100%;
+}
+
+.DetailsImageAlbum {
+	padding: 0.7em 1em;
+	border-radius: 0 0 6px 6px;
+	background-color: var(--primary-color);
+}
+
+.DetailsImageAlbum .DetailsImageList {
+    display: flex;
+    justify-content: space-between;
+}
+
+.DetailsImageAlbum li {
+    width: calc(((100% - 14px -4px) / 4));
+    height: fit-content;
+    padding: 7px;
+    border: 1px solid var(--dark-color);
+    border-radius: 3px;
+    list-style: none;
+}
+
+.DetailsImageAlbum li img{
+    width: 100%;
+}
+
+.DetailsImageAlbum .activeLiImage{
+    border: 2px solid var(--dark-color);
+}
+
+.DetailsImageAlbum .activeLiImage img{
+    opacity: 0.4;
+}
