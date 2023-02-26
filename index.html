@@ -2,589 +2,512 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/reset-min.css">
-    <link rel="stylesheet" href="style/homePage.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="style/reset-min.css">
+  <link rel="stylesheet" href="style/homePage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 
 <body>
-    <!-- navbar -->
+  <!-- navbar -->
 
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light p-3 col-12 col-md-12 px-5 sticky" id="nav">
-        <div class="container-fluid">
-            <a class="navbar-brand col-2" href="index.html">E-wish</a>
-            <button class="navbar-toggler" type="navbarNav" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse col-10 col-md-10 justify-content-between" id="navbarNav">
-                <div class="navbar-nav col-8 col-md-8 justify-content-evenly">
-                    <a class="nav-link active" href="index.html">Home</a>
-                    <a class="nav-link" href="about.html">About</a>
-                    <a class="nav-link" href="products.html">Products</a>
-
-
-                    <a class="nav-link" href="contact-us.html">Contact us</a>
-
-                </div>
-                <div class="loginCart col-2 col-md-2 d-flex justify-content-end gap-2">
-                    <a class="nav-link" href="cart.html">🛒</a>
-                    <a class="nav-link" href="sign-up.html" id="user"><i class="fa fa-fw fa-user"></i></a>
-                </div>
-            </div>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light p-3 col-12 col-md-12 px-5 sticky" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand col-2" href="index.html">E-wish</a>
+      <button class="navbar-toggler" type="navbarNav" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse col-10 col-md-10 justify-content-between" id="navbarNav">
+        <div class="navbar-nav col-8 col-md-8 justify-content-evenly">
+          <a class="nav-link active" href="index.html">Home</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="products.html">Products</a>
+          <a class="nav-link" href="contact-us.html">Contact us</a>
         </div>
-    </nav>
-
-    <!-- header container -->
-    <section class="header-container">
-        <div class="header container">
-            <p id="firstHeader">Each purchase will be made with pleasure</p>
-            <p id="secHeader">
-              An exciting place for the whole family to shop.<br>
-              "Transforming shopping into an experience"
-            </p>
+        <div class="loginCart col-2 d-flex justify-content-end gap-2">
+          <a class="nav-link" id="cart"><i class="bi bi-cart3 fs-4 me-2"></i></a>
+          <a class="nav-link" id="user"><i class="bi bi-person-circle fs-4"></i></a>
         </div>
-
-        <div class="shop">
-            <div class="center"><button class="shopNow">
-                    <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-                    </svg>
-                    <span>Shop now</span>
-                </button></div>
-        </div>
-    </section>
-
-
-    <!-----------products--------------->
-    <div class="container-fluid py-5">
-        <div
-          id="carouselExampleCaption"
-          class="carousel slide col-12  col-lg-9"
-          data-bs-ride="false">
-          <div class="carousel-inner col-12">
-            <div class="carousel-item active col-12">
-              <img
-                src="assets/enthusiastic-smiling-asian-girl-sunglasses-holding-mobile-phone-dancing-laughing-with-smartphone-standing-blue-background.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
-              <div class="carousel-caption h-100 my-0 d-flex justify-content-center flex-column">
-                <div class="custom-carousel-content">
-                  <h2 class="pb-2">
-                    <span>NEW COLLECTION</span>
-                  </h2>
-                  <p>
-                    We offer an industry-driven and successful digital marketing
-                    strategy that helps our clients in achieving a strong online
-                    presence and maximum company profit.
-                  </p>
-                </div>
-                
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="assets/enthusiastic-asian-girl-stylish-sunglasses-pointing-finger-smartphone-showing-mobile-phone-standing-blue-background.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
-              <div class="carousel-caption h-100 my-0 d-flex justify-content-center flex-column">
-                <div class="custom-carousel-content">
-                  <h2>
-                    <span>SALE UP TO 50%</span>
-                  </h2>
-                  <p>
-                    We offer an industry-driven and successful digital marketing
-                    strategy that helps our clients in achieving a strong online
-                    presence and maximum company profit.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="assets/smiling-asian-girl-sunglasses-using-smartphone-app-holding-mobile-phone-standing-blue-background.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
-              <div class="carousel-caption h-100 my-0 d-flex justify-content-center flex-column">
-                <div class="custom-carousel-content">
-                  <h2>
-                    <span>BUY 1 AND GET 2 FREE</span>
-                  </h2>
-                  <p>
-                    We offer an industry-driven and successful digital marketing
-                    strategy that helps our clients in achieving a strong online
-                    presence and maximum company profit.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleCaption"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleCaption"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-    </div>
-
-    <div class="container-fluid my-0 all-products">
-      <div class="featured" style="text-align: center">
-        <h4 class="product-title">BEST SELLERS</h4>
-        <span class="word"
-          >Collection of best seller products from all categories</span
-        >
       </div>
 
-      <div class="row form-group justify-content-between">
-        <div class="col-12 col-md-4 col-lg-3 item my-2">
-          <div class="card box-shadow my-5 p-2">
-            <img
-              src="https://source.unsplash.com/collection/190727/2000x2500"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <div
-                class="card-title d-flex justify-content-evenly align-baseline"
-              >
-                <h5>T-shirt</h5>
-                <span class="card-text price">400£</span>
-              </div>
-              <div class="rates">
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-              </div>
-              <p class="card-text prand">ZARA</p>
-              <a href="cart.html" class="d-block w-100">
-                <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+    </div>
+  </nav>
+  <!-- user box -->
+  <div class="user-container">
+    <div class="our-user">
+      <div class="user-picture">
+        <img class="img-fluid" src="./assets/user.jpg">
+      </div>
+      <div class="user-content">
+        <p class="name"></p>
 
-        <div class="col-12 col-md-4 col-lg-3 item my-2">
-          <div class="card box-shadow my-5 p-2">
-            <img
-              src="https://source.unsplash.com/collection/190727/2000x2500"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <div
-                class="card-title d-flex justify-content-evenly align-baseline"
-              >
-                <h5>T-shirt</h5>
-                <span class="card-text price">400£</span>
-              </div>
-              <div class="rates">
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-              </div>
-              <p class="card-text prand">ZARA</p>
-              <a href="cart.html" class="d-block w-100">
-                <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+      </div>
+      <ul class="user-social">
+        <li><a href="#" class="bi bi-facebook" aria-hidden="true"></a></li>
+        <li><a href="#" class="bi bi-twitter" aria-hidden="true"></a></li>
+        <li><a href="#" class="bi bi-google" aria-hidden="true"></a></li>
+        <li><a href="#" class="bi bi-box-arrow-right" aria-hidden="true" id="logOut"></a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+  <!-- header container -->
+  <section class="header-container">
+    <div class="header container">
+      <p id="firstHeader">Each purchase will be made with pleasure</p>
+      <p id="secHeader">
+        An exciting place for the whole family to shop.<br>
+        "Transforming shopping into an experience"
+      </p>
+    </div>
 
-        <div class="col-12 col-md-4 col-lg-3 item my-2">
-          <div class="card box-shadow my-5 p-2">
-            <img
-              src="https://source.unsplash.com/collection/190727/2000x2500"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <div
-                class="card-title d-flex justify-content-evenly align-baseline"
-              >
-                <h5>T-shirt</h5>
-                <span class="card-text price">400£</span>
-              </div>
-              <div class="rates">
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-              </div>
-              <p class="card-text prand">ZARA</p>
-              <a href="cart.html" class="d-block w-100">
-                <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+    <div class="shop">
+      <div class="center"><button class="shopNow">
+          <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+          </svg>
+          <span>Shop now</span>
+        </button></div>
+    </div>
+  </section>
 
-        <div class="col-12 col-md-4 col-lg-3 item my-2">
-          <div class="card box-shadow my-5 p-2">
-            <img
-              src="https://source.unsplash.com/collection/190727/2000x2500"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <div
-                class="card-title d-flex justify-content-evenly align-baseline"
-              >
-                <h5>T-shirt</h5>
-                <span class="card-text price">400£</span>
-              </div>
-              <div class="rates">
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-              </div>
-              <p class="card-text prand">ZARA</p>
-              <a href="cart.html" class="d-block w-100">
-                <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-12 col-md-4 col-lg-3 item my-2">
-          <div class="card box-shadow my-5 p-2">
-            <img
-              src="https://source.unsplash.com/collection/190727/2000x2500"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <div
-                class="card-title d-flex justify-content-evenly align-baseline"
-              >
-                <h5>T-shirt</h5>
-                <span class="card-text price">400£</span>
-              </div>
-              <div class="rates">
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-              </div>
-              <p class="card-text prand">ZARA</p>
-              <a href="cart.html" class="d-block w-100">
-                <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div class="col-12 col-md-4 col-lg-3 item my-2">
-          <div class="card box-shadow my-5 p-2">
-            <img
-              src="https://source.unsplash.com/collection/190727/2000x2500"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <div
-                class="card-title d-flex justify-content-evenly align-baseline"
-              >
-                <h5>T-shirt</h5>
-                <span class="card-text price">400£</span>
-              </div>
-              <div class="rates">
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-              </div>
-              <p class="card-text prand">ZARA</p>
-              <a href="cart.html" class="d-block w-100">
-                <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
-              </a>
+  <!-----------products--------------->
+  <div class="container-fluid py-5">
+    <div id="carouselExampleCaption" class="carousel slide col-12  col-lg-9" data-bs-ride="false">
+      <div class="carousel-inner col-12">
+        <div class="carousel-item active col-12">
+          <img
+            src="assets/enthusiastic-smiling-asian-girl-sunglasses-holding-mobile-phone-dancing-laughing-with-smartphone-standing-blue-background.jpg"
+            class="d-block w-100" alt="..." />
+          <div class="carousel-caption h-100 my-0 d-flex justify-content-center flex-column">
+            <div class="custom-carousel-content">
+              <h2 class="pb-2">
+                <span>NEW COLLECTION</span>
+              </h2>
+              <p>
+                We offer an industry-driven and successful digital marketing
+                strategy that helps our clients in achieving a strong online
+                presence and maximum company profit.
+              </p>
             </div>
-          </div>
-        </div>
 
-        <div class="col-12 col-md-4 col-lg-3 item my-2">
-          <div class="card box-shadow my-5 p-2">
-            <img
-              src="https://source.unsplash.com/collection/190727/2000x2500"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <div
-                class="card-title d-flex justify-content-evenly align-baseline"
-              >
-                <h5>T-shirt</h5>
-                <span class="card-text price">400£</span>
-              </div>
-              <div class="rates">
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-              </div>
-              <p class="card-text prand">ZARA</p>
-              <a href="cart.html" class="d-block w-100">
-                <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
-              </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="assets/enthusiastic-asian-girl-stylish-sunglasses-pointing-finger-smartphone-showing-mobile-phone-standing-blue-background.jpg"
+            class="d-block w-100" alt="..." />
+          <div class="carousel-caption h-100 my-0 d-flex justify-content-center flex-column">
+            <div class="custom-carousel-content">
+              <h2>
+                <span>SALE UP TO 50%</span>
+              </h2>
+              <p>
+                We offer an industry-driven and successful digital marketing
+                strategy that helps our clients in achieving a strong online
+                presence and maximum company profit.
+              </p>
             </div>
           </div>
         </div>
-
-        <div class="col-12 col-md-4 col-lg-3 item my-2">
-          <div class="card box-shadow my-5 p-2">
-            <img
-              src="https://source.unsplash.com/collection/190727/2000x2500"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <div
-                class="card-title d-flex justify-content-evenly align-baseline"
-              >
-                <h5>T-shirt</h5>
-                <span class="card-text price">400£</span>
-              </div>
-              <div class="rates">
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-              </div>
-              <p class="card-text prand">ZARA</p>
-              <a href="cart.html" class="d-block w-100">
-                <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-12 col-md-4 col-lg-3 item my-2">
-          <div class="card box-shadow my-5 p-2">
-            <img
-              src="https://source.unsplash.com/collection/190727/2000x2500"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <div
-                class="card-title d-flex justify-content-evenly align-baseline"
-              >
-                <h5>T-shirt</h5>
-                <span class="card-text price">400£</span>
-              </div>
-              <div class="rates">
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-              </div>
-              <p class="card-text prand">ZARA</p>
-              <a href="cart.html" class="d-block w-100">
-                <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4 col-lg-3 item my-2">
-          <div class="card box-shadow my-5 p-2">
-            <img
-              src="https://source.unsplash.com/collection/190727/2000x2500"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <div
-                class="card-title d-flex justify-content-evenly align-baseline"
-              >
-                <h5>T-shirt</h5>
-                <span class="card-text price">400£</span>
-              </div>
-              <div class="rates">
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-              </div>
-              <p class="card-text prand">ZARA</p>
-              <a href="cart.html" class="d-block w-100">
-                <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4 col-lg-3 item my-2">
-          <div class="card box-shadow my-5 p-2">
-            <img
-              src="https://source.unsplash.com/collection/190727/2000x2500"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <div
-                class="card-title d-flex justify-content-evenly align-baseline"
-              >
-                <h5>T-shirt</h5>
-                <span class="card-text price">400£</span>
-              </div>
-              <div class="rates">
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-              </div>
-              <p class="card-text prand">ZARA</p>
-              <a href="cart.html" class="d-block w-100">
-                <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4 col-lg-3 item my-2">
-          <div class="card box-shadow my-5 p-2">
-            <img
-              src="https://source.unsplash.com/collection/190727/2000x2500"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <div
-                class="card-title d-flex justify-content-evenly align-baseline"
-              >
-                <h5>T-shirt</h5>
-                <span class="card-text price">400£</span>
-              </div>
-              <div class="rates">
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-                <i class="bi bi-star-fill" style="color: #eee20b"></i>
-              </div>
-              <p class="card-text prand">ZARA</p>
-              <a href="cart.html" class="d-block w-100">
-                <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
-              </a>
+        <div class="carousel-item">
+          <img
+            src="assets/smiling-asian-girl-sunglasses-using-smartphone-app-holding-mobile-phone-standing-blue-background.jpg"
+            class="d-block w-100" alt="..." />
+          <div class="carousel-caption h-100 my-0 d-flex justify-content-center flex-column">
+            <div class="custom-carousel-content">
+              <h2>
+                <span>BUY 1 AND GET 2 FREE</span>
+              </h2>
+              <p>
+                We offer an industry-driven and successful digital marketing
+                strategy that helps our clients in achieving a strong online
+                presence and maximum company profit.
+              </p>
             </div>
           </div>
         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaption" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaption" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+  </div>
 
-    <!-- footer -->
-    <footer>
-        <div class="row">
-            <div class="col">
-                <h3>E-Wish</h3>
-                <p>“We see our customers as invited guests <br> to a party, and we are the hosts. It’s our job every day
-                    to
-                    make every important aspect of the customer experience a little bit better.”</p>
+  <div class="container-fluid my-0 all-products px-lg-5">
+    <div class="featured" style="text-align: center">
+      <h4 class="product-title">BEST SELLERS</h4>
+      <span class="word">Collection of best seller products from all categories</span>
+    </div>
+    <div class="row form-group justify-content-between">
+      <div class="col-12 col-md-4 col-lg-3 item my-2">
+        <div class="card box-shadow my-5 p-2">
+          <img src="https://source.unsplash.com/collection/190727/2000x2500" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-evenly align-baseline">
+              <h5>T-shirt</h5>
+              <span class="card-text price">400£</span>
             </div>
-            <div class="col">
-                <h3>Get in Touch <div class="underline"><span></span></div>
-                </h3>
-                <p>Alexandria, Egypt</p>
-                <p style="padding-top:11px">E-wish@gmail.com</p>
-                <p style="padding-top:11px">+00 111 222 3333</p>
+            <div class="rates">
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
             </div>
-            <div class="col">
-                <h3>Pages <div class="underline"><span></span></div>
-                </h3>
-                <ul>
-                    <li>
-                        <i class='bx bxs-chevron-right'></i>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <i class='bx bxs-chevron-right'></i>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <i class='bx bxs-chevron-right'></i>
-                        <a href="products.html">Products</a>
-                    </li>
-                    <li>
-                        <i class='bx bxs-chevron-right'></i>
-                        <a href="contact-us.html">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col">
-                <h3>News letter <div class="underline"><span></span></div>
-                </h3>
-                <form class="form1">
-                    <i class='bx bx-envelope'></i>
-                    <input class="input2" type="email" placeholder=" Enter your email id">
-                    <button type="submit"><i class='bx bxs-paper-plane'></i></button>
-                </form>
-                <div class="social-icons">
-                    <i class='bx bxl-facebook'></i>
-                    <i class='bx bxl-twitter'></i>
-                    <i class='bx bxl-whatsapp'></i>
-                    <i class='bx bxl-pinterest'></i>
-                </div>
-
-            </div>
+            <p class="card-text prand">ZARA</p>
+            <a href="cart.html" class="d-block w-100">
+              <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
+            </a>
+          </div>
         </div>
-        <hr>
-        <p class="Copyrights">ITI © 2023 - All Rights Reserved.</p>
-    </footer>
-  
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-    <script src="./script/navbar.js" defer></script>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-3 item my-2">
+        <div class="card box-shadow my-5 p-2">
+          <img src="https://source.unsplash.com/collection/190727/2000x2500" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-evenly align-baseline">
+              <h5>T-shirt</h5>
+              <span class="card-text price">400£</span>
+            </div>
+            <div class="rates">
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+            </div>
+            <p class="card-text prand">ZARA</p>
+            <a href="cart.html" class="d-block w-100">
+              <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-3 item my-2">
+        <div class="card box-shadow my-5 p-2">
+          <img src="https://source.unsplash.com/collection/190727/2000x2500" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-evenly align-baseline">
+              <h5>T-shirt</h5>
+              <span class="card-text price">400£</span>
+            </div>
+            <div class="rates">
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+            </div>
+            <p class="card-text prand">ZARA</p>
+            <a href="cart.html" class="d-block w-100">
+              <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-3 item my-2">
+        <div class="card box-shadow my-5 p-2">
+          <img src="https://source.unsplash.com/collection/190727/2000x2500" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-evenly align-baseline">
+              <h5>T-shirt</h5>
+              <span class="card-text price">400£</span>
+            </div>
+            <div class="rates">
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+            </div>
+            <p class="card-text prand">ZARA</p>
+            <a href="cart.html" class="d-block w-100">
+              <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-3 item my-2">
+        <div class="card box-shadow my-5 p-2">
+          <img src="https://source.unsplash.com/collection/190727/2000x2500" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-evenly align-baseline">
+              <h5>T-shirt</h5>
+              <span class="card-text price">400£</span>
+            </div>
+            <div class="rates">
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+            </div>
+            <p class="card-text prand">ZARA</p>
+            <a href="cart.html" class="d-block w-100">
+              <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-3 item my-2">
+        <div class="card box-shadow my-5 p-2">
+          <img src="https://source.unsplash.com/collection/190727/2000x2500" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-evenly align-baseline">
+              <h5>T-shirt</h5>
+              <span class="card-text price">400£</span>
+            </div>
+            <div class="rates">
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+            </div>
+            <p class="card-text prand">ZARA</p>
+            <a href="cart.html" class="d-block w-100">
+              <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-3 item my-2">
+        <div class="card box-shadow my-5 p-2">
+          <img src="https://source.unsplash.com/collection/190727/2000x2500" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-evenly align-baseline">
+              <h5>T-shirt</h5>
+              <span class="card-text price">400£</span>
+            </div>
+            <div class="rates">
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+            </div>
+            <p class="card-text prand">ZARA</p>
+            <a href="cart.html" class="d-block w-100">
+              <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-3 item my-2">
+        <div class="card box-shadow my-5 p-2">
+          <img src="https://source.unsplash.com/collection/190727/2000x2500" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-evenly align-baseline">
+              <h5>T-shirt</h5>
+              <span class="card-text price">400£</span>
+            </div>
+            <div class="rates">
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+            </div>
+            <p class="card-text prand">ZARA</p>
+            <a href="cart.html" class="d-block w-100">
+              <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-3 item my-2">
+        <div class="card box-shadow my-5 p-2">
+          <img src="https://source.unsplash.com/collection/190727/2000x2500" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-evenly align-baseline">
+              <h5>T-shirt</h5>
+              <span class="card-text price">400£</span>
+            </div>
+            <div class="rates">
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+            </div>
+            <p class="card-text prand">ZARA</p>
+            <a href="cart.html" class="d-block w-100">
+              <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-3 item my-2">
+        <div class="card box-shadow my-5 p-2">
+          <img src="https://source.unsplash.com/collection/190727/2000x2500" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-evenly align-baseline">
+              <h5>T-shirt</h5>
+              <span class="card-text price">400£</span>
+            </div>
+            <div class="rates">
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+            </div>
+            <p class="card-text prand">ZARA</p>
+            <a href="cart.html" class="d-block w-100">
+              <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-3 item my-2">
+        <div class="card box-shadow my-5 p-2">
+          <img src="https://source.unsplash.com/collection/190727/2000x2500" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-evenly align-baseline">
+              <h5>T-shirt</h5>
+              <span class="card-text price">400£</span>
+            </div>
+            <div class="rates">
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+            </div>
+            <p class="card-text prand">ZARA</p>
+            <a href="cart.html" class="d-block w-100">
+              <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-3 item my-2">
+        <div class="card box-shadow my-5 p-2">
+          <img src="https://source.unsplash.com/collection/190727/2000x2500" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-evenly align-baseline">
+              <h5>T-shirt</h5>
+              <span class="card-text price">400£</span>
+            </div>
+            <div class="rates">
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+              <i class="bi bi-star-fill" style="color: #eee20b"></i>
+            </div>
+            <p class="card-text prand">ZARA</p>
+            <a href="cart.html" class="d-block w-100">
+              <i class="bi bi-cart-plus d-block p-1 cart" style="font-size: x-large;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <div class="row">
+      <div class="col">
+        <h3>E-Wish</h3>
+        <p>“We see our customers as invited guests <br> to a party, and we are the hosts. It’s our job every day
+          to
+          make every important aspect of the customer experience a little bit better.”</p>
+      </div>
+      <div class="col">
+        <h3>Get in Touch <div class="underline"><span></span></div>
+        </h3>
+        <p>Alexandria, Egypt</p>
+        <p style="padding-top:11px">E-wish@gmail.com</p>
+        <p style="padding-top:11px">+00 111 222 3333</p>
+      </div>
+      <div class="col">
+        <h3>Pages <div class="underline"><span></span></div>
+        </h3>
+        <ul>
+          <li>
+            <i class='bx bxs-chevron-right'></i>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <i class='bx bxs-chevron-right'></i>
+            <a href="about.html">About</a>
+          </li>
+          <li>
+            <i class='bx bxs-chevron-right'></i>
+            <a href="products.html">Products</a>
+          </li>
+          <li>
+            <i class='bx bxs-chevron-right'></i>
+            <a href="contact-us.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>News letter <div class="underline"><span></span></div>
+        </h3>
+        <form class="form1">
+          <i class='bx bx-envelope'></i>
+          <input class="input2" type="email" placeholder=" Enter your email id">
+          <button type="submit"><i class='bx bxs-paper-plane'></i></button>
+        </form>
+        <div class="social-icons">
+          <i class='bx bxl-facebook'></i>
+          <i class='bx bxl-twitter'></i>
+          <i class='bx bxl-whatsapp'></i>
+          <i class='bx bxl-pinterest'></i>
+        </div>
+
+      </div>
+    </div>
+    <hr>
+    <p class="Copyrights">ITI © 2023 - All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="./script/navbar.js" defer></script>
+
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 </body>
 

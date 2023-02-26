@@ -1,40 +1,52 @@
+import { User } from "./user.js";
+import { v4 as uuidv4 } from "uuid";
+
 const inputs = document.querySelectorAll("input");
 const submit = document.querySelector("#submit-signup")
 const firstNameInput = inputs[0];
 const lastNameInput = inputs[1];
 const emailInput = inputs[2];
-const passwordInput = inputs[3]
+const passwordInput = inputs[3];
 
 var regexName = /^[a-zA-Z]{3,10}$/;
 var regexEmail = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
 
-submit.addEventListener('click', function () {
+class SignUp {
 
-    validateNames(firstNameInput.value, lastNameInput.value);
-    validateEmail(emailInput.value);
-    var user = {
-        firstName: firstNameInput.value,
-        lastName: lastNameInput.value,
-        email: emailInput.value,
-        password: passwordInput.value,
-        loggedIn: 'false'
+    constructor() {
+        
+        submit.addEventListener('click', this.validateNames.bind(this, firstNameInput.value, lastNameInput.value));
+        submit.addEventListener('click', this.validateEmail.bind(this, emailInput.value));
+        submit.addEventListener('click', this.localStorage);
 
-    };
-    var json = JSON.stringify(user);
-    localStorage.setItem(emailInput.value, json);
-    console.log("user added");
+    }
+    validateNames(first, last) {
+        if (regexName.test(first) && regexName.test(last)) {
+            console.log("valid names");
+        } else {
+            console.log("invalid names");
+        }
+    }
 
-})
+    validateEmail(email) {
+        console.log(regexEmail.test(email));
+    }
 
-
-function validateNames(first,last) {
-    if (regexName.test(first) && regexName.test(last)) {
-        console.log("valid names");
-    } else {
-        console.log("invalid names");
+    localStorage() {
+        let users = [];   
+        //this.localStorage.setItem('users',[])
+        var user = new User(uuidv4(), emailInput.value, passwordInput.value, firstNameInput.value, lastNameInput.value, [], false);
+        users = JSON.parse(localStorage.getItem('users'));
+        users.push(user);
+        // console.log(users);
+        
+        var json = JSON.stringify(users);
+        localStorage.setItem('users', json);
     }
 }
 
-function validateEmail(email) {
-    console.log(regexEmail.test(email));
-}
+let signup = new SignUp();
+
+
+
+
