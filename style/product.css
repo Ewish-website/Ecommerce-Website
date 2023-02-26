@@ -8,7 +8,6 @@
   opacity:0.65 ;
 }
 
-
 .carousel-item .custom-carousel-content {
   width: 50%;
 }
@@ -28,7 +27,6 @@
   font-weight: 800;
   color: rgb(30, 27, 27);
 }
-
 
 .custom-carousel-content .btn-slider {
   border: 2px solid #fff;
@@ -122,14 +120,15 @@
   top: 27rem;
   color: rgb(227, 227, 227);
   font-size: 3rem;
-  background:rgb(19, 103, 199);
-  background-color: var(--dark-color);
+  background-color: var(--medium-color);
+  color: var(--dark-color);
   padding: 0.5rem;
   width:100%;
 }
 
 .cart:hover {
-  background: var(--medium-color);
+  background-color: var(--dark-color);
+  color: var(--primary-color);
 }
 
 .cart::before{
