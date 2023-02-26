@@ -6,16 +6,16 @@ class ProductDetails {
     #QuantityBtn = null;
     #addToCartBtn = null;
     counter = 1;
-    constructor(id, images, name, rate, desc, price, brand, category, availabilty) {
+    constructor(id, images, title, rate, description, price, brand, category, availabilty) {
         this.id = id;
         this.images = images;
-        this.name = name;
+        this.title = title;
         this.rate = rate;
-        this.desc = desc;
+        this.description = description;
         this.price = price;
         this.brand = brand;
         this.category = category;
-        this.availabilty = availabilty;
+        this.availabilty = (availabilty > 0) ? "In stock" : "out of stock";
         this.init();
     }
 
@@ -33,7 +33,6 @@ class ProductDetails {
         this.#QuantityBtn = document.querySelector(".quantityBtn");
         this.#addToCartBtn = document.querySelector(".addToCartBtn"); 
 
-        // Event Listener
         this.#QuantityContainer.addEventListener("change", (e) => {
         this.AddToCart(e);
         });
@@ -68,17 +67,17 @@ class ProductDetails {
                                         </div>
                                         <div class="DetailsImageAlbum col-12 ">
                                             <ul class="DetailsImageList p-0 m-0">
-                                                <li class="activeLiImage"><img src="${this.images[0]}" alt="${this.name} image 1"></li>
-                                                <li><img src="${this.images[1]}" alt="${this.name} image 2"></li>
-                                                <li><img src="${this.images[2]}" alt="${this.name} image 3"></li>
-                                                <li><img src="${this.images[3]}" alt="${this.name} image 4"></li>
+                                                <li class="activeLiImage"><img src="${this.images[0]}" alt="${this.title} image 1"></li>
+                                                <li><img src="${this.images[1]}" alt="${this.title} image 2"></li>
+                                                <li><img src="${this.images[2]}" alt="${this.title} image 3"></li>
+                                                <li><img src="${this.images[3]}" alt="${this.title} image 4"></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-12 col-md-7 DetailsText my-auto pt-4 p-md-0 ml-lg-auto">
-                                    <h3 class="fs-3 text-uppercase">${this.name}</h3>
+                                    <h3 class="fs-3 text-uppercase">${this.title}</h3>
                                     <div class="ProductDetails-rating pb-2">
                                         <i class="bi bi-star-fill text-warning-emphasis"></i>
                                         <i class="bi bi-star-fill text-warning-emphasis"></i>
@@ -86,11 +85,11 @@ class ProductDetails {
                                         <i class="bi bi-star-fill text-warning-emphasis"></i>
                                         <i class="bi bi-star-fill text-warning-emphasis"></i>
                                     </div>
-                                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, sunt ratione sequi eaque magnam eos officiis!</p>
-                                    <p class="pb-1 m-0"><b>price:</b>$ ${this.price}</p>
-                                    <p class="pb-1 m-0"><b>Brand:</b>${this.brand}</p>
-                                    <p class="pb-1 m-0"><b>Category:</b>${this.category}</p>
-                                    <p class="pb-1 m-0"><b>Availabilty:</b>${this.availabilty}</p>
+                                    <p class="">${this.description}</p>
+                                    <p class="pb-1 m-0"><b>price: </b>$ ${this.price}</p>
+                                    <p class="pb-1 m-0"><b>Brand: </b>${this.brand}</p>
+                                    <p class="pb-1 m-0"><b>Category: </b>${this.category}</p>
+                                    <p class="pb-1 m-0"><b>Availabilty: </b>${this.availabilty}</p>
                                     <div class="productDetailsForm d-flex justify-content-between pt-3">
                                         <div class="d-flex p-0 col-5 col-md-6 col-lg-4 productQuantityContainer">
                                             <button class="minusbtn btn btn-link p-0 pe-2">
@@ -176,12 +175,9 @@ class ProductDetails {
         }
     }
 
-    serachForItem(){
-        
-    }
 }
 
-var desc =
+var description =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, sunt ratione sequi eaque magnam eos officiis!";
 
 const Images = [
@@ -193,14 +189,14 @@ const Images = [
 
 ProductDetailsBtn.addEventListener("click", () => {
     var product = new ProductDetails(
-        1,
-        Images,
-        "apple",
-        5,
-        desc,
-        150,
-        "food",
-        "food",
-        "In stock"
+      1,
+      Images,
+      "apple",
+      5,
+      description,
+      150,
+      "food",
+      "food",
+      90
     );
 })

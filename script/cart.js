@@ -1,13 +1,15 @@
 const cartBtn = document.querySelector(".cartBtn");
 const modalWrap = document.querySelector(".cart-section");
 
-// git active useet
 class Cart{
-    #userCartList = null;
-    #cartItems = null;
-    #QuantityContainer = null;
-    #QuantityBtn = null;
-    #deleteCart = null;
+    #activeUser 
+    #userList;
+    #cartItems;
+    #QuantityContainer;
+    #QuantityBtn;
+    #deleteCart;
+    #itemsCount;
+
     constructor(){
         this.#cartItems = document.querySelector(".cartItems");
         this.renderCartList();
@@ -119,7 +121,7 @@ class Cart{
             // insert the input value in quantity local storage
             // --------------------------------------------------
         }
-        localStorage.setItem("users", JSON.stringify(this.#userCartList));
+        localStorage.setItem("users", JSON.stringify(this.#userList));
     }
 
     // Display price
@@ -128,17 +130,22 @@ class Cart{
     }
 
     renderCartList(){
-        this.#userCartList = JSON.parse(localStorage.getItem("users"));
-        if (this.#userCartList == null || this.#userCartList == []){
+        this.#userList = JSON.parse(localStorage.getItem("users"));
+        if (this.#userList == null || this.#userList == []){
             console.log("No List")
         }
         else{ 
+            this.#userList.forEach((user, i) => {
+                if(user.active){
+                    this.#activeUser = i
+                }
+            })
             var modal = bootstrap.Modal.getOrCreateInstance(
                 modalWrap.querySelector("#exampleModal")
             );
             modal.show()
-            this.#userCartList[0].cartList.forEach((item) => {
-                this.AddItem(item);
+            this.#userList[this.#activeUser].cartList.forEach((item) => {
+              this.AddItem(item);
             });
         }
         this.cartEventListener();
