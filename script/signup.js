@@ -12,11 +12,11 @@ var regexName = /^[a-zA-Z]{3,10}$/;
 var regexEmail = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
 
 class SignUp {
-
+    user;
     constructor() {
-        
-        submit.addEventListener('click', this.validateNames.bind(this, firstNameInput.value, lastNameInput.value));
-        submit.addEventListener('click', this.validateEmail.bind(this, emailInput.value));
+
+        // submit.addEventListener('click', this.validateNames.bind(this, firstNameInput.value, lastNameInput.value));
+        // submit.addEventListener('click', this.validateEmail.bind(this, emailInput.value));
         submit.addEventListener('click', this.localStorage);
 
     }
@@ -33,15 +33,22 @@ class SignUp {
     }
 
     localStorage() {
-        let users = [];   
-        //this.localStorage.setItem('users',[])
-        var user = new User(uuidv4(), emailInput.value, passwordInput.value, firstNameInput.value, lastNameInput.value, [], false);
-        users = JSON.parse(localStorage.getItem('users'));
-        users.push(user);
-        // console.log(users);
-        
-        var json = JSON.stringify(users);
-        localStorage.setItem('users', json);
+        let users = [];
+        // users = localStorage.getItem('users');
+        if (JSON.parse(localStorage.getItem('users'))) {
+            users = JSON.parse(localStorage.getItem('users'));
+            this.user = new User(uuidv4(), emailInput.value, passwordInput.value, firstNameInput.value, lastNameInput.value, [], false);
+            users.push(this.user);
+            var json = JSON.stringify(users);
+            localStorage.setItem('users', json);
+        } else {
+            this.user = new User(uuidv4(), emailInput.value, passwordInput.value, firstNameInput.value, lastNameInput.value, [], false);
+            users.push(this.user);
+            var json = JSON.stringify(users);
+            localStorage.setItem('users', json);
+
+        }
+
     }
 }
 
