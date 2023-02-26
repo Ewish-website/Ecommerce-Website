@@ -2,16 +2,27 @@
 @import url("navbar.css");
 @import url("footer.css");
 
-.cart-section {
-  background: url(../assets/shopping-bag.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position-y: center;
-  padding: 90px 0;
+
+.cart-model-close{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
 }
 
-.shopping-cart-container {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+.cartLargeScreen{
+  overflow-y: inherit !important;
+  height: 520px !important;
+}
+
+.cartLargeScreen .shopping-cart{
+  overflow-y: inherit !important;
+  height: 500px !important;
+}
+
+.cartLargeScreen .cart-items-checkout{
+  overflow-y: scroll !important;
+  height: 390px !important;
 }
 
 .cart-backToShopping a:hover {
