@@ -10,4 +10,18 @@ export class User {
         this.active = active;
     }
 
+    isUserLoggedIn() {
+        let loggedInUser;
+        var users = localStorage.getItem('users');
+        var userData = JSON.parse(users);
+        userData.forEach(element => {
+            if (element.active === true) {
+                loggedInUser = element;
+            }
+    
+        });
+    
+        return loggedInUser;
+    }
+
 }

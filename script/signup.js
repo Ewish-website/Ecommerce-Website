@@ -2,7 +2,7 @@ import { User } from "./user.js";
 import { v4 as uuidv4 } from "uuid";
 
 const inputs = document.querySelectorAll("input");
-const submit = document.querySelector("#submit-signup")
+const submit = document.querySelector("#submit-signup");
 const firstNameInput = inputs[0];
 const lastNameInput = inputs[1];
 const emailInput = inputs[2];
@@ -17,7 +17,7 @@ class SignUp {
 
         // submit.addEventListener('click', this.validateNames.bind(this, firstNameInput.value, lastNameInput.value));
         // submit.addEventListener('click', this.validateEmail.bind(this, emailInput.value));
-        submit.addEventListener('click', this.localStorage);
+        submit.addEventListener('click', this.localStorage.bind(this));
 
     }
     validateNames(first, last) {
@@ -33,6 +33,7 @@ class SignUp {
     }
 
     localStorage() {
+        this.validateNames
         let users = [];
         if (JSON.parse(localStorage.getItem('users'))) {
             users = JSON.parse(localStorage.getItem('users'));
