@@ -1,0 +1,209 @@
+@import url("root.css");
+@import url("navbar.css");
+@import url("product.css");
+
+
+#sidebar {
+  border: 2px solid var(--primary-color);
+  border-top: none;
+  border-left: none;
+  position: fixed;
+  margin-right: 8rem;
+}
+.card-img-top{
+  width: 100%;
+  height: 15rem;
+}
+
+.filter-container{
+  margin-top: 4.6rem;
+}
+
+.control-btns{    
+  position:fixed;
+  top: 0;
+  bottom:0px;  
+  margin-left: 10.5rem;
+  z-index:1000;
+  margin-top: 5rem;
+}
+.control-btnsToggle{    
+  z-index:1000;
+  margin-top: 5rem;
+  left: 0;
+}
+
+#sidebarToggle{
+  border: 2px solid var(--primary-color);
+  display: none;
+}
+
+
+
+.control-btns a{
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+}
+
+.product{
+  margin-left: 15rem;
+}
+
+#notFound{
+  margin-top: 10%;
+  font-size: 5rem;
+  font-weight: 900;
+  opacity: 0.5;
+}
+
+
+.card{
+  height: 30rem;
+}
+
+.cart{
+  font-size: 20px;
+}
+
+
+label{
+  color: var(--dark-color) ;
+}
+
+#filter,#all{
+  color: var(--dark-color);
+}
+
+#filter:hover,#all:hover{
+  background-color: var(--medium-color);
+  color: var(--dark-color);
+}
+
+.accordion-item{
+  border-top: none ;
+  border-right: none;
+}
+
+.form-check-label{
+  font-size: 0.8rem;
+}
+.accordion-button{
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  font-weight: 900;
+}
+.rating {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 50px;
+}
+
+.rating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rating label:last-child {
+  position: static;
+}
+
+.rating label:nth-child(1) {
+  z-index: 5;
+}
+
+.rating label:nth-child(2) {
+  z-index: 4;
+}
+
+.rating label:nth-child(3) {
+  z-index: 3;
+}
+
+.rating label:nth-child(4) {
+  z-index: 2;
+}
+
+.rating label:nth-child(5) {
+  z-index: 1;
+}
+
+.rating label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.rating label .icon {
+  float: left;
+  color: transparent;
+}
+
+.rating label:last-child .icon {
+  color: #939393;
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+  color: gold;
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+  color: #7d7d7d;
+  text-shadow: 0 0 5px #09f;
+}
+
+
+.icon{
+   scale: 0.5;
+   transform-origin: top center;
+   width: 1.5rem;
+
+} 
+
+
+.applyFilter {
+  background-color: var(--medium-color);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 5% auto;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.applyFilter:hover,
+.applyFilter:focus {
+  background-color:var(--secondary-color);
+}
+
+.all-products{
+  scale: 0.8;
+  transform-origin: top center;
+} 
+
+@media only screen and (max-width:1000px){
+  .card-img-top{
+    width: 100%;
+  }
+}
