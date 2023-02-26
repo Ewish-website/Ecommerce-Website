@@ -118,6 +118,7 @@ class Cart {
       // --------------------------------------------------
     }
     localStorage.setItem("users", JSON.stringify(this.#userCartList));
+    // console.log(localStorage.setItem("users", JSON.stringify(this.#userCartList)));
   }
 
   // -------------------------------------------------------------
