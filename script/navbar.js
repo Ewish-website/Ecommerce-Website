@@ -68,9 +68,10 @@ logOut.addEventListener('click', function () {
         }
 
     });
-
+    
     var json = JSON.stringify(userData);
     localStorage.setItem('users', json);
+    userBox.style.display = "none"
 
 })
 

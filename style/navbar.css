@@ -20,6 +20,9 @@ nav {
   
 }
 
+#cart,#user{
+  cursor: pointer;
+}
 .user-container {
   top: 5rem;
   width: fit-content;
