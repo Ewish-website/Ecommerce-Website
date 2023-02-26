@@ -19,3 +19,12 @@
    color: white !important;
 }
 
+.wrongEmail,.wrongPassword,.wrongName{
+   font-size: 15px;
+   color: red;
+   display: none;
+}
+
+/* .form-control{
+   border-color: red !important;
+} */

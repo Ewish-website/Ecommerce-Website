@@ -1,20 +1,10 @@
 @import url("reset-min.css"); 
 @import url("root.css");
 @import url("footer.css");
+@import url("navbar.css");
 
 
-nav {
-  background-color: transparent;
-  }
-  .nav-link {
-    color: var(--primary-color);
-  }
-  
-  .container-fluid a.active {
-  
-    border-bottom: 3px solid black;
-    color: black !important;
-  }
+
   .contact{
     position: relative;
     padding: 80px 100px;
@@ -22,42 +12,48 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("../assets/background.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../assets/background.jpg");
     background-size: cover;
   }
-.contact .content{
+.contact#blur.active{
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+}
+.contact .content-contact-form{
+  margin-top: 30px;
   max-width: 800px;
   text-align: center;
 }
-.contact .content h2{
+.contact .content-contact-form h2{
 
   font-size: 36px;
   font-weight: 500;
   color: var(--primary-color);
 }
-.contact .content p{
+.contact .content-contact-form p{
   font-weight: 300;
   color: var(--primary-color);
 }
-.container{
+.container-contact-form{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
 }
-.container .contactInfo{
+.container-contact-form .contactInfo{
   width: 50%;
   display: flex;
   flex-direction: column;
 }
-.container .contactInfo .box{
+.container-contact-form .contactInfo .box{
   position: relative;
   padding: 20px 0;
   display: flex;
 
 }
-.container .contactInfo .box .icon{
+.container-contact-form .contactInfo .box .icon{
   min-width: 60px;
   height: 60px;
   background: var(--primary-color);
@@ -67,7 +63,8 @@ nav {
   border-radius: 50%;
   font-size: 22px;
 }
-.container .contactInfo .box .text{
+.container-contact-form .contactInfo .box .text-contact-form
+{
   display: flex;
   margin-left: 20px;
   font-size: 16px;
@@ -75,7 +72,7 @@ nav {
   flex-direction: column;
   font-weight: 300;
 }
-.container .contactInfo .box .text h3{
+.container-contact-form .contactInfo .box .text-contact-form h3{
   font-weight: 500;
   color: var(--primary-color);
 }
@@ -132,7 +129,7 @@ nav {
   font-size: 12px;
   transform: translate(-20px);
 }
-.contactForm .inputBox input[type="submit"]{
+.contactForm .inputBox #popup-send{
   width: 100px; 
   background-color: var(--dark-color);
   color: var(--primary-color);
@@ -141,24 +138,78 @@ nav {
   padding: 10px;
   font-size: 18px;
 }
-@media(max-width:991px)
+#popup{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 350px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rg(0, 0, 0,0.30);
+  background: white;
+  border-radius: 6px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  color: var(--dark-color);
+  position: absolute;
+  box-shadow: 0 4px 8px 0 var(--dark-color), 0 6px 20px 0  var(--dark-color);
+  
+}
+#popup h2,
+#popup p{
+  text-align: center;
+}
+
+#popup.active{
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+}
+#ok-btn{
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  border-radius: 6px;
+  border: 2px solid var(--medium-color);
+  background-color: var(--dark-color);
+  color: var(--primary-color);
+  margin: 0;
+  position: absolute;
+  margin-left: 90px;
+  
+}
+#popup img{
+  width: 100px;
+  margin-top: -130px;
+  margin-left: 70px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgb(0, 0, 0,0.2);
+}
+
+@media(max-width:1000px)
 {
+  .contact .content-contact-form{
+    margin-top: 70px;
+  }
   .contact
   {
     padding: 50px;
   }
-  .container{
+  .container-contact-form{
     flex-direction: column;
   }
-  .container .contactInfo
+  .container-contact-form .contactInfo
   {
     margin-bottom: 40px;
-    
+    flex-direction: column;
   }
-  .container .contactForm
+  .container-contact-form .contactForm
   {
-
     width: 100%;
   }
- 
+  #popup{
+    width: 100%;
+  }
 }
