@@ -129,7 +129,7 @@
   font-size: 12px;
   transform: translate(-20px);
 }
-.contactForm .inputBox input[type="submit"]{
+.contactForm .inputBox #popup-send{
   width: 100px; 
   background-color: var(--dark-color);
   color: var(--primary-color);
