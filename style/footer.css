@@ -16,7 +16,7 @@ footer{
     font-size: 15px;
     line-height: 25px;
 }
-.row{
+.footer-row{
     width:80%;
     margin: auto;
     display: flex;
@@ -24,11 +24,11 @@ footer{
     align-items: flex-start;
     justify-content: space-between;
 }
-.col{
+.footer-col{
     flex-basis: 25%;
     padding: 10px;
 }
-.col h3{
+.footer-col h3{
     color: var(--primary-color);
     width: fit-content;
     margin-bottom: 40px;
@@ -134,10 +134,10 @@ hr{
     footer{
         bottom: unset;
     }
-    .col{
+    .footer-col{
         flex-basis: 100%;
     }
-    .col:nth-child(2), .col:nth-child(3){
+    .footer-col:nth-child(2), .footer-col:nth-child(3){
         flex-basis: 100%;
     }
 

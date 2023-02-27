@@ -1,6 +1,12 @@
 
-  var wantedProducts = [];
-  var filteredProducts = {'category':0,'price':0,'rating':0};
+  var wantedProducts = [];  //array that matched products stored in to be displayed
+  var filteredProducts = {'category':0,'price':0,'rating':0};  //cheked filter features
+
+  document.querySelector("#filter").addEventListener('click',function(){
+    document.querySelector(".filter-btns").classList.toggle("control-btns");
+    document.querySelector("#sidebar").classList.toggle("side-bar");
+    document.querySelector('.product').classList.toggle("product-toggle");
+  })
 
   function appendCards(products) {
     var productsContainer = document.querySelector('.product');
@@ -12,13 +18,13 @@
       var card = document.createElement('div');
       item.appendChild(card);
       card.classList.add("card", "box-shadow" ,"my-5","p-2");
-
+/*
       var detailsLink = document.createElement('a')
       detailsLink.href = "_blank";
       card.appendChild(detailsLink);
-
+*/
       var image = document.createElement('img');
-      detailsLink.appendChild(image);
+      card.appendChild(image);
       image.classList.add('card-img-top');
       image.src=products[i].images[0];
 
@@ -60,23 +66,22 @@
       }
     
       
-        if(products[i].rating>4){
+        if(products[i].rating>4.5){
           for(let x=0;x<5;x++){
             document.getElementsByClassName(`rate${i}`)[x].style.color = "gold";
-  
           } 
         }
-        else if(products[i].rating>3 && products[i].rating<=4){
+        else if(products[i].rating>3.5 && products[i].rating<=4.5){
           for(let x=0;x<4;x++){
             document.getElementsByClassName(`rate${i}`)[x].style.color = "gold";
           }
         }
-        else if(products[i].rating<=3 && products[i].rating>2){
+        else if(products[i].rating<=3.5 && products[i].rating>2.5){
           for(let x=0;x<3;x++){
             document.getElementsByClassName(`rate${i}`)[x].style.color = "gold";
         }
       }
-       else if(products[i].rating<=3 && products[i].rating>2){
+       else if(products[i].rating<=3.5 && Math.roundproducts[i].rating>2.5){
         for(let x=0;x<2;x++){
           document.getElementsByClassName(`rate${i}`)[x].style.color = "gold";
        }
@@ -133,35 +138,58 @@ function resetPage(){
 function filterProducts(allData,wantedData){
   var allProducts = intializeData(allData);
   let flag=0;
-  console.log()
+  //console.log(wantedData);
   for(let i=0;i<allData.length;i++){
     if(wantedData['category']!=0&& wantedData['rating']!=0 && wantedData['price']!=0){
-      if(allProducts['category'][i]==wantedData['category'] && Math.ceil(allProducts['rating'][i])==wantedData['rating'] && allProducts['price'][i]==wantedData['price'] ){
+      if(allProducts['category'][i]==wantedData['category'] && Math.round(allProducts['rating'][i])==wantedData['rating'] && allProducts['price'][i]==wantedData['price'] ){
         wantedProducts.push(allData[i]);
         flag=1;
       }
     }
-    if(wantedData['category']== 0&& wantedData['rating']!=0 && wantedData['price']!=0){
-      console.log('hi');
-      if(Math.ceil(allProducts['rating'][i])==wantedData['rating'] && allProducts['price'][i]==wantedData['price'] ){
+    else if((wantedData['category']== 0)&& (wantedData['rating']!=0) && (wantedData['price']!=0)){
+      if(Math.round(allProducts['rating'][i])==wantedData['rating'] && allProducts['price'][i]==wantedData['price'] ){
         wantedProducts.push(allData[i]);
         flag=1;
       }
     }
-    if(wantedData['category']!=0&& wantedData['rating']==0 && wantedData['price']!=0){
+    else if(wantedData['category']!=0&& wantedData['rating']==0 && wantedData['price']!=0){
       if(allProducts['category'][i]==wantedData['category'] && allProducts['price'][i]==wantedData['price'] ){
         wantedProducts.push(allData[i]);
         flag=1;
       }
     } 
-    if(wantedData['category']!=0&& wantedData['rating']!=0 && wantedData['price']==0){
-      if(allProducts['category'][i]==wantedData['category'] && Math.ceil(allProducts['rating'][i])==wantedData['rating']){
+    else if(wantedData['category']!=0&& wantedData['rating']!=0 && wantedData['price']==0){
+      if(allProducts['category'][i]==wantedData['category'] && Math.round(allProducts['rating'][i])==wantedData['rating']){
         wantedProducts.push(allData[i]);
         flag=1;
       }
-    } 
-  }
-  if(flag==0){
+    }
+    else if(wantedData['category']!=0&& wantedData['rating']==0 && wantedData['price']==0){
+      if(allProducts['category'][i]==wantedData['category']){
+        wantedProducts.push(allData[i]);
+        flag=1;
+      }
+    }  
+    else if(wantedData['category']==0&& wantedData['rating']!=0 && wantedData['price']==0){
+      if(Math.round(allProducts['rating'][i])==wantedData['rating']){
+        wantedProducts.push(allData[i]);
+        flag=1;
+      }
+    }
+    else if(wantedData['category']==0&& wantedData['rating']==0 && wantedData['price']!=0){
+      if(allProducts['price'][i]==wantedData['price'] ){
+        wantedProducts.push(allData[i]);
+        flag=1;
+      }
+    }
+    else{
+        wantedProducts.push(allData[i]);
+        flag=1;
+      }
+    }
+  filteredProducts = {'category':0,'price':0,'rating':0};  
+  //console.log(wantedData);
+  if(flag==0){   //no products found
     var notFoundMsg = document.createElement('p');
     document.querySelector('.product').appendChild(notFoundMsg);
     notFoundMsg.id='notFound';
@@ -176,7 +204,7 @@ function filterProducts(allData,wantedData){
   fetch('../script/products.json')
   .then(function (response){
       let jsonData = response.json();
-      console.log(jsonData);
+      //console.log(jsonData);
       return jsonData;
   })
   .then(function (jsonData) {
@@ -190,35 +218,27 @@ function filterProducts(allData,wantedData){
       var category = document.getElementsByName("flexRadioDefault1");
       var rates = document.getElementsByName("stars");
       var price = document.getElementsByName("flexRadioDefault3");
-      var flag=0;
-      for(i = 0; i < category.length; i++) {
+      var flag=0
+      for(i = 0; (i < category.length) && (flag==0); i++) {
           if(category[i].checked){
             filteredProducts['category']=category[i].value;
             flag=1;
           } 
         }
-        if(flag==0){
-          filteredProducts['category']=0;
-          flag=0;
-        }
-        for(i = 0; i < rates.length; i++) {
+      flag=0;
+      for(i = 0;( i < rates.length)&&(flag==0); i++) {
           if(rates[i].checked){
             filteredProducts['rating']=rates[i].value;
+            flag=1;      
           }  
-        }
-        if(flag==0){
-          filteredProducts['rating']=0;
-          flag=0;
-        }        
-        for(i = 0; i < price.length; i++) {
+      }
+      flag=0;     
+      for(i = 0;( i < price.length)&&(flag==0); i++) {
           if(price[i].checked){
             filteredProducts['price']=price[i].value;
+            flag=1;      
           }   
-        }
-        if(flag==0){
-          filteredProducts['price']=0;
-          flag=0;          
-        }
+      }
         resetPage();
         filterProducts(productsData,filteredProducts);     
    })
@@ -243,6 +263,11 @@ function filterProducts(allData,wantedData){
   .catch(function (err) {
       console.log('error: ' + err);
   });  
+
+ /***********************************************************connect to product details******************************************************************** */ 
+ document.querySelector(".card-img-top").addEventListener('click',function(){
+  
+ })  
   
   
 
