@@ -59,6 +59,7 @@ cart.addEventListener('click', function () {
 logOut.addEventListener('click', function () {
     loggedInUser.active = false;
     userAccount.updateUser(loggedInUser);
+    location.reload();
 })
 
 
