@@ -13,7 +13,7 @@
 }
 
 .wrongEmail,
-.wrongPassword {
+.wrongPassword,.wrongPassOrEmail {
    font-size: 15px;
    color: red;
    display: none;

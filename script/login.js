@@ -2,8 +2,8 @@ const inputs = document.querySelectorAll("input");
 const submit = document.querySelector("#submit-login")
 const emailInput = inputs[0];
 const passwordInput = inputs[1];
-const wrongEmail = document.querySelector('.wrongEmail');
-const wrongPassword = document.querySelector('.wrongPassword');
+const wrongPassOrEmail = document.querySelector('.wrongPassOrEmail');
+
 
 export class Login {
 
@@ -22,10 +22,9 @@ export class Login {
                 element.active = true;
                 location.assign('./index.html')
 
-            } else if (!(element.email == emailInput.value)) {
-                wrongEmail.style.display = "block";
+            
             } else {
-                wrongPassword.style.display = "block";
+                wrongPassOrEmail.style.display = "block";
             }
 
         });
