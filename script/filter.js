@@ -265,9 +265,7 @@ function filterProducts(allData,wantedData){
   });  
 
  /***********************************************************connect to product details******************************************************************** */ 
- document.querySelector(".card-img-top").addEventListener('click',function(){
-  
- })  
+
   
   
 
