@@ -11,3 +11,10 @@
       backdrop-filter: saturate(200%) blur(25px);
       opacity:0.8;
 }
+
+.wrongEmail,
+.wrongPassword {
+   font-size: 15px;
+   color: red;
+   display: none;
+}
