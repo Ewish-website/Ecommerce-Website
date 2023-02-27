@@ -116,6 +116,9 @@ class ProductDetails {
 
     ratingStars(){
         let ratingContainer = document.querySelector(".ProductDetails-rating");
+        while (ratingContainer.firstChild) {
+          ratingContainer.firstChild.remove();
+        }
         for(let i =1; i<= 5; i++){
             if(i <= this.rate){
                 ratingContainer.insertAdjacentHTML(
@@ -189,6 +192,7 @@ class ProductDetails {
             price: this.price,
             quantity: this.counter,
         };
+        this.#QuantityBtn.value = 1;
         if (this.availabilty >= this.counter){
             this.availabilty -= this.counter;
             this.user.AddToCart(item);
