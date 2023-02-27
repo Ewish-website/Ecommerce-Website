@@ -1,0 +1,152 @@
+@import url("reset-min.css"); 
+@import url("root.css");
+@import url("footer.css");
+@import url("navbar.css");
+.sectionnn{
+    width: 100%;
+    min-height: 100vh;
+    /* background-color:var(--dark-color); */
+    /* background-image:linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),url("../assets/background.jpg"); */
+    /* background-size: cover!important; */
+    
+}
+.containerrrr{
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 90px;
+}
+.content-sectionn{
+    float: left;
+    width: 55%;
+}
+.image-sectionn{
+    float: right;
+    width: 45%;
+}
+.image-sectionn img{
+    width: 100%;
+    height: 450px;
+    padding-top: 0px;
+    padding-left: 40px;
+
+}
+.content-sectionn .titell{
+    /* text-transform: uppercase; */
+    font-size: 30px;
+    color: var(--dark-color);   
+    /* font-weight:100000; */
+    margin-top: 0px;
+    /* font-family: 'Open Sans', sans-serif; */
+    /* font-size: 45px; */
+    font-weight: 900;
+}
+.orangecolor{
+    color:var(--secondary-color);
+}
+.content-sectionn .contenttt p{
+    /* margin-top: 100px; */
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 50px;
+    /* color: var(--secondary-color); */
+}
+.content-sectionn .contenttt .aboutButton a{
+    background-color: var(--dark-color);
+    padding: 12px 40px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    letter-spacing: 1.5px;
+}
+@media screen and (max-width:768px){
+    .ccontainerrrr{
+        width: 80%;
+        display: block;
+        margin: auto;
+        padding-top: 50px;
+    }
+    .content-sectionn{
+        float: none;
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    .image-sectionn{
+        float: none;
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    .image-sectionn img{
+        padding-bottom: 20px;
+    }
+    .content-sectionn .titel{
+        text-align: center;
+        font-size: 22px;
+    }
+    .content-sectionn .contenttt h3{
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        color: var(--dark-color);
+        font-size: 21px;
+    }
+
+    
+}
+/* .containerrrr{
+     width: 100%;
+     height: 100%;
+     padding: 10px 8%;
+     
+}
+.containerrrr h1{
+    text-align: center;
+    padding-top: 3%;
+    margin-bottom: 60px;
+    font-weight: 600;
+    position: relative;
+}
+.containerrrr h1 span{
+    color: var(--medium-color);
+}
+.containerrrr h1::after{
+    content: '';
+    background: var(--dark-color);
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+}
+.roww{
+    display:grid ;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 30px;
+}
+.service{
+    text-align: center;
+    padding: 25px 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s, background 0.5s;
+
+}
+.service i{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: var(--medium-color);
+}
+.service h2{
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.service:hover{
+    background: var(--primary-color);
+    transform: scale(1.05);
+} */
