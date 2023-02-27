@@ -47,16 +47,16 @@
                   <div class="col-md-6 mb-4">
                     <div class="form-outline" style="color: var(--dark-color);">
                       <label class="form-label fw-bold" for="form3Example1">First name</label>
-                      <input type="text" id="form3Example1" class="form-control" required />
-                      <label class="wrongName">Please enter a valid name!</label>
+                      <input type="text" id="form3Example1" class="form-control" pattern="[A-Za-z ]{1,}" required name="name" />
+                      <label class="wrongFname">Please enter a valid name!</label>
 
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline" style="color: var(--dark-color);">
                       <label class="form-label fw-bold" for="form3Example2">Last name</label>
-                      <input type="text" id="form3Example2" class="form-control" required />
-                      <label class="wrongName">Please enter a valid name!</label>
+                      <input type="text" id="form3Example2" class="form-control" pattern="[A-Za-z ]{1,}" required name="name" />
+                      <label class="wrongLname">Please enter a valid name!</label>
 
                     </div>
                   </div>
@@ -65,7 +65,7 @@
                 <!-- Email input -->
                 <div class="form-outline mb-4 " style="color: var(--dark-color);">
                   <label class="form-label fw-bold" for="form3Example3">Email address</label>
-                  <input type="email" id="form3Example3" class="form-control" required />
+                  <input type="email" id="form3Example3" class="form-control" required email="email" />
                   <label class="wrongEmail">Please enter a valid email!</label>
 
 
