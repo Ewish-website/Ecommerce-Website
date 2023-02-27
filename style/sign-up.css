@@ -1,20 +1,48 @@
 /* this is another way to import css instead of html import */
 @import url("root.css");
 @import url("reset-min.css");
- .background-radial-gradient {
-      background-image: url("/assets/shopping-bag.jfif");
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      min-height: 100vh;      
-    }
-  
- .bg-glass {
-      background-color:var(--primary-color)  !important; 
-      backdrop-filter: saturate(200%) blur(25px);
-      opacity:0.8;
-   }
-   .link{
-      text-decoration: none !important;
-      color: white !important;
-    }
 
+.background-radial-gradient {
+   background-image: url("/assets/shopping-bag.jfif");
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   min-height: 100vh;
+}
+
+.bg-glass {
+   background-color: var(--primary-color) !important;
+   backdrop-filter: saturate(200%) blur(25px);
+   opacity: 0.8;
+}
+
+.link {
+   text-decoration: none !important;
+   color: white !important;
+}
+
+.wrongEmail,
+.wrongPassword,
+.wrongFname,
+.wrongLname {
+   font-size: 15px;
+   color: red;
+   display: none;
+}
+
+/* #form3Example1:invalid+label,
+#form3Example2:invalid+label,
+#form3Example3:invalid+label,
+#form3Example4:invalid+label {
+   display: block;
+   border-color: red;
+
+}
+
+#form3Example1:valid+label,
+#form3Example2:valid+label,
+#form3Example3:valid+label,
+#form3Example4:valid+label {
+   display: none;
+   border-color: green;
+
+} */

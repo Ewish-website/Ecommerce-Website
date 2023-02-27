@@ -1,3 +1,5 @@
+import { User } from "./user.js";
+
 const user = document.querySelector("#user");
 const cart = document.querySelector("#cart");
 const userBoxName = document.querySelector('.user-content p');
@@ -24,8 +26,9 @@ headerObserver.observe(header)
 ///when pressed on user card checks if their is a user logged in 
 user.addEventListener('click', function () {
 
-    if (isUserLoggedIn()) {
-        let user = isUserLoggedIn();
+    if (loggedInUser.isUserLoggedIn()) {
+        let user = loggedInUser.isUserLoggedIn();
+        console.log(user);
         let firstName = user.firstName;
         let lastName = user.lastName;
         userBoxName.innerText = `${firstName} ${lastName}`;
@@ -45,7 +48,7 @@ user.addEventListener('click', function () {
 
 //check if thier is a user logged in when pressed on cart
 cart.addEventListener('click', function () {
-    if (isUserLoggedIn()) {
+    if (loggedInUser.isUserLoggedIn()) {
         location.assign('./cart.html');
     } else {
         location.assign('./log-in.html');
@@ -64,22 +67,12 @@ logOut.addEventListener('click', function () {
         }
 
     });
-
+    
     var json = JSON.stringify(userData);
     localStorage.setItem('users', json);
+    userBox.style.display = "none"
 
 })
 
-function isUserLoggedIn() {
-    let loggedInUser;
-    var users = localStorage.getItem('users');
-    var userData = JSON.parse(users);
-    userData.forEach(element => {
-        if (element.active === true) {
-            loggedInUser = element;
-        }
+var loggedInUser = new User();
 
-    });
-
-    return loggedInUser;
-}
