@@ -18,10 +18,19 @@ export class User {
             if (element.active === true) {
                 loggedInUser = element;
             }
-    
         });
-    
         return loggedInUser;
+    }
+
+    updateUser(user){
+        var users = JSON.parse(localStorage.getItem("users"));
+        users.forEach((element) => {
+            if (element.id === user.id) {
+                element.active = user.active;
+                element.cartList = user.cartList;
+            }
+        });
+        localStorage.setItem("users", JSON.stringify(users));
     }
 
 }

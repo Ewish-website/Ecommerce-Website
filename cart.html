@@ -25,7 +25,7 @@
 
 <body>
     <section class="h-100 h-custom cart-section container-fluid">
-        <button type="button" class="btn btn-primary cartBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-primary cartBtn">
             Launch demo modal
         </button>
 
@@ -65,19 +65,19 @@
                                 <div class="cart-price mb-3">
                                     <div class="d-flex justify-content-between">
                                         <h5>Products</h5>
-                                        <h5>€ 132.00</h5>
+                                        <h5 class="product">$ 132.00</h5>
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <h5>Shipping</h5>
-                                        <h5>€ 5.00</h5>
+                                        <h5>$ 5.00</h5>
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <h5>Discount</h5>
-                                        <h5>€ 0.00</h5>
+                                        <h5 class="discount">$ 0.00</h5>
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <h5>Total</h5>
-                                        <h5>€ 137.00</h5>
+                                        <h5 class="total">$ 137.00</h5>
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-dark btn-block btn-lg col-md-12 checkoutBtn"
@@ -97,7 +97,7 @@
             </div>
         </div>
     </section>
-    <script src="./script/cart.js"></script>
+    <script src="./script/cart.js" type="module" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 

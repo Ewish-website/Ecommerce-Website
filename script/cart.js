@@ -1,59 +1,60 @@
-const cartBtn = document.querySelector(".cartBtn");
-const modalWrap = document.querySelector(".cart-section");
+import { User } from "./user.js";
+const cartModule = document.querySelector(".cart-section");
 
-class Cart{
-    #activeUser 
-    #userList;
-    #cartItems;
-    #QuantityContainer;
-    #QuantityBtn;
-    #deleteCart;
-    #itemsCount;
+export class Cart {
+  #userList;
+  #cartItems;
+  #QuantityContainer;
+  #QuantityBtn;
+  #deleteCart;
+  #promoButtom;
 
-    constructor(){
-        this.#cartItems = document.querySelector(".cartItems");
-        this.renderCartList();
-        window.addEventListener("resize", (e) => {
-            let modalBody = document.querySelector(".modal-body");
-            if(e.target.innerWidth < 992){
-                if(modalBody.classList.contains("cartLargeScreen")){
-                    modalBody.classList.remove("cartLargeScreen");
-                }
-            }
-            else{
-                if (! modalBody.classList.contains("cartLargeScreen")) {
-                    modalBody.classList.add("cartLargeScreen");
-                }
-            }
-        });
+  constructor() {
+    this.#cartItems = document.querySelector(".cartItems");
+    this.user = new User();
+    while(this.#cartItems.firstChild){
+      this.#cartItems.firstChild.remove();
     }
+    this.renderCartList();
+  }
 
-    cartEventListener(){
-        this.#QuantityBtn = document.querySelectorAll(".quantityBtn");
-        this.#QuantityContainer = document.querySelectorAll(".QuantityContainer");
-        this.#deleteCart = document.querySelectorAll(".cart-delete-product");
+  cartEventListener() {
+    this.#QuantityBtn = document.querySelectorAll(".quantityBtn");
+    this.#QuantityContainer = document.querySelectorAll(".QuantityContainer");
+    this.#deleteCart = document.querySelectorAll(".cart-delete-product");
+    this.#promoButtom = document.querySelector(".prompCodeBtn");
 
-        this.#QuantityContainer.forEach((container, i) => {
-            container.addEventListener("change", (e) => {
-                this.IncItemCounter(e,i);
-            });
-        })
-        this.#QuantityContainer.forEach((container, i) => {
-            container.addEventListener("click", (e) => {
-                this.IncItemCounter(e,i);
-            });
-        });
-        this.#deleteCart.forEach((container, i) => {
-            container.addEventListener("click", (e) => {
-                this.RemoveItem(e, i);
-            });
-        });
-    }
+    this.#QuantityContainer.forEach((container, i) => {
+      container.addEventListener("change", (e) => {
+        this.changeQuantity(e, i);
+      });
+    });
+    this.#QuantityContainer.forEach((container, i) => {
+      container.addEventListener("click", (e) => {
+        this.changeQuantity(e, i);
+      });
+    });
+    this.#deleteCart.forEach((container, i) => {
+      container.addEventListener("click", (e) => {
+        this.RemoveItem(e, i);
+      });
+    });
 
-    AddItem(item){
-        this.#cartItems.insertAdjacentHTML(
-          "beforeend",
-          `<div class="row w-100 mb-4 d-flex justify-content-between align-items-center">
+    this.#promoButtom.addEventListener("click", (e) => {
+      e.preventDefault();
+      let discountValue = 0;
+      let input = document.querySelector(".promoInput").value;
+      if (input == "123") {
+        discountValue = 0.05;
+      }
+      this.displayPrice(discountValue);
+    });
+  }
+
+  AddItem(item) {
+    this.#cartItems.insertAdjacentHTML(
+      "beforeend",
+      `<div class="row w-100 mb-4 d-flex justify-content-between align-items-center">
                 <div class="col-2 p-0">
                     <img
                         src="${item.images[0]}"
@@ -83,78 +84,81 @@ class Cart{
                 </div>
             </div>
             <hr class="mx-4">`
-        );
+    );
+  }
+
+  RemoveItem(e, i) {
+    this.#userList.cartList.splice(i, 1);
+    this.user.updateUser(this.#userList);
+    let child = document.querySelectorAll(".cartItems div");
+    let hr = this.#cartItems.querySelectorAll(".cartItems hr");
+    this.#cartItems.removeChild(child[i]);
+    this.#cartItems.removeChild(hr[i]);
+  }
+
+  changeQuantity(e, i) {
+    if (e.target.classList.contains("bi")) {
+      let clickedElement = e.target.closest("button");
+      if (clickedElement.classList.contains("minusbtn")) {
+        if (this.#userList.cartList[i].quantity > 1) {
+          this.#userList.cartList[i].quantity--;
+          this.#QuantityBtn[i].value =
+            this.#userList.cartList[i].quantity;
+        }
+      } else if (clickedElement.classList.contains("plusbtn")) {
+        this.#userList.cartList[i].quantity++;
+        this.#QuantityBtn[i].value =
+          this.#userList.cartList[i].quantity;
+      }
+    } else if (e.target.classList.contains("quantityBtn")) {
+      this.#userList.cartList[i].quantity =
+        this.#QuantityBtn[i].value;
     }
+    this.user.updateUser(this.#userList)
+    this.displayPrice();
     
-    // ----------------------------
-    // remove from local storage
-    RemoveItem(e, i){
-        // -------------------------------------------------
-        // remove cart list of index i from local storage
-        // -------------------------------------------------
-        let child = document.querySelectorAll(".cartItems div");
-        let hr = this.#cartItems.querySelectorAll(".cartItems hr");
-        this.#cartItems.removeChild(child[i]);
-        this.#cartItems.removeChild(hr[i]);
-    }
+  }
 
-    // ----------------------------
-    // Edit in local storage
-    IncItemCounter(e,i){
-        if (e.target.classList.contains("bi")) {
-            let clickedElement = e.target.closest("button");
-            if (clickedElement.classList.contains("minusbtn")) {
-                // --------------------------------------------------------
-                // check if quantity in local storage is less than1 
-                // if yes: decrement it and insert the value in input value
-                // ---------------------------------------------------------
-                
-            } else if (clickedElement.classList.contains("plusbtn")) {
-                // -----------------------------------------------
-                // increment quantity value in local storage
-                // insert the new value in input value
-                // ------------------------------------------------
-            }
-        } 
-        else if (e.target.classList.contains("quantityBtn")) {
-            // --------------------------------------------------
-            // insert the input value in quantity local storage
-            // --------------------------------------------------
-        }
-        localStorage.setItem("users", JSON.stringify(this.#userList));
-    }
+  displayPrice() {
+    let AllProductcount = 0;
+    let productPrice = 0;
+    let discountValue = 0;
+    let product = document.querySelector(".product");
+    let total = document.querySelector(".total");
+    let discount = document.querySelector(".discount");
+    let itemsCount = document.querySelector(".itemsCount"); 
 
-    // Display price
-    displayPrice(item){
+    this.#userList.cartList.forEach((item) => {
+      productPrice += item.quantity * item.price;
+      AllProductcount += item.quantity; 
+    });
+    product.innerHTML = ` ${"$ " + productPrice.toFixed(2)}`;
+    discountValue *= -productPrice;
+    discount.innerHTML = `${"$ " + discountValue.toFixed(2)}`;
+    total.innerHTML = ` ${
+      "$ " + (productPrice + discountValue - 5).toFixed(2)
+    }`;
+    itemsCount.innerHTML = `${AllProductcount} items`
+  }
 
-    }
-
-    renderCartList(){
-        this.#userList = JSON.parse(localStorage.getItem("users"));
-        if (this.#userList == null || this.#userList == []){
-            console.log("No List")
-        }
-        else{ 
-            this.#userList.forEach((user, i) => {
-                if(user.active){
-                    this.#activeUser = i
-                }
-            })
-            var modal = bootstrap.Modal.getOrCreateInstance(
-                modalWrap.querySelector("#exampleModal")
-            );
-            modal.show()
-            this.#userList[this.#activeUser].cartList.forEach((item) => {
-              this.AddItem(item);
-            });
-        }
-        this.cartEventListener();
-    }
+  renderCartList() {
+    this.#userList = this.user.isUserLoggedIn();
+    console.log(this.#userList)
+    var modal = bootstrap.Modal.getOrCreateInstance(
+      cartModule.querySelector("#exampleModal")
+    );
+    modal.show();
+    this.#userList.cartList.forEach((item) => {
+      this.AddItem(item);
+    });
+    this.cartEventListener();
+  }
 }
 
-cartBtn.addEventListener("click", () => {
-  let cart = new Cart();
-})
+// document.querySelector(".cartBtn").addEventListener("click", () => {
+//   let cart = new Cart();
+// });
+
 
 // let user = [
 //   {

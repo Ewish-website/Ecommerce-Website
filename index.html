@@ -21,7 +21,6 @@
 
 <body>
   <!-- navbar -->
-
   <nav class="navbar navbar-expand-lg fixed-top navbar-light p-3 col-12 col-md-12 px-5 sticky" id="nav">
     <div class="container-fluid">
       <a class="navbar-brand col-2" href="index.html">E-wish</a>
@@ -41,9 +40,10 @@
           <a class="nav-link" id="user"><i class="bi bi-person-circle fs-4"></i></a>
         </div>
       </div>
-
     </div>
   </nav>
+
+  <!-- --------------------------------------------------------------------------------------------------- -->
   <!-- user box -->
   <div class="user-container">
     <div class="our-user">
@@ -63,6 +63,79 @@
     </div>
   </div>
   </div>
+
+  <!-- --------------------------------------------------------------------------------------------------- -->
+  <!-- cart Module -->
+  <div class="cart-section">
+    <div class="modal fade modal-lg cart-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable rounded-4">
+            <div class="modal-content p-0 w-100">
+                <button type="button" class="cart-model-close btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body cartLargeScreen  w-100 row m-0 p-0">
+                    <div class="shopping-cart col-12 col-lg-8 py-5 px-4">
+                        <div class="shopping-cart-heading d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="fw-bold mb-0 text-black fs-4 text-uppercase">Cart Details</h3>
+                            <h6 class="mb-0 text-muted itemsCount">3 items</h6>
+                        </div>
+                        <hr class="my-3">
+                        <div class="cart-items-checkout">
+                            <div class="cartItems"></div>
+                            <div class="cartCheckout"></div>
+                        </div>
+                        
+                    </div>
+                    <div class="shopping-summary col-12 col-lg-4 p-0">
+                        <div class="py-5 px-4 h-100 summary-container w-100">
+                            <h3 class="shopping-summary-heading fw-bold mb-3 fs-4 text-uppercase">Summary</h3>
+                            <hr class="my-3">
+                            <form class="pt-3 border-0">
+                                <div class="cart-promoCode row justify-content-between w-100">
+                                    <div class="form-outline col-6 col-lg-12 p-0">
+                                        <input type="text" id="form3Examplea2" class="promoInput form-control form-control-lg w-100" />
+                                        <label class="form-label" for="form3Examplea2">Promo code</label>
+                                    </div>
+                                    <button type="button" class="btn btn-primary btn-lg col-5 col-lg-12 mt-lg-2 prompCodeBtn"> 
+                                        Apply
+                                    </button>
+                                </div>
+                            </form>
+                            <hr class="my-4">
+                            <div class="cart-price mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <h5>Products</h5>
+                                    <h5 class="product">$ 132.00</h5>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <h5>Shipping</h5>
+                                    <h5>$ 5.00</h5>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <h5>Discount</h5>
+                                    <h5 class="discount">$ 0.00</h5>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <h5>Total</h5>
+                                    <h5 class="total">$ 137.00</h5>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-dark btn-block btn-lg col-md-12 checkoutBtn"
+                                data-mdb-ripple-color="dark">checkout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer cart-backToShopping m-0 justify-content-start">
+                    <h6 class="mb-0">
+                        <a href="products.html" class="text-decoration-none text-black border-1">
+                            <i class="bi bi-arrow-left "></i> Back to shopping
+                        </a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
   <!-- header container -->
   <section class="header-container">
     <div class="header container">
@@ -395,7 +468,7 @@
           <div class="card-body">
             <div class="card-title d-flex justify-content-evenly align-baseline">
               <h5>T-shirt</h5>
-              <span class="card-text price">400£</span>
+              <span class="card-text price">400$</span>
             </div>
             <div class="rates">
               <i class="bi bi-star-fill" style="color: #eee20b"></i>
@@ -418,7 +491,7 @@
           <div class="card-body">
             <div class="card-title d-flex justify-content-evenly align-baseline">
               <h5>T-shirt</h5>
-              <span class="card-text price">400£</span>
+              <span class="card-text price">400$</span>
             </div>
             <div class="rates">
               <i class="bi bi-star-fill" style="color: #eee20b"></i>
@@ -506,7 +579,7 @@
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
   <script src="./script/navbar.js" type="module" defer></script>
-
+  <script src="./script/cart.js" type="module" defer></script>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 </body>

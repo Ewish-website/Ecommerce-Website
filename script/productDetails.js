@@ -115,6 +115,12 @@ class ProductDetails {
         );
     }
 
+    // ratingStars(){
+    //     for(let i =1; i< 5; i++){
+
+    //     }
+    // }
+
     showImages() {
         const ActiveDetailsImage = document.querySelector(
         ".ActiveDetailsImage img"
