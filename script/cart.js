@@ -42,12 +42,10 @@ export class Cart {
 
     this.#promoButtom.addEventListener("click", (e) => {
       e.preventDefault();
-      let discountValue = 0;
       let input = document.querySelector(".promoInput").value;
       if (input == "123") {
-        discountValue = 0.05;
+        this.displayPrice(0.05);
       }
-      this.displayPrice(discountValue);
     });
   }
 
@@ -85,6 +83,7 @@ export class Cart {
             </div>
             <hr class="mx-4">`
     );
+    this.displayPrice();
   }
 
   RemoveItem(e, i) {
@@ -94,6 +93,7 @@ export class Cart {
     let hr = this.#cartItems.querySelectorAll(".cartItems hr");
     this.#cartItems.removeChild(child[i]);
     this.#cartItems.removeChild(hr[i]);
+    this.displayPrice();
   }
 
   changeQuantity(e, i) {
@@ -116,13 +116,11 @@ export class Cart {
     }
     this.user.updateUser(this.#userList)
     this.displayPrice();
-    
   }
 
-  displayPrice() {
+  displayPrice(discountValue = 0) {
     let AllProductcount = 0;
     let productPrice = 0;
-    let discountValue = 0;
     let product = document.querySelector(".product");
     let total = document.querySelector(".total");
     let discount = document.querySelector(".discount");
@@ -136,7 +134,7 @@ export class Cart {
     discountValue *= -productPrice;
     discount.innerHTML = `${"$ " + discountValue.toFixed(2)}`;
     total.innerHTML = ` ${
-      "$ " + (productPrice + discountValue - 5).toFixed(2)
+      "$ " + (productPrice + discountValue + 5).toFixed(2)
     }`;
     itemsCount.innerHTML = `${AllProductcount} items`
   }
@@ -151,6 +149,7 @@ export class Cart {
     this.#userList.cartList.forEach((item) => {
       this.AddItem(item);
     });
+    this.displayPrice();
     this.cartEventListener();
   }
 }

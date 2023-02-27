@@ -1,3 +1,5 @@
+import { User } from "./user.js";
+
 const modalWrap = document.querySelector(".container");
 const ProductDetailsBtn = document.querySelector("#ProductDetailsBtn");
 
@@ -7,6 +9,7 @@ class ProductDetails {
     #addToCartBtn = null;
     counter = 1;
     constructor(id, images, title, rate, description, price, brand, category, availabilty) {
+        this.user = new User();
         this.id = id;
         this.images = images;
         this.title = title;
@@ -15,16 +18,17 @@ class ProductDetails {
         this.price = price;
         this.brand = brand;
         this.category = category;
-        this.availabilty = (availabilty > 0) ? "In stock" : "out of stock";
+        this.availabilty = availabilty ;
         this.init();
     }
 
     init() {
         this.showModalProductDetails();
         this.showImages();
+        this.ratingStars();
 
         window.addEventListener("resize", (e) => {
-        this.editImageStyle(e.target.innerWidth);
+            this.editImageStyle(e.target.innerWidth);
         });
 
         this.#QuantityContainer = document.querySelector(
@@ -34,10 +38,10 @@ class ProductDetails {
         this.#addToCartBtn = document.querySelector(".addToCartBtn"); 
 
         this.#QuantityContainer.addEventListener("change", (e) => {
-        this.AddToCart(e);
+        this.changeQuantity(e);
         });
         this.#QuantityContainer.addEventListener("click", (e) => {
-        this.AddToCart(e);
+        this.changeQuantity(e);
         });
         this.#addToCartBtn.addEventListener("click", () => {
             this.AddItemToLoalStorage();
@@ -79,17 +83,12 @@ class ProductDetails {
                                 <div class="col-12 col-md-7 DetailsText my-auto pt-4 p-md-0 ml-lg-auto">
                                     <h3 class="fs-3 text-uppercase">${this.title}</h3>
                                     <div class="ProductDetails-rating pb-2">
-                                        <i class="bi bi-star-fill text-warning-emphasis"></i>
-                                        <i class="bi bi-star-fill text-warning-emphasis"></i>
-                                        <i class="bi bi-star-fill text-warning-emphasis"></i>
-                                        <i class="bi bi-star-fill text-warning-emphasis"></i>
-                                        <i class="bi bi-star-fill text-warning-emphasis"></i>
                                     </div>
                                     <p class="">${this.description}</p>
                                     <p class="pb-1 m-0"><b>price: </b>$ ${this.price}</p>
                                     <p class="pb-1 m-0"><b>Brand: </b>${this.brand}</p>
                                     <p class="pb-1 m-0"><b>Category: </b>${this.category}</p>
-                                    <p class="pb-1 m-0"><b>Availabilty: </b>${this.availabilty}</p>
+                                    <p class="pb-1 m-0"><b>Availabilty: </b>${(this.availabilty> 0) ? "In stock" : "out of stock"}</p>
                                     <div class="productDetailsForm d-flex justify-content-between pt-3">
                                         <div class="d-flex p-0 col-5 col-md-6 col-lg-4 productQuantityContainer">
                                             <button class="minusbtn btn btn-link p-0 pe-2">
@@ -115,11 +114,25 @@ class ProductDetails {
         );
     }
 
-    // ratingStars(){
-    //     for(let i =1; i< 5; i++){
-
-    //     }
-    // }
+    ratingStars(){
+        let ratingContainer = document.querySelector(".ProductDetails-rating");
+        for(let i =1; i<= 5; i++){
+            if(i <= this.rate){
+                ratingContainer.insertAdjacentHTML(
+                  "beforeend",
+                  `
+                    <i class="bi bi-star-fill text-warning-emphasis"></i>`
+                );
+            }
+            else{
+                ratingContainer.insertAdjacentHTML(
+                  "beforeend",
+                  `
+                    <i class="bi bi-star text-warning-emphasis"></i>`
+                );
+            }
+        }
+    }
 
     showImages() {
         const ActiveDetailsImage = document.querySelector(
@@ -141,7 +154,7 @@ class ProductDetails {
         }, 8000);
     }
 
-    AddToCart(e) {
+    changeQuantity(e) {
         if (e.target.classList.contains("bi")) {
         let clickedElement = e.target.closest("button");
         if (clickedElement.classList.contains("minusbtn")) {
@@ -170,14 +183,15 @@ class ProductDetails {
     AddItemToLoalStorage() {
         let item = {
             id: this.id,
-            name: this.name,
-            image: this.images[0],
+            title: this.title,
+            images: this.images[0],
             category: this.category,
             price: this.price,
             quantity: this.counter,
         };
-        if (this.Availabilty == "In stock"){
-            console.log(item);
+        if (this.availabilty >= this.counter){
+            this.availabilty -= this.counter;
+            this.user.AddToCart(item);
         }
     }
 
@@ -195,10 +209,10 @@ const Images = [
 
 ProductDetailsBtn.addEventListener("click", () => {
     var product = new ProductDetails(
-      1,
+      3,
       Images,
       "apple",
-      5,
+      3,
       description,
       150,
       "food",
