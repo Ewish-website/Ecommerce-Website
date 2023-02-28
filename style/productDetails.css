@@ -14,8 +14,8 @@
 
 .ActiveDetailsImage {
 	border-radius: 6px 6px 0 0;
-	/* background-color: var(--primary-color); */
     background-color: white;
+    min-width: 100%;
 }
 
 .ActiveDetailsImage img {
@@ -35,10 +35,11 @@
 
 .DetailsImageAlbum li {
     width: calc(((100% - 14px -4px) / 4));
-    padding: 7px;
+    height: 50px;
     border: 1px solid var(--dark-color);
     border-radius: 3px;
     list-style: none;
+    margin: 0;
 }
 
 .DetailsImageAlbum li img{

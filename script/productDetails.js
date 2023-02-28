@@ -64,14 +64,14 @@ export class ProductDetails {
                         <div class="col-12 col-md-5 DetailsImage my-auto ml-lg-auto">
                             <div class="Image-container DetailsLargeScreen">
                                 <div class="ActiveDetailsImage">
-                                    <img src="${this.images[0]}" alt="green apple slice">
+                                    <img src="${this.images[0]}" alt="${this.title}">
                                 </div>
                                 <div class="DetailsImageAlbum col-12 ">
                                     <ul class="DetailsImageList p-0 m-0">
-                                        <li class="activeLiImage"><img src="${this.images[0]}" alt="${this.title} image 1"></li>
-                                        <li><img src="${this.images[1]}" alt="${this.title} image 2"></li>
-                                        <li><img src="${this.images[2]}" alt="${this.title} image 3"></li>
-                                        <li><img src="${this.images[3]}" alt="${this.title} image 4"></li>
+                                        <li class="activeLiImage"><img src="${this.images[0]}" alt="${this.title}"></li>
+                                        <li><img src="${this.images[1]}" alt="${this.title}"></li>
+                                        <li><img src="${this.images[2]}" alt="${this.title}"></li>
+                                        <li><img src="${this.images[3]}" alt="${this.title}"></li>
                                     </ul>
                                 </div>
                             </div>
