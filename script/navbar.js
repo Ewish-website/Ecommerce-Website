@@ -1,4 +1,8 @@
+import { Cart } from "./cart.js";
 import { User } from "./user.js";
+
+var userAccount = new User();
+let loggedInUser = userAccount.isUserLoggedIn();
 
 const user = document.querySelector("#user");
 const cart = document.querySelector("#cart");
@@ -25,12 +29,10 @@ headerObserver.observe(header)
 
 ///when pressed on user card checks if their is a user logged in 
 user.addEventListener('click', function () {
-
-    if (loggedInUser.isUserLoggedIn()) {
-        let user = loggedInUser.isUserLoggedIn();
-        console.log(user);
-        let firstName = user.firstName;
-        let lastName = user.lastName;
+    console.log(loggedInUser)
+    if (loggedInUser) {
+        let firstName = loggedInUser.firstName;
+        let lastName = loggedInUser.lastName;
         userBoxName.innerText = `${firstName} ${lastName}`;
         if (userBox.style.display === "none") {
             userBox.style.display = "block";
@@ -41,15 +43,12 @@ user.addEventListener('click', function () {
     } else {
         location.assign('./log-in.html');
     }
-
-
-}
-)
+})
 
 //check if thier is a user logged in when pressed on cart
 cart.addEventListener('click', function () {
-    if (loggedInUser.isUserLoggedIn()) {
-        location.assign('./cart.html');
+    if (loggedInUser.active) {
+        let cart = new Cart();
     } else {
         location.assign('./log-in.html');
     }
@@ -57,22 +56,9 @@ cart.addEventListener('click', function () {
 
 
 logOut.addEventListener('click', function () {
-
-    var users = localStorage.getItem('users');
-    var userData = JSON.parse(users);
-    userData.forEach(element => {
-        console.log(element);
-        if (element.active === true) {
-            element.active = false;
-        }
-
-    });
-    
-    var json = JSON.stringify(userData);
-    localStorage.setItem('users', json);
-    userBox.style.display = "none"
-
+    loggedInUser.active = false;
+    userAccount.updateUser(loggedInUser);
+    window.location.replace("log-in.html");
 })
 
-var loggedInUser = new User();
 

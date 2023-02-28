@@ -1,8 +1,4 @@
 @import url("root.css");
-@import url("navbar.css");
-@import url("footer.css");
-@import url("checkOut.css");
-
 
 .cart-model-close{
   position: absolute;
@@ -11,32 +7,8 @@
   z-index: 2;
 }
 
-.cartLargeScreen{
-  overflow-y: inherit !important;
-  height: 520px !important;
-}
-
-
-.cart-model-close{
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 2;
-}
-
-.cartLargeScreen{
-  overflow-y: inherit !important;
-  height: 520px !important;
-}
-
-
-.cartLargeScreen .shopping-cart{
-  overflow-y: inherit !important;
-  height: 500px !important;
-}
-.cartLargeScreen .cart-items-checkout{
-  overflow-y: scroll !important;
-  height: 390px !important;
+.shopping-cart-container {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .cart-backToShopping a:hover {
@@ -64,11 +36,9 @@
   background-color: var(--primary-color);
 }
 
-
-.shopping-summary .promoInput {
+ .form3 input {
   border: 1px solid #ced4da !important;
 } 
-
 
 .shopping-summary .prompCodeBtn {
   cursor: pointer;
@@ -81,53 +51,20 @@
   transition: 1s ease-in-out;
   background: #ced4da;
 }
-section#blurr .active{
-  filter: blur(20px);
-  pointer-events: none;
-  user-select: none;
-}
-#conf-pop-up{
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 350px;
-  padding: 50px;
-  box-shadow: 0 5px 30px rg(0, 0, 0,0.30);
-  background: white;
-  border-radius: 6px;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.5s;
-  color: var(--dark-color);
-  position: absolute;
-  box-shadow: 0 4px 8px 0 var(--dark-color), 0 6px 20px 0  var(--dark-color);
-}
 
-#conf-pop-up h2,
-#conf-pop-up p{
-  text-align: center;
-}
+@media (min-width: 992px){
+  .cartLargeScreen{
+    overflow-y: inherit !important;
+    height: 520px !important;
+  }
 
-#conf-pop-up.active{
-  top: 50%;
-  visibility: visible;
-  opacity: 1;
-  transition: 1s;
-  /* this line  */
-  z-index: 10000;
-}
+  .cartLargeScreen .shopping-cart{
+    overflow-y: inherit !important;
+    height: 500px !important;
+  }
 
-#conf-btn{
-  width: 70px;
-  height: 30px;
-  text-align: center;
-  border-radius: 6px;
-  border: 2px solid var(--medium-color);
-  background-color: var(--dark-color);
-  color: var(--primary-color);
-  margin: 0;
-  position: absolute;
-  margin-left: 90px;
+  .cartLargeScreen .cart-items-checkout{
+    overflow-y: scroll !important;
+    height: 390px !important;
+  }
 }
-

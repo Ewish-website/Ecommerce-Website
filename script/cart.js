@@ -1,160 +1,237 @@
-const cartBtn = document.querySelector(".cartBtn");
-const modalWrap = document.querySelector(".cart-section");
+import { User } from "./user.js";
+const cartModule = document.querySelector(".cart-section");
 
-class Cart{
-    #activeUser 
-    #userList;
-    #cartItems;
-    #QuantityContainer;
-    #QuantityBtn;
-    #deleteCart;
-    #itemsCount;
+export class Cart {
+  #userList;
+  #cartItems;
+  #QuantityContainer;
+  #QuantityBtn;
+  #deleteCart;
+  #promoButtom;
 
-    constructor(){
-        this.#cartItems = document.querySelector(".cartItems");
-        this.renderCartList();
-        window.addEventListener("resize", (e) => {
-            let modalBody = document.querySelector(".modal-body");
-            if(e.target.innerWidth < 992){
-                if(modalBody.classList.contains("cartLargeScreen")){
-                    modalBody.classList.remove("cartLargeScreen");
-                }
-            }
-            else{
-                if (! modalBody.classList.contains("cartLargeScreen")) {
-                    modalBody.classList.add("cartLargeScreen");
-                }
-            }
-        });
-    }
+  constructor() {
+    this.showModalCart();
+    this.#cartItems = document.querySelector(".cartItems");
+    this.user = new User();
+    this.renderCartList();
+  }
 
-    cartEventListener(){
-        this.#QuantityBtn = document.querySelectorAll(".quantityBtn");
-        this.#QuantityContainer = document.querySelectorAll(".QuantityContainer");
-        this.#deleteCart = document.querySelectorAll(".cart-delete-product");
+  destructor(){
+    cartModule.innerHTML = ""
+  }
 
-        this.#QuantityContainer.forEach((container, i) => {
-            container.addEventListener("change", (e) => {
-                this.IncItemCounter(e,i);
-            });
-        })
-        this.#QuantityContainer.forEach((container, i) => {
-            container.addEventListener("click", (e) => {
-                this.IncItemCounter(e,i);
-            });
-        });
-        this.#deleteCart.forEach((container, i) => {
-            container.addEventListener("click", (e) => {
-                this.RemoveItem(e, i);
-            });
-        });
-    }
+  renderCartList() {
+    this.#userList = this.user.isUserLoggedIn();
+    this.#userList.cartList.forEach((item) => {
+      this.AddItem(item);
+    });
+    this.displayPrice();
+    this.cartEventListener();
+  }
 
-    AddItem(item){
-        this.#cartItems.insertAdjacentHTML(
-          "beforeend",
-          `<div class="row w-100 mb-4 d-flex justify-content-between align-items-center">
-                <div class="col-2 p-0">
-                    <img
-                        src="${item.images[0]}"
-                        class="cart-product-image img-fluid rounded-3" alt="Cotton T-shirt">
+  createCartModal() {
+    cartModule.innerHTML = `
+    <div class="modal fade modal-lg cart-modal" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable rounded-4">
+            <div class="modal-content p-0 w-100">
+                <button type="button" class="cart-model-close btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body cartLargeScreen  w-100 row m-0 p-0">
+                    <div class="shopping-cart col-12 col-lg-8 py-5 px-4">
+                        <div class="shopping-cart-heading d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="fw-bold mb-0 text-black fs-4 text-uppercase">Cart Details</h3>
+                            <h6 class="mb-0 text-muted itemsCount">3 items</h6>
+                        </div>
+                        <hr class="my-3">
+                        <div class="cart-items-checkout">
+                            <div class="cartItems"></div>
+                            <div class="cartCheckout"></div>
+                        </div>
+                        
+                    </div>
+                    <div class="shopping-summary col-12 col-lg-4 p-0">
+                        <div class="py-5 px-4 h-100 summary-container w-100">
+                            <h3 class="shopping-summary-heading fw-bold mb-3 fs-4 text-uppercase">Summary</h3>
+                            <hr class="my-3">
+                            <form class="pt-3 border-0">
+                                <div class="cart-promoCode row justify-content-between w-100">
+                                    <div class="form-outline col-6 col-lg-12 p-0">
+                                        <input type="text" id="form3Examplea2" class="promoInput form-control form-control-lg w-100" />
+                                        <label class="form-label" for="form3Examplea2">Promo code</label>
+                                    </div>
+                                    <button type="button" class="btn btn-primary btn-lg col-5 col-lg-12 mt-lg-2 prompCodeBtn"> 
+                                        Apply
+                                    </button>
+                                </div>
+                            </form>
+                            <hr class="my-4">
+                            <div class="cart-price mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <h5>Products</h5>
+                                    <h5 class="product">$ 132.00</h5>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <h5>Shipping</h5>
+                                    <h5>$ 5.00</h5>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <h5>Discount</h5>
+                                    <h5 class="discount">$ 0.00</h5>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <h5>Total</h5>
+                                    <h5 class="total">$ 137.00</h5>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-dark btn-block btn-lg col-md-12 checkoutBtn"
+                                data-mdb-ripple-color="dark">checkout
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-2 col-lg-3 p-0">
-                    <h6 class="cart-product-name text-black mb-0">${item.title}</h6>
-                    <h6 class="cart-product-category text-muted">${item.category}</h6>
-                </div>
-                <div class="col-4 col-sm-3 d-flex p-0 QuantityContainer">
-                    <button class="minusbtn btn btn-link p-0 pe-2">
-                        <i class="bi bi-dash fs-5"></i>
-                    </button>
-
-                    <input id="form1" min="0" name="quantity" value="${item.quantity}" type="number"
-                        class="quantityBtn form-control form-control-sm" />
-
-                    <button class="plusbtn btn btn-link p-0 ps-2">
-                        <i class="bi bi-plus fs-5"></i>
-                    </button>
-                </div>
-                <div class="col-2 p-0">
-                    <h6 class="cart-product-price mb-0 text-center">${item.price}</h6>
-                </div>
-                <div class="col-1 p-0 text-muted cart-delete-product" style ="cursor: pointer;">
-                    <i class="bi bi-x fs-5"></i>
+                <div class="modal-footer cart-backToShopping m-0 justify-content-start">
+                    <h6 class="mb-0">
+                        <a href="products.html" class="text-decoration-none text-black border-1">
+                            <i class="bi bi-arrow-left "></i> Back to shopping
+                        </a>
+                    </h6>
                 </div>
             </div>
-            <hr class="mx-4">`
-        );
-    }
-    
-    // ----------------------------
-    // remove from local storage
-    RemoveItem(e, i){
-        // -------------------------------------------------
-        // remove cart list of index i from local storage
-        // -------------------------------------------------
-        let child = document.querySelectorAll(".cartItems div");
-        let hr = this.#cartItems.querySelectorAll(".cartItems hr");
-        this.#cartItems.removeChild(child[i]);
-        this.#cartItems.removeChild(hr[i]);
-    }
+        </div>
+    </div>
+    `;
+  }
 
-    // ----------------------------
-    // Edit in local storage
-    IncItemCounter(e,i){
-        if (e.target.classList.contains("bi")) {
-            let clickedElement = e.target.closest("button");
-            if (clickedElement.classList.contains("minusbtn")) {
-                // --------------------------------------------------------
-                // check if quantity in local storage is less than1 
-                // if yes: decrement it and insert the value in input value
-                // ---------------------------------------------------------
-                
-            } else if (clickedElement.classList.contains("plusbtn")) {
-                // -----------------------------------------------
-                // increment quantity value in local storage
-                // insert the new value in input value
-                // ------------------------------------------------
-            }
-        } 
-        else if (e.target.classList.contains("quantityBtn")) {
-            // --------------------------------------------------
-            // insert the input value in quantity local storage
-            // --------------------------------------------------
+  showModalCart() {
+    this.createCartModal();
+    var modal = bootstrap.Modal.getOrCreateInstance(
+      cartModule.querySelector("#cartModal")
+    );
+    modal.show();
+  }
+
+  cartEventListener() {
+    this.#QuantityBtn = document.querySelectorAll(".quantityBtn");
+    this.#QuantityContainer = document.querySelectorAll(".QuantityContainer");
+    this.#deleteCart = document.querySelectorAll(".cart-delete-product");
+    this.#promoButtom = document.querySelector(".prompCodeBtn");
+
+    this.#QuantityContainer.forEach((container, i) => {
+      container.addEventListener("change", (e) => {
+        this.changeQuantity(e, i);
+      });
+    });
+    this.#QuantityContainer.forEach((container, i) => {
+      container.addEventListener("click", (e) => {
+        this.changeQuantity(e, i);
+      });
+    });
+    this.#deleteCart.forEach((container, i) => {
+      container.addEventListener("click", (e) => {
+        this.RemoveItem(e, i);
+      });
+    });
+
+    this.#promoButtom.addEventListener("click", (e) => {
+      e.preventDefault();
+      let input = document.querySelector(".promoInput").value;
+      if (input == "123") {
+        this.displayPrice(0.05);
+      }
+    });
+  }
+
+  AddItem(item) {
+    this.#cartItems.insertAdjacentHTML(
+      "beforeend",
+      `<div class="row w-100 mb-4 d-flex justify-content-between align-items-center">
+          <div class="col-2 p-0">
+              <img
+                  src="${item.images[0]}"
+                  class="cart-product-image img-fluid rounded-3" alt="${item.title}">
+          </div>
+          <div class="col-2 col-lg-3 p-0">
+              <h6 class="cart-product-name text-black mb-0">${item.title}</h6>
+              <h6 class="cart-product-category text-muted">${item.category}</h6>
+          </div>
+          <div class="col-4 col-sm-3 d-flex p-0 QuantityContainer">
+              <button class="minusbtn btn btn-link p-0 pe-2">
+                  <i class="bi bi-dash fs-5"></i>
+              </button>
+
+              <input id="form1" min="0" name="quantity" value="${item.quantity}" type="number"
+                  class="quantityBtn form-control form-control-sm" />
+
+              <button class="plusbtn btn btn-link p-0 ps-2">
+                  <i class="bi bi-plus fs-5"></i>
+              </button>
+          </div>
+          <div class="col-2 p-0">
+              <h6 class="cart-product-price mb-0 text-center">${item.price}</h6>
+          </div>
+          <div class="col-1 p-0 text-muted cart-delete-product" style ="cursor: pointer;">
+              <i class="bi bi-x fs-5"></i>
+          </div>
+      </div>
+      <hr class="mx-4">`
+    );
+    this.displayPrice();
+  }
+
+  RemoveItem(e, i) {
+    this.#userList.cartList.splice(i, 1);
+    this.user.updateUser(this.#userList);
+    let child = document.querySelectorAll(".cartItems div");
+    let hr = this.#cartItems.querySelectorAll(".cartItems hr");
+    this.#cartItems.removeChild(child[i]);
+    this.#cartItems.removeChild(hr[i]);
+    this.displayPrice();
+  }
+
+  changeQuantity(e, i) {
+    if (e.target.classList.contains("bi")) {
+      let clickedElement = e.target.closest("button");
+      if (clickedElement.classList.contains("minusbtn")) {
+        if (this.#userList.cartList[i].quantity > 1) {
+          this.#userList.cartList[i].quantity--;
+          this.#QuantityBtn[i].value = this.#userList.cartList[i].quantity;
         }
-        localStorage.setItem("users", JSON.stringify(this.#userList));
+      } else if (clickedElement.classList.contains("plusbtn")) {
+        this.#userList.cartList[i].quantity++;
+        this.#QuantityBtn[i].value = this.#userList.cartList[i].quantity;
+      }
+    } else if (e.target.classList.contains("quantityBtn")) {
+      this.#userList.cartList[i].quantity = this.#QuantityBtn[i].value;
     }
+    this.user.updateUser(this.#userList);
+    this.displayPrice();
+  }
 
-    // Display price
-    displayPrice(item){
+  displayPrice(discountValue = 0) {
+    let AllProductcount = 0;
+    let productPrice = 0;
+    let product = document.querySelector(".product");
+    let total = document.querySelector(".total");
+    let discount = document.querySelector(".discount");
+    let itemsCount = document.querySelector(".itemsCount");
 
-    }
-
-    renderCartList(){
-        this.#userList = JSON.parse(localStorage.getItem("users"));
-        if (this.#userList == null || this.#userList == []){
-            console.log("No List")
-        }
-        else{ 
-            this.#userList.forEach((user, i) => {
-                if(user.active){
-                    this.#activeUser = i
-                }
-            })
-            var modal = bootstrap.Modal.getOrCreateInstance(
-                modalWrap.querySelector("#exampleModal")
-            );
-            modal.show()
-            this.#userList[this.#activeUser].cartList.forEach((item) => {
-              this.AddItem(item);
-            });
-        }
-        this.cartEventListener();
-    }
+    this.#userList.cartList.forEach((item) => {
+      productPrice += item.quantity * item.price;
+      AllProductcount += item.quantity;
+    });
+    product.innerHTML = ` ${"$ " + productPrice.toFixed(2)}`;
+    discountValue *= -productPrice;
+    discount.innerHTML = `${"$ " + discountValue.toFixed(2)}`;
+    total.innerHTML = ` ${
+      "$ " + (productPrice + discountValue + 5).toFixed(2)
+    }`;
+    itemsCount.innerHTML = `${AllProductcount} items`;
+  }
 }
 
-cartBtn.addEventListener("click", () => {
-  let cart = new Cart();
-})
+// document.querySelector(".cartBtn").addEventListener("click", () => {
+//   let cart = new Cart();
+// });
+
 
 // let user = [
 //   {
@@ -207,26 +284,25 @@ cartBtn.addEventListener("click", () => {
 
 /* checkout button */
 
-const checkoutBtnElm = document.querySelector(".checkoutBtn")
-const shoppingCartContainerElm = document.querySelector(".shopping-cart-container")
+// const checkoutBtnElm = document.querySelector(".checkoutBtn")
+// const shoppingCartContainerElm = document.querySelector(".shopping-cart-container")
 
-const checkoutFormElm = document.querySelector(".checkout-from")
+// const checkoutFormElm = document.querySelector(".checkout-from")
 
-checkoutBtnElm.addEventListener('click', () => {
-    console.log('testt')
-    shoppingCartContainerElm.classList.toggle('d-none')
-    checkoutFormElm.classList.toggle('d-none')
+// checkoutBtnElm.addEventListener('click', () => {
+//     console.log('testt')
+//     shoppingCartContainerElm.classList.toggle('d-none')
+//     checkoutFormElm.classList.toggle('d-none')
 
-})
+// })
 
-/* confirm button */
-function togglee(){
-    var blurr = document.getElementById("blurr");
-    blurr.classList.toggle("active");
+// /* confirm button */
+// function togglee(){
+//     var blurr = document.getElementById("blurr");
+//     blurr.classList.toggle("active");
 
-    var popup2 = document.getElementById("conf-pop-up");
-    popup2.classList.toggle("active");
-
-}
+//     var popup2 = document.getElementById("conf-pop-up");
+//     popup2.classList.toggle("active");
+// }
 
 
