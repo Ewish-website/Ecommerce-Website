@@ -145,7 +145,6 @@ export class Cart {
       cartModule.querySelector("#cartModal")
     );
     modal.show();
-    console.log(modal)
     this.#userList.cartList.forEach((item) => {
       this.AddItem(item);
     });
