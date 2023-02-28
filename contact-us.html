@@ -14,41 +14,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+
 
 </head>
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light p-3 col-12 col-md-12 px-5 sticky" id="nav">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light p-3 col-12 col-md-12 px-5 sticky" id="nav">
         <div class="container-fluid">
-            <a class="navbar-brand col-2" href="#">E-wish</a>
-
-            <button class="navbar-toggler" type="navbarNav" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse col-10 col-md-10 justify-content-between" id="navbarNav">
-                <div class="navbar-nav col-8 col-md-8 justify-content-evenly">
-
-                    <a class="nav-link " href="index.html">Home</a>
-
-
-                    <a class="nav-link" href="about.html">About</a>
-
-                    <a class="nav-link" href="products.html">Products</a>
-
-
-                    <a class="nav-link active" href="#">Contact us</a>
-
-                </div>
-                <div class="loginCart col-2 d-flex justify-content-end gap-2">
-
-                    <a class="nav-link" href="cart.html">🛒</a>
-
-                    <a class="nav-link" href="log-in.html"><i class="fa fa-fw fa-user"></i></a>
-
-                </div>
+          <a class="navbar-brand col-2" href="index.html">E-wish</a>
+          <button class="navbar-toggler" type="navbarNav" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse col-10 col-md-10 justify-content-between" id="navbarNav">
+            <div class="navbar-nav col-8 col-md-8 justify-content-evenly">
+              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="products.html">Products</a>
+              <a class="nav-link active" href="contact-us.html">Contact us</a>
             </div>
+            <div class="loginCart col-2 d-flex justify-content-end gap-2">
+              <a class="nav-link" id="cart"><i class="bi bi-cart3 fs-4 me-2"></i></a>
+              <a class="nav-link" id="user"><i class="bi bi-person-circle fs-4"></i></a>
+            </div>
+          </div>
+    
         </div>
-    </nav>
+      </nav>
+      <!-- user box -->
+      <div class="user-container">
+        <div class="our-user">
+          <div class="user-picture">
+            <img class="img-fluid" src="./assets/user.jpg">
+          </div>
+          <div class="user-content">
+            <p class="name"></p>
+    
+          </div>
+          <ul class="user-social">
+            <li><a href="#" class="bi bi-facebook" aria-hidden="true"></a></li>
+            <li><a href="#" class="bi bi-twitter" aria-hidden="true"></a></li>
+            <li><a href="#" class="bi bi-google" aria-hidden="true"></a></li>
+            <li><a href="#" class="bi bi-box-arrow-right" aria-hidden="true" id="logOut"></a></li>
+          </ul>
+        </div>
+      </div>
+      
     <!--End of Nav-->
    
     <section class="contact" id="blur">
@@ -93,11 +106,11 @@
                 <form>
                     <h2>Send Message</h2>
                     <div class="inputBox">
-                        <input type="text-contact-form" name="" required="required" >
+                        <input type="text-contact-form" name="" required/>
                         <span>Full Name</span>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="" required="required" >
+                        <input type="text" name="" required/>
                         <span>Email</span>
                     </div>
                     <div class="inputBox">
@@ -192,5 +205,6 @@
         crossorigin="anonymous"></script>
         
         <script src="./script/contactUs.js" defer></script>
+        <script src="./script/navbarModule.js" type="module"></script>
 </body>
 </html>

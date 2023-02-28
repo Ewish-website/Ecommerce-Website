@@ -6,7 +6,7 @@ nav {
 }
 
 .nav-link, .navbar-brand {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
 
 .container-fluid a.active {
@@ -15,11 +15,15 @@ nav {
   color: white !important;
 
 }
+
 .sticky{
   background-color: var(--dark-color);
   
 }
 
+#cart,#user{
+  cursor: pointer;
+}
 .user-container {
   top: 5rem;
   width: fit-content;

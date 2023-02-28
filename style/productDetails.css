@@ -7,21 +7,9 @@
     z-index: 2;
 }
 
-.DetailsImage {
-	position: relative;
-}
-
 .DetailsImage .Image-container {
 	width: 100%;
 	border-radius: 6px;
-}
-
-.DetailsLargeScreen{
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-25%, -50%);
-	box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
 }
 
 .ActiveDetailsImage {
@@ -55,7 +43,7 @@
 }
 
 .DetailsImageAlbum li img{
-    width: 100%;
+    max-width: 100% !important;
 }
 
 .DetailsImageAlbum .activeLiImage{
@@ -64,4 +52,17 @@
 
 .DetailsImageAlbum .activeLiImage img{
     opacity: 0.4;
+}
+
+@media (min-width: 768px){
+    .DetailsImage {
+        position: relative;
+    }
+    .DetailsLargeScreen{
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-25%, -50%);
+        box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+    }
 }

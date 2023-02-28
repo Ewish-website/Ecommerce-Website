@@ -41,6 +41,7 @@ export class User {
         })
 
         if(!flag){
+            console.log("added")
             loggedInUser.cartList.push(item);
         }
         localStorage.setItem("users", JSON.stringify(this.#users));

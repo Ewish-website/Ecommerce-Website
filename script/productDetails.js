@@ -1,24 +1,23 @@
 import { User } from "./user.js";
 
-const modalWrap = document.querySelector(".container");
-const ProductDetailsBtn = document.querySelector("#ProductDetailsBtn");
+const detailsModal = document.querySelector(".detailsModal");
 
-class ProductDetails {
+export class ProductDetails {
     #QuantityContainer = null;
     #QuantityBtn = null;
     #addToCartBtn = null;
     counter = 1;
-    constructor(id, images, title, rate, description, price, brand, category, availabilty) {
+    constructor(product) {
         this.user = new User();
-        this.id = id;
-        this.images = images;
-        this.title = title;
-        this.rate = rate;
-        this.description = description;
-        this.price = price;
-        this.brand = brand;
-        this.category = category;
-        this.availabilty = availabilty ;
+        this.id = product.id;
+        this.images = product.images;
+        this.title = product.title;
+        this.rating = product.rating;
+        this.description = product.description;
+        this.price = product.price;
+        this.brand = product.brand;
+        this.category = product.category;
+        this.stock = product.stock ;
         this.init();
     }
 
@@ -26,10 +25,6 @@ class ProductDetails {
         this.showModalProductDetails();
         this.showImages();
         this.ratingStars();
-
-        window.addEventListener("resize", (e) => {
-            this.editImageStyle(e.target.innerWidth);
-        });
 
         this.#QuantityContainer = document.querySelector(
         ".productQuantityContainer"
@@ -44,20 +39,20 @@ class ProductDetails {
         this.changeQuantity(e);
         });
         this.#addToCartBtn.addEventListener("click", () => {
-            this.AddItemToLoalStorage();
+            this.AddItemcart();
         })
     }
 
     showModalProductDetails() {
         this.createProductDetaisModal();
         var modal = bootstrap.Modal.getOrCreateInstance(
-        modalWrap.querySelector("#myModal")
+        detailsModal.querySelector("#myModal")
         );
         modal.show();
     }
 
     createProductDetaisModal() {
-        modalWrap.insertAdjacentHTML(
+        detailsModal.insertAdjacentHTML(
         "beforeend",
         `<div class="modal fade modal-lg Details-modal mt-md-5" id="myModal">
                     <div class="modal-dialog ">
@@ -88,7 +83,7 @@ class ProductDetails {
                                     <p class="pb-1 m-0"><b>price: </b>$ ${this.price}</p>
                                     <p class="pb-1 m-0"><b>Brand: </b>${this.brand}</p>
                                     <p class="pb-1 m-0"><b>Category: </b>${this.category}</p>
-                                    <p class="pb-1 m-0"><b>Availabilty: </b>${(this.availabilty> 0) ? "In stock" : "out of stock"}</p>
+                                    <p class="pb-1 m-0"><b>stock: </b>${(this.stock> 0) ? "In stock" : "out of stock"}</p>
                                     <div class="productDetailsForm d-flex justify-content-between pt-3">
                                         <div class="d-flex p-0 col-5 col-md-6 col-lg-4 productQuantityContainer">
                                             <button class="minusbtn btn btn-link p-0 pe-2">
@@ -120,7 +115,7 @@ class ProductDetails {
           ratingContainer.firstChild.remove();
         }
         for(let i =1; i<= 5; i++){
-            if(i <= this.rate){
+            if(i <= this.rating){
                 ratingContainer.insertAdjacentHTML(
                   "beforeend",
                   `
@@ -144,17 +139,19 @@ class ProductDetails {
         const ImagesList = document.querySelectorAll(".DetailsImageAlbum li");
         var i = 0;
         setInterval(() => {
-        ActiveDetailsImage.src = this.images[i];
-        ImagesList.forEach((li) => {
-            li.classList.remove("activeLiImage");
-        });
-        ImagesList[i].classList.add("activeLiImage");
-        if (i < this.images.length - 1) {
-            i++;
-        } else {
-            i = 0;
-        }
-        }, 8000);
+            ActiveDetailsImage.src = this.images[i];
+            ImagesList.forEach((li) => {
+                if(li.classList.contains("activeLiImage")){
+                    li.classList.remove("activeLiImage");
+                }
+            });
+            ImagesList[i].classList.add("activeLiImage");
+            if (i < 3) {
+                i++;
+            } else {
+                i = 0;
+            }
+        }, 3000);
     }
 
     changeQuantity(e) {
@@ -174,16 +171,7 @@ class ProductDetails {
         }
     }
 
-    editImageStyle(windowWidth) {
-        var ImageContainer = document.querySelector(".Image-container");
-        if (windowWidth < 768) {
-        ImageContainer.classList.remove("DetailsLargeScreen");
-        } else {
-        ImageContainer.classList.add("DetailsLargeScreen");
-        }
-    }
-
-    AddItemToLoalStorage() {
+    AddItemcart() {
         let item = {
             id: this.id,
             title: this.title,
@@ -193,34 +181,10 @@ class ProductDetails {
             quantity: this.counter,
         };
         this.#QuantityBtn.value = 1;
-        if (this.availabilty >= this.counter){
-            this.availabilty -= this.counter;
+        if (this.stock >= this.counter){
+            this.stock -= this.counter;
             this.user.AddToCart(item);
         }
     }
 
 }
-
-var description =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, sunt ratione sequi eaque magnam eos officiis!";
-
-const Images = [
-  "https://res.cloudinary.com/john-mantas/image/upload/v1537291846/codepen/delicious-apples/green-apple-with-slice.png",
-  "https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png",
-  "https://res.cloudinary.com/john-mantas/image/upload/v1537303532/codepen/delicious-apples/half-apple.png",
-  "https://res.cloudinary.com/john-mantas/image/upload/v1537303160/codepen/delicious-apples/green-apple-flipped.png",
-];
-
-ProductDetailsBtn.addEventListener("click", () => {
-    var product = new ProductDetails(
-      3,
-      Images,
-      "apple",
-      3,
-      description,
-      150,
-      "food",
-      "food",
-      90
-    );
-})
