@@ -7,6 +7,10 @@
   z-index: 2;
 }
 
+.shopping-cart-container {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 .cart-backToShopping a:hover {
   color: #4f95da !important;
   transition: 1s ease-in-out;
@@ -32,7 +36,7 @@
   background-color: var(--primary-color);
 }
 
-.shopping-summary .promoInput {
+ .form3 input {
   border: 1px solid #ced4da !important;
 } 
 

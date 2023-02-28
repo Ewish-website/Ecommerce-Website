@@ -129,18 +129,27 @@ function cardEventListner() {
   if (productsContainer) {
     productsContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("card-img-top")) {
-        let imageSource = e.target.src.split("/");
-        let ClickedId = imageSource[imageSource.length - 2];
+        let imageSource = e.target.src.split('/');
+        let ClickedId = imageSource[imageSource.length - 2]
         let clickedProduct = SearchForProduct(ClickedId);
         let product = new ProductDetails(clickedProduct);
-      } else if (e.target.classList.contains("cart")) {
+        
+      }else if(e.target.classList.contains("cart")){
         let imageSource = e.target.closest(".card").firstChild.src.split("/");
         let ClickedId = imageSource[imageSource.length - 2];
         let clickedProduct = SearchForProduct(ClickedId);
+        let item = {
+            id: clickedProduct.id,
+            title: clickedProduct.title,
+            images: clickedProduct.images,
+            category: clickedProduct.category,
+            price: clickedProduct.price,
+            quantity: 1,
+        };
         if (clickedProduct.stock > 0) {
           let user = new User();
           let loggedInUser = user.isUserLoggedIn();
-          if (loggedInUser) user.AddToCart(clickedProduct);
+          if (loggedInUser) user.AddToCart(item);
         }
       }
     });

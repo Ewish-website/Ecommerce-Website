@@ -8,7 +8,6 @@ export class ProductDetails {
     #addToCartBtn = null;
     counter = 1;
     constructor(product) {
-        console.log(product)
         this.user = new User();
         this.id = product.id;
         this.images = product.images;
@@ -49,7 +48,6 @@ export class ProductDetails {
         var modal = bootstrap.Modal.getOrCreateInstance(
           detailsModal.querySelector("#myModal")
         );
-        console.log(modal)
         modal.show();
     }
 

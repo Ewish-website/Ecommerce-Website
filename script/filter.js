@@ -330,10 +330,18 @@ function cardEventListner() {
         let imageSource = e.target.closest(".card").firstChild.src.split("/");
         let ClickedId = imageSource[imageSource.length - 2];
         let clickedProduct = SearchForProduct(ClickedId);
+        let item = {
+            id: clickedProduct.id,
+            title: clickedProduct.title,
+            images: clickedProduct.images,
+            category: clickedProduct.category,
+            price: clickedProduct.price,
+            quantity: 1,
+        };
         if (clickedProduct.stock > 0) {
           let user = new User();
           let loggedInUser = user.isUserLoggedIn();
-          if (loggedInUser) user.AddToCart(clickedProduct);
+          if (loggedInUser) user.AddToCart(item);
         }
       }
     });
