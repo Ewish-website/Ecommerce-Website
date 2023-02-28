@@ -266,14 +266,14 @@ fetch("../script/products.json")
           }
         }
         flag = 0;
-        for (i = 0; i < rates.length && flag == 0; i++) {
+        for (let i = 0; i < rates.length && flag == 0; i++) {
           if (rates[i].checked) {
             filteredProducts["rating"] = rates[i].value;
             flag = 1;
           }
         }
         flag = 0;
-        for (i = 0; i < price.length && flag == 0; i++) {
+        for (let i = 0; i < price.length && flag == 0; i++) {
           if (price[i].checked) {
             filteredProducts["price"] = price[i].value;
             flag = 1;
