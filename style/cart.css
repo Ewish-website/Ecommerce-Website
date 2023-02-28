@@ -29,17 +29,11 @@
   height: 520px !important;
 }
 
-.cartLargeScreen .shopping-cart{
-  overflow-y: inherit !important;
-  height: 500px !important;
+
 .cartLargeScreen .shopping-cart{
   overflow-y: inherit !important;
   height: 500px !important;
 }
-
-.cartLargeScreen .cart-items-checkout{
-  overflow-y: scroll !important;
-  height: 390px !important;
 .cartLargeScreen .cart-items-checkout{
   overflow-y: scroll !important;
   height: 390px !important;
@@ -70,11 +64,11 @@
   background-color: var(--primary-color);
 }
 
-.shopping-summary .promoInput {
+
 .shopping-summary .promoInput {
   border: 1px solid #ced4da !important;
 } 
-} 
+
 
 .shopping-summary .prompCodeBtn {
   cursor: pointer;
