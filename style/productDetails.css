@@ -35,7 +35,6 @@
 
 .DetailsImageAlbum li {
     width: calc(((100% - 14px -4px) / 4));
-    height: fit-content;
     padding: 7px;
     border: 1px solid var(--dark-color);
     border-radius: 3px;
