@@ -204,3 +204,29 @@ cartBtn.addEventListener("click", () => {
 // ];
 
 // localStorage.setItem("users", JSON.stringify(user));
+
+/* checkout button */
+
+const checkoutBtnElm = document.querySelector(".checkoutBtn")
+const shoppingCartContainerElm = document.querySelector(".shopping-cart-container")
+
+const checkoutFormElm = document.querySelector(".checkout-from")
+
+checkoutBtnElm.addEventListener('click', () => {
+    console.log('testt')
+    shoppingCartContainerElm.classList.toggle('d-none')
+    checkoutFormElm.classList.toggle('d-none')
+
+})
+
+/* confirm button */
+function togglee(){
+    var blurr = document.getElementById("blurr");
+    blurr.classList.toggle("active");
+
+    var popup2 = document.getElementById("conf-pop-up");
+    popup2.classList.toggle("active");
+
+}
+
+

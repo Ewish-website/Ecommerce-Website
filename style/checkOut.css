@@ -1,0 +1,166 @@
+@import url("root.css");
+@import url("reset-min.css");
+
+  /* body {
+    background-color: var(--white-color);
+    display: grid;
+     line-height: 1.5; 
+     margin: 0;
+     min-block-size: 100vh; 
+     padding: 5vmin; 
+     place-items: center;
+  } */
+    
+  /* .iphone {
+    background-color: white;
+    box-shadow: 0 0 1em rgba(233, 226, 226, 0.063);
+    overflow: auto;
+    padding: 2em;
+    /* height: 600px;
+    width: 600px; 
+  } */
+
+  .card address {
+    font-style: normal;
+  }
+  
+ .btn1 button {
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+  }
+  
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+ .iphone h1 {
+    line-height: 1;
+    
+    
+  }
+  
+  .iphone h2 {
+    line-height: 1.2;
+    color: var(--dark-color);
+  }
+  
+  legend {
+    font-weight: 600;
+    padding: 0;
+  }
+  
+  .form__radios  input {
+    border: 0;
+    color: inherit;
+    font: inherit;
+  }
+  
+  .form__radios input[type="radio"] {
+    accent-color: var(--medium-color);
+  }
+  
+  table {
+    border-collapse: collapse;
+    inline-size: 100%;
+  }
+ 
+  .align {
+    display: grid;
+    place-items: center;
+  }
+  
+  .btn1 button {
+    align-items: center;
+    background-color: var(--dark-color);
+    border-radius: 999em;
+    color: white;
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+    padding-block: 0.75em;
+    padding-inline: 1em;
+    transition: 0.3s;
+    font-weight: bold;
+  }
+  
+  .button:focus,
+  .button:hover {
+    background-color:var(--medium-color);
+    color: var(--dark-color);
+  }
+  
+  .button--full {
+    inline-size: 100%;
+  }
+  
+  .form {
+    display: grid;
+    gap: 2em;
+  }
+  
+  .form__radios {
+    display: grid;
+    gap: 1em;
+  }
+  
+  .form__radio {
+    align-items: center;
+    background-color: var(--dark-color);
+    border-radius: 1em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
+    display: flex;
+    padding: 1em;
+    color: var(--primary-color);
+  }
+  
+  .form__radio label {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    gap: 1em;
+    color: var(--paimary-color);
+  }
+  
+  .iphone .header {
+    display: flex;
+    /* problem is here justify center */
+    justify-content: left;
+    margin-top: -10px;
+    color: var(--dark-color);
+  }
+  
+  .icon {
+    block-size: 1em;
+    display: inline-block;
+    fill: currentColor;
+    inline-size: 1em;
+    vertical-align: middle;
+  }
+
+  .payment-method1{
+    color: var(--dark-color);
+  }
+ .card textarea{
+    background-color: var(--dark-color);
+    padding: 1em;
+    color: var(--primary-color);
+    border-radius: 6px;
+ }
+
+ @media (max-width:991px) {
+ 
+  .form__radios{
+    flex-direction: column;
+  }
+  .conf-pop-up{
+    width: 100%;
+    flex-direction: column;
+  }
+  
+ }
+  
+ 
