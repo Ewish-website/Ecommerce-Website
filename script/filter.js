@@ -259,7 +259,7 @@ fetch("../script/products.json")
         var rates = document.getElementsByName("stars");
         var price = document.getElementsByName("flexRadioDefault3");
         var flag = 0;
-        for (i = 0; i < category.length && flag == 0; i++) {
+        for (let i = 0; i < category.length && flag == 0; i++) {
           if (category[i].checked) {
             filteredProducts["category"] = category[i].value;
             flag = 1;
@@ -310,7 +310,7 @@ function SearchForProduct(ClickedId) {
   let clickedProduct;
   productsData.forEach((product) => {
     if (product.id == ClickedId) {
-      clickedProduct =  product;
+      clickedProduct = product;
     }
   });
   return clickedProduct;
@@ -325,18 +325,18 @@ function cardEventListner() {
         let ClickedId = imageSource[imageSource.length - 2]
         let clickedProduct = SearchForProduct(ClickedId);
         let product = new ProductDetails(clickedProduct);
-        
-      }else if(e.target.classList.contains("cart")){
+
+      } else if (e.target.classList.contains("cart")) {
         let imageSource = e.target.closest(".card").firstChild.src.split("/");
         let ClickedId = imageSource[imageSource.length - 2];
         let clickedProduct = SearchForProduct(ClickedId);
         let item = {
-            id: clickedProduct.id,
-            title: clickedProduct.title,
-            images: clickedProduct.images,
-            category: clickedProduct.category,
-            price: clickedProduct.price,
-            quantity: 1,
+          id: clickedProduct.id,
+          title: clickedProduct.title,
+          images: clickedProduct.images,
+          category: clickedProduct.category,
+          price: clickedProduct.price,
+          quantity: 1,
         };
         if (clickedProduct.stock > 0) {
           let user = new User();
