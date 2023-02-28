@@ -60,11 +60,11 @@
     letter-spacing: 1.5px;
 }
 @media screen and (max-width:768px){
-    .ccontainerrrr{
+    .containerrrr{
         width: 80%;
         display: block;
-        margin: auto;
-        padding-top: 50px;
+        /* margin: auto; */
+        /* padding-top: 50px; */
     }
     .content-sectionn{
         float: none;
@@ -77,13 +77,16 @@
         width: 100%;
         display: block;
         margin: auto;
+
     }
     .image-sectionn img{
+        
         padding-bottom: 20px;
+        padding-top: 50px;
     }
-    .content-sectionn .titel{
+    .content-sectionn .titell{
         text-align: center;
-        font-size: 22px;
+        font-size: 20px;
     }
     .content-sectionn .contenttt h3{
         text-align: center;
@@ -92,61 +95,12 @@
         color: var(--dark-color);
         font-size: 21px;
     }
+    .content-sectionn .contenttt .aboutButton {
+        text-align: center;       
+    }
+    .content-sectionn .contenttt .aboutButton a{
+        padding: 9px 30px;
+    }
 
     
 }
-/* .containerrrr{
-     width: 100%;
-     height: 100%;
-     padding: 10px 8%;
-     
-}
-.containerrrr h1{
-    text-align: center;
-    padding-top: 3%;
-    margin-bottom: 60px;
-    font-weight: 600;
-    position: relative;
-}
-.containerrrr h1 span{
-    color: var(--medium-color);
-}
-.containerrrr h1::after{
-    content: '';
-    background: var(--dark-color);
-    width: 100px;
-    height: 5px;
-    position: absolute;
-    bottom: -1px;
-    left: 50%;
-    top: 80px;
-    transform: translateX(-50%);
-}
-.roww{
-    display:grid ;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    grid-gap: 30px;
-}
-.service{
-    text-align: center;
-    padding: 25px 10px;
-    border-radius: 5px;
-    font-size: 15px;
-    cursor: pointer;
-    background: transparent;
-    transition: transform 0.5s, background 0.5s;
-
-}
-.service i{
-    font-size: 40px;
-    margin-bottom: 10px;
-    color: var(--medium-color);
-}
-.service h2{
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-.service:hover{
-    background: var(--primary-color);
-    transform: scale(1.05);
-} */
