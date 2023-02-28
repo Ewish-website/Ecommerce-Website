@@ -259,21 +259,21 @@ fetch("../script/products.json")
         var rates = document.getElementsByName("stars");
         var price = document.getElementsByName("flexRadioDefault3");
         var flag = 0;
-        for (i = 0; i < category.length && flag == 0; i++) {
+        for (let i = 0; i < category.length && flag == 0; i++) {
           if (category[i].checked) {
             filteredProducts["category"] = category[i].value;
             flag = 1;
           }
         }
         flag = 0;
-        for (i = 0; i < rates.length && flag == 0; i++) {
+        for (let i = 0; i < rates.length && flag == 0; i++) {
           if (rates[i].checked) {
             filteredProducts["rating"] = rates[i].value;
             flag = 1;
           }
         }
         flag = 0;
-        for (i = 0; i < price.length && flag == 0; i++) {
+        for (let i = 0; i < price.length && flag == 0; i++) {
           if (price[i].checked) {
             filteredProducts["price"] = price[i].value;
             flag = 1;
@@ -287,13 +287,13 @@ fetch("../script/products.json")
       var category = document.getElementsByName("flexRadioDefault1");
       var rates = document.getElementsByName("stars");
       var price = document.getElementsByName("flexRadioDefault3");
-      for (i = 0; i < category.length; i++) {
+      for (let i = 0; i < category.length; i++) {
         category[i].checked = false;
       }
-      for (i = 0; i < rates.length; i++) {
+      for (let i = 0; i < rates.length; i++) {
         rates[i].checked = false;
       }
-      for (i = 0; i < price.length; i++) {
+      for (let i = 0; i < price.length; i++) {
         price[i].checked = false;
       }
       resetPage();
