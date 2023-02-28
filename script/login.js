@@ -4,12 +4,10 @@ const emailInput = inputs[0];
 const passwordInput = inputs[1];
 const wrongPassOrEmail = document.querySelector('.wrongPassOrEmail');
 
-
 export class Login {
 
     constructor() {
-        submit.addEventListener('click', this.login.bind(this))
-
+        submit.addEventListener('click', this.login.bind(this));
     }
 
     login() {
@@ -30,11 +28,7 @@ export class Login {
         });
         var json = JSON.stringify(userData);
         localStorage.setItem('users', json);
-
     }
-
-
-
 }
 
 let login = new Login();
