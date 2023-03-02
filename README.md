@@ -1,7 +1,3 @@
 # Ecommerce-Website
-
-      Markup :  # Overview #
-
-      -OR-
- 
-      Markup :  ============= (below H1 text)
+      
+      Simple Ecommerce website to buy all kind of products; groceries, fragrances, smartphones, laptops and skincare products  
