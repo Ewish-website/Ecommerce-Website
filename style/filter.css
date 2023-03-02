@@ -4,15 +4,20 @@
 .side-bar {
   border: 2px solid var(--dark-color);
   border-top: none;
-  border-left: none;
-  position: sticky;
+  border-left: none;  
   top: 0;
 }
 #sidebar{
+  top: 0;
+  left: 0;
+  position: sticky;
   border: 2px solid var(--primary-color);
   border-top: none;
   border-left: none;
   background-color: whitesmoke;
+}
+.filter{
+  left: 0;
 }
 .card-img-top{
   width: 100%;
@@ -25,16 +30,14 @@
 }
 
 .control-btns{    
- 
   bottom:0px;  
-  margin-left: 10.8rem;
+  
   z-index:10;
-  margin-top: 5rem;
-  position: sticky;
+  /* position: sticky; */
   top: 0;
 }
 .filter-btns{ 
-  position: fixed;  
+  /* position: fixed;   */
   z-index:1000;
   left: 0;
 }
@@ -211,6 +214,18 @@ label{
   z-index: 200000;
 }
 
+#filter-container{
+  height: fit-content;
+}
+#test, .filter{
+  box-sizing: border-box;
+  height: auto;
+}
+
+.filter-container {
+  box-sizing: border-box;
+  height: -moz-fit-content;
+}
 @media only screen and (max-width:1000px){
 
   .card-img-top{
