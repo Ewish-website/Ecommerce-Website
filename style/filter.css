@@ -16,7 +16,7 @@
 }
 .card-img-top{
   width: 100%;
-  height: 15rem;
+  height: 18rem;
   cursor: pointer;
 }
 
@@ -62,7 +62,7 @@
 
 
 .card{
-  height: 30rem;
+  height: 32rem;
 }
 
 .cart{
@@ -215,5 +215,6 @@ label{
 
   .card-img-top{
     width: 100%;
+    height: 20rem;
   }
 }
