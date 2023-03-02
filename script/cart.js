@@ -8,6 +8,7 @@ export class Cart {
   #QuantityBtn;
   #deleteCart;
   #promoButtom;
+  #checkoutBtn;
 
   constructor() {
     this.showModalCart();
@@ -16,15 +17,19 @@ export class Cart {
     this.renderCartList();
   }
 
-  destructor(){
-    cartModule.innerHTML = ""
+  destructor() {
+    cartModule.innerHTML = "";
   }
 
   renderCartList() {
     this.#userList = this.user.isUserLoggedIn();
-    this.#userList.cartList.forEach((item) => {
-      this.AddItem(item);
-    });
+    if (this.#userList.cartList.length > 0) {
+      this.#userList.cartList.forEach((item) => {
+        this.AddItem(item);
+      });
+    } else {
+      document.querySelector(".emptyCart").classList.remove("d-none");
+    }
     this.displayPrice();
     this.cartEventListener();
   }
@@ -38,15 +43,95 @@ export class Cart {
                 <div class="modal-body cartLargeScreen  w-100 row m-0 p-0">
                     <div class="shopping-cart col-12 col-lg-8 py-5 px-4">
                         <div class="shopping-cart-heading d-flex justify-content-between align-items-center mb-3">
-                            <h3 class="fw-bold mb-0 text-black fs-4 text-uppercase">Cart Details</h3>
-                            <h6 class="mb-0 text-muted itemsCount">3 items</h6>
+                            <h3 class="fw-bold mb-0 text-black fs-4 text-uppercase cart-heading">Cart Details</h3>
+                            <h3 class="fw-bold mb-0 text-black fs-4 text-uppercase d-none shipping-heading">Shipping Information</h3>
+                            <h6 class="mb-0 text-muted itemsCount">0 items</h6>
                         </div>
                         <hr class="my-3">
                         <div class="cart-items-checkout">
-                            <div class="cartItems"></div>
-                            <div class="cartCheckout"></div>
+                            <div class="cartItems">
+                              <div class="emptyCart h-100 w-100 d-flex justify-content-center align-items-center d-none">
+                                <p class="text-center text-muted"> Your cart is currently empty. </p>
+                              </div>
+                            </div>
+                            <div class="cartCheckout checkout-from iphone h-100 w-100 d-none py-2">
+                              <form action="https://httpbin.org/post" class="form" method="POST">
+                                  <div class="addressBlock">
+                                    <div class="fields fields--2">
+                                      <label class="field">
+                                        <span class="field__label" for="firstname">First name</span>
+                                        <input class="field__input" type="text" required id="firstname"/>
+                                      </label>
+                                      <label class="field">
+                                        <span class="field__label" for="lastname">Last name</span>
+                                        <input class="field__input" type="text" required id="lastname"/>
+                                      </label>
+                                    </div>
+                                    <label class="field my-2">
+                                      <span class="field__label" for="address">Address</span>
+                                      <input class="field__input" type="text" required id="address" />
+                                    </label>
+                                    <div class="fields fields--3">
+                                      <label class="field">
+                                        <span class="field__label" for="phoneNum">phone number</span>
+                                        <input class="field__input" type="text" required id="phoneNum" />
+                                      </label>
+                                      <label class="field">
+                                        <span class="field__label" for="city">City</span>
+                                        <input class="field__input" type="text" required id="city" />
+                                      </label>
+                                      <label class="field">
+                                        <span class="field__label" for="state">State</span>
+                                        <input class="field__input" type="text" required id="state" />
+                                      </label>
+                                    </div>  
+                                  </div>
+                                  <fieldset class= "p-0">
+                                    <h5 class="payment-method1 p-0">Payment Method</h5>
+                                    <div class="form__radios col-6 col-md-5 d-flex flex-column gap-1">
+                                      <div class="form__radio p-1">
+                                        <input checked id="visa" name="payment-method" type="radio" />
+                                        <label class="ps-2" for="visa">
+                                          <img src="../assets/visa.png" style="width: 20px" alt="payPal Img">
+                                          Visa
+                                        </label>
+                                      </div>
+                                      <div class="form__radio p-1" style="relative">
+                                        <input id="paypal" name="payment-method" type="radio" />
+                                        <label class="ps-2" for="paypal">
+                                          <img src="../assets/payPal.png" style="width: 20px" alt="payPal Img">
+                                          PayPal
+                                        </label>
+                                      </div>
+                              
+                                      <div class="form__radio p-1">
+                                        <input id="mastercard" name="payment-method" type="radio" />
+                                        <label class="ps-2" for="mastercard">
+                                          <img src="../assets/master.png" style="width: 20px" alt="payPal Img">
+                                          Master card
+                                        </label>
+                                      </div>
+
+                                      <div class="form__radio p-1">
+                                        <input id="cash" name="payment-method" type="radio" />
+                                        <label class="ps-2" for="cash">
+                                          <img src="../assets/cash.png" style="width: 20px" alt="payPal Img">
+                                          cash
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+                                  <div class="cardPayment">
+                                    
+                                  </div>
+                                  <div class="btn1">
+                                    <button id="conf-btn1" class="button button--full"  type="button"  data-bs-dismiss="modal">
+                                      Confirm
+                                    </button>
+                                  </div>
+                                </form>
+                            </div>
                         </div>
-                        
                     </div>
                     <div class="shopping-summary col-12 col-lg-4 p-0">
                         <div class="py-5 px-4 h-100 summary-container w-100">
@@ -67,11 +152,11 @@ export class Cart {
                             <div class="cart-price mb-3">
                                 <div class="d-flex justify-content-between">
                                     <h5>Products</h5>
-                                    <h5 class="product">$ 132.00</h5>
+                                    <h5 class="product">$ 0.00</h5>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <h5>Shipping</h5>
-                                    <h5>$ 5.00</h5>
+                                    <h5 class="shipping">$ 0.00</h5>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <h5>Discount</h5>
@@ -79,7 +164,7 @@ export class Cart {
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <h5>Total</h5>
-                                    <h5 class="total">$ 137.00</h5>
+                                    <h5 class="total">$ 0.00</h5>
                                 </div>
                             </div>
                             <button type="button" class="btn btn-dark btn-block btn-lg col-md-12 checkoutBtn"
@@ -114,6 +199,9 @@ export class Cart {
     this.#QuantityContainer = document.querySelectorAll(".QuantityContainer");
     this.#deleteCart = document.querySelectorAll(".cart-delete-product");
     this.#promoButtom = document.querySelector(".prompCodeBtn");
+    this.#checkoutBtn = document.querySelector(".checkoutBtn");
+    const checkoutFormElm = document.querySelector(".checkout-from");
+    const confBtm = document.querySelector("#conf-btn1");
 
     this.#QuantityContainer.forEach((container, i) => {
       container.addEventListener("change", (e) => {
@@ -125,9 +213,9 @@ export class Cart {
         this.changeQuantity(e, i);
       });
     });
-    this.#deleteCart.forEach((container, i) => {
+    this.#deleteCart.forEach((container) => {
       container.addEventListener("click", (e) => {
-        this.RemoveItem(e, i);
+        this.RemoveItem(e);
       });
     });
 
@@ -138,52 +226,72 @@ export class Cart {
         this.displayPrice(0.05);
       }
     });
+
+    this.#checkoutBtn.addEventListener("click", () => {
+      if (this.#userList.cartList.length > 0) {
+        this.#cartItems.classList.toggle("d-none");
+        checkoutFormElm.classList.toggle("d-none");
+        document.querySelector(".cart-heading").classList.toggle("d-none");
+        document.querySelector(".shipping-heading").classList.toggle("d-none");
+      }
+    });
+
+    confBtm.addEventListener("click", () => {
+      this.togglee();
+    });
+
+    document.querySelector("#conf-btn").addEventListener("click", () => {
+      this.togglee();
+    });
   }
 
   AddItem(item) {
     this.#cartItems.insertAdjacentHTML(
       "beforeend",
-      `<div class="row w-100 mb-4 d-flex justify-content-between align-items-center">
-          <div class="col-2 p-0">
-              <img
-                  src="${item.images[0]}"
-                  class="cart-product-image img-fluid rounded-3" alt="${item.title}">
-          </div>
-          <div class="col-2 col-lg-3 p-0">
-              <h6 class="cart-product-name text-black mb-0">${item.title}</h6>
-              <h6 class="cart-product-category text-muted">${item.category}</h6>
-          </div>
-          <div class="col-4 col-sm-3 d-flex p-0 QuantityContainer">
-              <button class="minusbtn btn btn-link p-0 pe-2">
-                  <i class="bi bi-dash fs-5"></i>
-              </button>
+      ` <div class="item" id="${item.id}">
+          <div class="w-100 mb-4 d-flex justify-content-between align-items-center">
+            <div class="col-2 p-0">
+                <img
+                    src="${item.images[0]}"
+                    class="cart-product-image img-fluid rounded-3" alt="${item.title}">
+            </div>
+            <div class="col-2 col-lg-3 p-0">
+                <h6 class="cart-product-name text-black mb-0">${item.title}</h6>
+                <h6 class="cart-product-category text-muted">${item.category}</h6>
+            </div>
+            <div class="col-4 col-sm-3 d-flex p-0 QuantityContainer">
+                <button class="minusbtn btn btn-link p-0 pe-2">
+                    <i class="bi bi-dash fs-5"></i>
+                </button>
 
-              <input id="form1" min="0" name="quantity" value="${item.quantity}" type="number"
-                  class="quantityBtn form-control form-control-sm" />
+                <input id="form1" min="0" name="quantity" value="${item.quantity}" type="number"
+                    class="quantityBtn form-control form-control-sm" />
 
-              <button class="plusbtn btn btn-link p-0 ps-2">
-                  <i class="bi bi-plus fs-5"></i>
-              </button>
-          </div>
-          <div class="col-2 p-0">
-              <h6 class="cart-product-price mb-0 text-center">${item.price}</h6>
-          </div>
-          <div class="col-1 p-0 text-muted cart-delete-product" style ="cursor: pointer;">
-              <i class="bi bi-x fs-5"></i>
-          </div>
-      </div>
-      <hr class="mx-4">`
+                <button class="plusbtn btn btn-link p-0 ps-2">
+                    <i class="bi bi-plus fs-5"></i>
+                </button>
+            </div>
+            <div class="col-2 p-0">
+                <h6 class="cart-product-price mb-0 text-center">${item.price}</h6>
+            </div>
+            <div class="col-1 p-0 text-muted cart-delete-product" style ="cursor: pointer;">
+                <i class="bi bi-x fs-5"></i>
+            </div>
+        </div>
+        <hr class="mx-4">
+      </div>`
     );
     this.displayPrice();
   }
 
   RemoveItem(e, i) {
-    this.#userList.cartList.splice(i, 1);
-    this.user.updateUser(this.#userList);
-    let child = document.querySelectorAll(".cartItems div");
-    let hr = this.#cartItems.querySelectorAll(".cartItems hr");
-    this.#cartItems.removeChild(child[i]);
-    this.#cartItems.removeChild(hr[i]);
+    let child = e.target.closest(".item");
+    this.user.DeleteFromCart(this.#userList, child.id);
+    this.#cartItems.removeChild(child);
+    this.displayPrice();
+    if (this.#userList.cartList.length == 0) {
+      document.querySelector(".emptyCart").classList.remove("d-none");
+    }
     this.displayPrice();
   }
 
@@ -209,29 +317,41 @@ export class Cart {
   displayPrice(discountValue = 0) {
     let AllProductcount = 0;
     let productPrice = 0;
+    let ShippingPrice = 0;
     let product = document.querySelector(".product");
     let total = document.querySelector(".total");
     let discount = document.querySelector(".discount");
     let itemsCount = document.querySelector(".itemsCount");
+    let Shipping = document.querySelector(".shipping");
 
     this.#userList.cartList.forEach((item) => {
       productPrice += item.quantity * item.price;
       AllProductcount += item.quantity;
     });
+
+    if (this.#userList.cartList.length > 0) {
+      ShippingPrice = 5;
+    }
+
     product.innerHTML = ` ${"$ " + productPrice.toFixed(2)}`;
     discountValue *= -productPrice;
     discount.innerHTML = `${"$ " + discountValue.toFixed(2)}`;
+    Shipping.innerHTML = `${"$ " + ShippingPrice.toFixed(2)}`;
     total.innerHTML = ` ${
-      "$ " + (productPrice + discountValue + 5).toFixed(2)
+      "$ " + (productPrice + discountValue + ShippingPrice).toFixed(2)
     }`;
     itemsCount.innerHTML = `${AllProductcount} items`;
+  }
+
+  togglee() {
+    var popup2 = document.getElementById("conf-pop-up");
+    popup2.classList.toggle("active");
   }
 }
 
 // document.querySelector(".cartBtn").addEventListener("click", () => {
 //   let cart = new Cart();
 // });
-
 
 // let user = [
 //   {

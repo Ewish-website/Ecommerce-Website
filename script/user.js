@@ -12,12 +12,16 @@ export class User {
 
     isUserLoggedIn() {
         let loggedInUser;
-        this.#users.forEach(element => {
-            if (element.active === true) {
-                loggedInUser = element;
-            }
-        });
-        return loggedInUser;
+        if(this.#users == null){
+            loggedInUser = false;
+        }else{
+            this.#users.forEach(element => {
+                if (element.active === true) {
+                    loggedInUser = element;
+                }
+            });
+            return loggedInUser;
+        }
     }
 
     updateUser(user){
@@ -46,4 +50,19 @@ export class User {
         }
         localStorage.setItem("users", JSON.stringify(this.#users));
     }
+
+
+    DeleteFromCart(user, itemId){
+        this.#users.forEach((element) => {
+            if (element.id == user.id) {
+                element.cartList.forEach((item, i) => {
+                    if (item.id == itemId) {
+                        element.cartList.splice(i, 1);
+                    }
+                })
+            }
+        });
+        localStorage.setItem("users", JSON.stringify(this.#users));
+    }
+
 }
