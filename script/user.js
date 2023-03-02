@@ -12,27 +12,33 @@ export class User {
 
     isUserLoggedIn() {
         let loggedInUser;
+        if(this.#users){
         this.#users.forEach(element => {
             if (element.active === true) {
                 loggedInUser = element;
             }
+        
         });
+    }
         return loggedInUser;
     }
 
     updateUser(user) {
+        if(this.#users){
         this.#users.forEach(element => {
             if (element.id == user.id) {
                 element.active = user.active;
                 element.cartList = user.cartList;
             }
-        })
+        });
+    }
         localStorage.setItem("users", JSON.stringify(this.#users));
     }
 
     AddToCart(item) {
         let loggedInUser = this.isUserLoggedIn();
         let flag = 0;
+        if(loggedInUser.cartList){
         loggedInUser.cartList.forEach(cartItem => {
 
             if (cartItem.id == item.id) {
@@ -40,6 +46,7 @@ export class User {
                 flag = 1;
             }
         })
+    }
 
         if (!flag) {
             console.log("added")
