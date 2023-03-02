@@ -1,3 +1,4 @@
 # Ecommerce-Website
-      
-      Simple Ecommerce website to buy all kind of products; groceries, fragrances, smartphones, laptops and skincare products  
+## Overview
+Simple Ecommerce website to buy all kind of products; laptops, fragrances, smaprtphones, fragrances and skincare products
+
