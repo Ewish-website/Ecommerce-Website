@@ -8,7 +8,7 @@
       "discountPercentage": 5.96,
       "rating": 4.69,
       "stock": 94,
-      "brand": "URBANFIND",
+      "brand": "GUESS",
       "category": "clothes",
       "images": [
         "../assets/more products/31/1.jpg",
@@ -19,7 +19,7 @@
     },
     {
       "id": 32,
-      "title": "T-Shirts",
+      "title": "T-Shirt",
       "description": "Bolo cotton T-Shirt",
       "price": 30,
       "discountPercentage": 5,
@@ -36,7 +36,7 @@
     },
     {
       "id": 33,
-      "title": "Blouses",
+      "title": "Blouse",
       "description": "Esla Blouse For Women",
       "price": 80,
       "discountPercentage": 5,
@@ -53,13 +53,13 @@
     },
     {
       "id": 34,
-      "title": "Skirts",
+      "title": "Skirt",
       "description": "Premoda Womens Fancy Printed Godet Skirt",
       "price": 95,
       "discountPercentage": 5,
       "rating": 4.5,
       "stock": 40,
-      "brand": "Premoda",
+      "brand": "ZARA",
       "category": "clothes",
       "images": [
         "../assets/more products/34/1.jpg",
@@ -70,7 +70,7 @@
     },
     {
       "id": 35,
-      "title": "Sweater",
+      "title": "sweater",
       "description": "Cropped Turtleneck Sweater Lantern Sleeve Ribbed Knit Pullover Sweater Jumper",
       "price": 100,
       "discountPercentage": 5,
@@ -87,13 +87,13 @@
     },
     {
       "id": 36,
-      "title": "Child-set",
+      "title": "child-Outfit",
       "description": "Printed outdoor shirt short for childrens",
       "price": 150,
       "discountPercentage": 10,
       "rating": 4.7,
       "stock": 70,
-      "brand": "BabyBjörn",
+      "brand": "iCandy",
       "category": "clothes",
       "images": [
         "../assets/more products/36/1.jpg",
@@ -104,13 +104,13 @@
     },
     {
       "id": 37,
-      "title": "Dress",
+      "title": "Mini-Dress",
       "description": "womens Short Sleeve lined Casual Midi Dress",
       "price": 150,
       "discountPercentage": 20,
       "rating": 4.3,
       "stock": 70,
-      "brand": "Andora",
+      "brand": "LV",
       "category": "clothes",
       "images": [
         "../assets/more products/37/1.jpg",
@@ -121,13 +121,13 @@
     },
     {
       "id": 38,
-      "title": "Heels&Bag",
-      "description": "Mens sportive tring",
+      "title": "Bag&Heels",
+      "description": "Women lather matched heels and bags",
       "price": 170,
       "discountPercentage": 20,
       "rating": 4.4,
       "stock": 100,
-      "brand": "Adidas",
+      "brand": "BATA",
       "category": "clothes",
       "images": [
         "../assets/more products/38/1.jpg",
@@ -138,13 +138,13 @@
     },
     {
       "id": 39,
-      "title": "Pajamas",
+      "title": "Pejama",
       "description": "Family Matching Holiday Pajamas Sets",
       "price": 110,
       "discountPercentage": 70,
       "rating": 4.7,
       "stock": 120,
-      "brand": "Andersson",
+      "brand": "ASOS",
       "category": "clothes",
       "images": [
         "../assets/more products/39/1.jpg",
@@ -258,7 +258,7 @@
     },
     {
       "id": 6,
-      "title": "MacBookPro",
+      "title": "MacBook",
       "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
       "price": 1749,
       "discountPercentage": 11.02,
@@ -294,7 +294,7 @@
     },
     {
       "id": 8,
-      "title": "Microsoft4",
+      "title": "M4",
       "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
       "price": 1499,
       "discountPercentage": 10.23,
@@ -332,7 +332,7 @@
     },
     {
       "id": 10,
-      "title": "15-DK1056WM",
+      "title": "15-DK1056",
       "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
       "price": 1099,
       "discountPercentage": 6.18,
@@ -356,7 +356,7 @@
       "discountPercentage": 8.4,
       "rating": 4.26,
       "stock": 65,
-      "brand": "Di Gio",
+      "brand": "DiGio",
       "category": "fragrances",
       "thumbnail": "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
       "images": [
@@ -374,7 +374,7 @@
       "discountPercentage": 15.66,
       "rating": 4,
       "stock": 52,
-      "brand": "Royal_Mirage",
+      "brand": "Mirage",
       "category": "fragrances",
       "thumbnail": "https://i.dummyjson.com/data/products/12/thumbnail.jpg",
       "images": [
@@ -387,7 +387,7 @@
     },
     {
       "id": 13,
-      "title": "Scent Xpressio",
+      "title": "Xpressio",
       "description": "Product details of Best Fog Scent Xpressio Perfume 100ml For Men cool long lasting perfumes for Men",
       "price": 13,
       "discountPercentage": 8.14,
@@ -406,7 +406,7 @@
     },
     {
       "id": 14,
-      "title": "Perfume Oil",
+      "title": "Perfume",
       "description": "Original Al Munakh® by Mahal Al Musk | Our Impression of Climate | 6ml Non-Alcoholic Concentrated Perfume Oil",
       "price": 120,
       "discountPercentage": 15.6,
@@ -499,7 +499,7 @@
     },
     {
       "id": 19,
-      "title": "Skin Serum.",
+      "title": "Serum",
       "description": "Product name: rorec collagen hyaluronic acid white face serum riceNet weight: 15 m",
       "price": 46,
       "discountPercentage": 10.68,
@@ -517,7 +517,7 @@
     },
     {
       "id": 20,
-      "title": "Freckle Cream",
+      "title": "Cream",
       "description": "Fair & Clear is Pakistan's only pure Freckle cream which helpsfade Freckles, Darkspots and pigments. Mercury level is 0%, so there are no side effects.",
       "price": 70,
       "discountPercentage": 16.99,
@@ -536,7 +536,7 @@
     },
     {
       "id": 21,
-      "title": "Daal Masoor",
+      "title": "Daal",
       "description": "Fine quality Branded Product Keep in a cool and dry place",
       "price": 20,
       "discountPercentage": 4.81,
@@ -570,7 +570,7 @@
     },
     {
       "id": 23,
-      "title": "Food Flavou",
+      "title": "Flavour",
       "description": "Specifications of Orange Essence Food Flavour For Cakes and Baking Food Item",
       "price": 14,
       "discountPercentage": 8.04,
@@ -589,7 +589,7 @@
     },
     {
       "id": 24,
-      "title": "cereals fruit",
+      "title": "cereals",
       "description": "original fauji cereal muesli 250gm box pack original fauji cereals muesli fruit nuts flakes breakfast cereal break fast faujicereals cerels cerel foji fouji",
       "price": 46,
       "discountPercentage": 16.8,
@@ -608,7 +608,7 @@
     },
     {
       "id": 25,
-      "title": "Gulab Powder",
+      "title": "Gulab",
       "description": "Dry Rose Flower Powder Gulab Powder 50 Gram • Treats Wounds",
       "price": 70,
       "discountPercentage": 13.58,
@@ -627,13 +627,13 @@
     },
     {
       "id": 26,
-      "title": "Plant Hanger",
+      "title": "Hanger",
       "description": "Boho Decor Plant Hanger For Home Wall Decoration Macrame Wall Hanging Shelf",
       "price": 41,
       "discountPercentage": 17.86,
       "rating": 4.08,
       "stock": 131,
-      "brand": "Boho Decor",
+      "brand": "Boho",
       "category": "home-decoration",
       "thumbnail": "https://i.dummyjson.com/data/products/26/thumbnail.jpg",
       "images": [
@@ -653,7 +653,7 @@
       "discountPercentage": 15.58,
       "rating": 4.41,
       "stock": 17,
-      "brand": "Flying Wooden",
+      "brand": "Flying",
       "category": "home-decoration",
       "thumbnail": "https://i.dummyjson.com/data/products/27/thumbnail.webp",
       "images": [
@@ -666,13 +666,13 @@
     },
     {
       "id": 28,
-      "title": "Art Lamp",
+      "title": "Lamp",
       "description": "3D led lamp sticker Wall sticker 3d wall art light on/off button  cell operated (included)",
       "price": 20,
       "discountPercentage": 16.49,
       "rating": 3.2,
       "stock": 54,
-      "brand": "LED Lights",
+      "brand": "LED",
       "category": "home-decoration",
       "thumbnail": "https://i.dummyjson.com/data/products/28/thumbnail.jpg",
       "images": [
@@ -691,7 +691,7 @@
       "discountPercentage": 15.34,
       "rating": 3.44,
       "stock": 7,
-      "brand": "luxury palace",
+      "brand": "luxury",
       "category": "home-decoration",
       "thumbnail": "https://i.dummyjson.com/data/products/29/thumbnail.webp",
       "images": [
@@ -704,7 +704,7 @@
     },
     {
       "id": 30,
-      "title": "Key Holder",
+      "title": "K-Holder",
       "description": "Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality",
       "price": 30,
       "discountPercentage": 2.92,

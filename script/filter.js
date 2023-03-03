@@ -47,15 +47,15 @@ function appendCards(products) {
     title.appendChild(productName);
     productName.classList.add("pname");
     productName.textContent = products[i].title;
-    productName.style.fontSize = "15px";
+    productName.style.fontSize = "1rem";
     productName.style.fontWeight = "900";
 
     var productPrice = document.createElement("span");
     title.appendChild(productPrice);
     productPrice.classList.add("card-text", "price");
     productPrice.textContent = products[i].price + "$";
-    productPrice.style.fontSize = "18px";
-    productPrice.style.fontWeight = "900";
+    productPrice.style.fontSize = "1rem";
+    productPrice.style.fontWeight = "700";
 
     var ratings = document.createElement("span");
     cardBody.appendChild(ratings);
@@ -95,6 +95,8 @@ function appendCards(products) {
     cardBody.appendChild(productPrand);
     productPrand.classList.add("card-text", "prand");
     productPrand.textContent = products[i].brand;
+    productPrand.style.fontSize = "0.8rem";
+    productPrand.style.fontWeight = "700";
 
     var cartButton = document.createElement("button");
     cartButton.classList.add("cartBtn")
