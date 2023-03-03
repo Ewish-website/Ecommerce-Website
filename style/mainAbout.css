@@ -5,10 +5,6 @@
 .sectionnn{
     width: 100%;
     min-height: 100vh;
-    /* background-color:var(--dark-color); */
-    /* background-image:linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),url("../assets/background.jpg"); */
-    /* background-size: cover!important; */
-    
 }
 .containerrrr{
     width: 80%;
@@ -63,8 +59,6 @@
     .containerrrr{
         width: 80%;
         display: block;
-        /* margin: auto; */
-        /* padding-top: 50px; */
     }
     .content-sectionn{
         float: none;
