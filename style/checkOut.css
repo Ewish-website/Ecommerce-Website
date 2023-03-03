@@ -135,15 +135,10 @@ fieldset {
   }
 
  @media (max-width:991px) {
- 
-  .form__radios{
-    flex-direction: column;
-  }
   .conf-pop-up{
     width: 100%;
     flex-direction: column;
   }
-  
 }
 
 .cardPayment{
