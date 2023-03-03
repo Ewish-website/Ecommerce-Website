@@ -19,11 +19,6 @@ fieldset {
   color: var(--dark-color);
 }
 
-.form {
-  display: grid;
-  grid-gap: 1rem;
-}
-
 .field {
   width: 100%;
   display: flex;
@@ -149,5 +144,11 @@ fieldset {
     flex-direction: column;
   }
   
+}
+
+.cardPayment{
+  width: 300px;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
