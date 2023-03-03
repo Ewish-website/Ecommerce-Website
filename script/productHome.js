@@ -12,7 +12,7 @@ function appendCards(products) {
 
     var card = document.createElement("div");
     item.appendChild(card);
-    card.classList.add("card", "box-shadow", "my-5", "p-2");
+    card.classList.add("card", "box-shadow", "my-5", "px-5","py-2");
     /*
       var detailsLink = document.createElement('a')
       detailsLink.href = "_blank";
@@ -41,17 +41,15 @@ function appendCards(products) {
     title.appendChild(productName);
     productName.classList.add("pname");
     productName.textContent = products[i].title;
-    productName.style.fontSize = "15px";
     productName.style.fontWeight = "900";
 
     var productPrice = document.createElement("span");
     title.appendChild(productPrice);
     productPrice.classList.add("card-text", "price");
     productPrice.textContent = products[i].price + "$";
-    productPrice.style.fontSize = "18px";
-    productPrice.style.fontWeight = "900";
+    productPrice.style.fontWeight = "500";
 
-    var ratings = document.createElement("rates");
+    var ratings = document.createElement("span");
     cardBody.appendChild(ratings);
     ratings.classList.add("rates");
 

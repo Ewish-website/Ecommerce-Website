@@ -7,8 +7,6 @@ let productsData;
 
 document.querySelector("#filter").addEventListener("click", function () {
   document.querySelector(".filter-btns").classList.toggle("control-btns");
-  document.querySelector("#sidebar").classList.toggle("side-bar");
-  document.querySelector(".product").classList.toggle("product-toggle");
 });
 
 function appendCards(products) {
@@ -20,7 +18,7 @@ function appendCards(products) {
 
     var card = document.createElement("div");
     item.appendChild(card);
-    card.classList.add("card", "box-shadow", "my-5", "p-2");
+    card.classList.add("card", "box-shadow", "my-5", "px-5","py-2");
     /*
       var detailsLink = document.createElement('a')
       detailsLink.href = "_blank";
@@ -59,7 +57,7 @@ function appendCards(products) {
     productPrice.style.fontSize = "18px";
     productPrice.style.fontWeight = "900";
 
-    var ratings = document.createElement("rates");
+    var ratings = document.createElement("span");
     cardBody.appendChild(ratings);
     ratings.classList.add("rates");
 
