@@ -1,9 +1,8 @@
 import { ProductDetails } from "./ProductDetails.js";
 import { User } from "./user.js";
-import {productsData} from "../script/fetch_module.js";
+import { productsData } from "../script/fetch_module.js";
 var wantedProducts = []; //array that matched products stored in to be displayed
 var filteredProducts = { category: 0, price: 0, rating: 0 }; //cheked filter features
-
 
 document.querySelector("#filter").addEventListener("click", function () {
   document.querySelector(".filter-btns").classList.toggle("control-btns");
@@ -18,7 +17,7 @@ function appendCards(products) {
 
     var card = document.createElement("div");
     item.appendChild(card);
-    card.classList.add("card", "box-shadow", "my-5", "px-5","py-2");
+    card.classList.add("card", "box-shadow", "my-5", "px-5", "py-2");
     /*
       var detailsLink = document.createElement('a')
       detailsLink.href = "_blank";
@@ -99,7 +98,7 @@ function appendCards(products) {
     productPrand.style.fontWeight = "700";
 
     var cartButton = document.createElement("button");
-    cartButton.classList.add("cartBtn")
+    cartButton.classList.add("cartBtn");
     cardBody.appendChild(cartButton);
 
     var cart = document.createElement("i");
@@ -238,7 +237,7 @@ function filterProducts(allData, wantedData) {
   }
 }
 
-function applyFilter(){
+function applyFilter() {
   document.querySelector(".applyFilter").addEventListener("click", function () {
     var category = document.getElementsByName("flexRadioDefault1");
     var rates = document.getElementsByName("stars");
@@ -269,7 +268,7 @@ function applyFilter(){
   });
 }
 
-function getAllProducts(){
+function getAllProducts() {
   document.querySelector("#all").addEventListener("click", function (e) {
     var category = document.getElementsByName("flexRadioDefault1");
     var rates = document.getElementsByName("stars");
@@ -288,7 +287,6 @@ function getAllProducts(){
   });
 }
 
-
 function SearchForProduct(ClickedId) {
   let clickedProduct;
   productsData.forEach((product) => {
@@ -304,11 +302,10 @@ function cardEventListner() {
   if (productsContainer) {
     productsContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("card-img-top")) {
-        let imageSource = e.target.src.split('/');
-        let ClickedId = imageSource[imageSource.length - 2]
+        let imageSource = e.target.src.split("/");
+        let ClickedId = imageSource[imageSource.length - 2];
         let clickedProduct = SearchForProduct(ClickedId);
         let product = new ProductDetails(clickedProduct);
-
       } else if (e.target.classList.contains("cart")) {
         let imageSource = e.target.closest(".card").firstChild.src.split("/");
         let ClickedId = imageSource[imageSource.length - 2];
@@ -331,4 +328,4 @@ function cardEventListner() {
   }
 }
 
-export {appendCards,applyFilter,getAllProducts,cardEventListner};
+export { appendCards, applyFilter, getAllProducts, cardEventListner };
