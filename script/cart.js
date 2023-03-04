@@ -92,8 +92,13 @@ export class Cart {
                                       <div class="form__radio p-1">
                                         <input checked id="visa" name="payment-method" type="radio" />
                                         <label class="ps-2" for="visa">
-                                          <img src="../assets/visa.png" style="width: 30px" alt="payPal Img">
-                                          <img src="../assets/master.png" style="width: 30px" alt="payPal Img">
+                                          <img src="../assets/visa.png" style="width: 30px" alt="VISA">
+                                        </label>
+                                      </div>
+                                      <div class="form__radio p-1">
+                                        <input checked id="master" name="payment-method" type="radio" />
+                                        <label class="ps-2" for="master">
+                                          <img src="../assets/master.png" style="width: 30px" alt="MASTER">
                                         </label>
                                       </div>
                                       <div class="form__radio p-1" style="relative">
@@ -111,50 +116,7 @@ export class Cart {
                                       </div>
                                     </div>
                                   </fieldset>
-                                  <div class="payBlock">
-                                    <div class="paymentCard">
-              <div class="card-inner">
-                  <div class="front">
-                      <img src="./images/map.png" class="map-img" alt="map">
-                      <div class="row">
-                          <img src="./images/chip.png" width="60px" alt="chip">
-                          <img src="./images/visaName.png" width="80px" alt="visaName">
-                      </div>
-                      <div class="row card-no">
-                          <input type="text" name="numOnCard" id="numOnCard" maxlength="16" placeholder="enter your card number">
-                      </div>
-                      <div class="row-2">
-                          <div class="row card-holder">
-                              <p>CARD HOLDER</p>
-                              <p>VALID TILL</p>
-                          </div>
-                          <div class="row name">
-                              <input type="text" name="NameOnCard" id="nameOnCard" placeholder="Name on card">
-                              <div class="expDate">
-                                  <input type="text" name="cardMonth" maxlength="2" placeholder="MM" id="month">
-                                  <p>/</p>
-                                  <input type="text" name="cardYear" maxlength="2" placeholder="YY" id="year">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="back">
-                      <img src="./images/map.png" class="map-img" alt="map">
-                      <div class="bar"></div>
-                          <div class="row card-cvv">
-                              <img src="./images/pattern.png" alt="">
-                              <input type="text" name="cardCVV" maxlength="3" placeholder="CVV" id="cvv">
-                          </div>
-                      <div class="row card-text">
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, eum quasi? Amet doloremque corrupti nesciunt assumenda error magni eum ratione sed quam. Molestiae voluptatem itaque necessitatibus eveniet veniam nulla aliquam.</p>
-                      </div>
-                      <div class="row signature">
-                          <img src="./images/visaName.png" width="80px" alt="visaName">
-                      </div>
-                  </div>
-              </div>
-          </div>
-                                  </div>
+                                  <div class="payBlock"></div>
                                   <div class="btn1">
                                     <button id="conf-btn1" class="button button--full"  type="button"  data-bs-dismiss="modal">
                                       Confirm
@@ -397,48 +359,48 @@ export class Cart {
         container.insertAdjacentHTML(
           "afterbegin",
           `
-            <div class="paymentCard">
+            <div class="paymentCard col-12 col-sm-11 col-md-10 mx-auto">
               <div class="card-inner">
                   <div class="front">
-                      <img src="./images/map.png" class="map-img" alt="map">
-                      <div class="row">
-                          <img src="./images/chip.png" width="60px" alt="chip">
-                          <img src="./images/visaName.png" width="80px" alt="visaName">
+                      <img src="../assets/map.png" class="map-img" alt="map">
+                      <div class="cardRow">
+                          <img src="../assets/chip.png" style="width: 45px; height: 40px;" alt="chip">
+                          <img src="../assets/visaName.png" style="width: 80px;" alt="visaName">
                       </div>
-                      <div class="row card-no">
+                      <div class="cardRow card-no">
                           <input type="text" name="numOnCard" id="numOnCard" maxlength="16" placeholder="enter your card number">
                       </div>
-                      <div class="row-2">
-                          <div class="row card-holder">
-                              <p>CARD HOLDER</p>
-                              <p>VALID TILL</p>
+                      <div class="cardRow-2">
+                          <div class="cardRow card-holder">
+                              <p class="m-0">CARD HOLDER</p>
+                              <p class="m-0">VALID TILL</p>
                           </div>
-                          <div class="row name">
+                          <div class="cardRow name">
                               <input type="text" name="NameOnCard" id="nameOnCard" placeholder="Name on card">
                               <div class="expDate">
                                   <input type="text" name="cardMonth" maxlength="2" placeholder="MM" id="month">
-                                  <p>/</p>
+                                  <p class="my-auto"> / </p>
                                   <input type="text" name="cardYear" maxlength="2" placeholder="YY" id="year">
                               </div>
                           </div>
                       </div>
                   </div>
                   <div class="back">
-                      <img src="./images/map.png" class="map-img" alt="map">
+                      <img src="../assets/map.png" class="map-img" alt="map">
                       <div class="bar"></div>
-                          <div class="row card-cvv">
-                              <img src="./images/pattern.png" alt="">
+                          <div class="cardRow card-cvv">
+                              <img src="../assets/pattern.png" alt="">
                               <input type="text" name="cardCVV" maxlength="3" placeholder="CVV" id="cvv">
                           </div>
-                      <div class="row card-text">
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, eum quasi? Amet doloremque corrupti nesciunt assumenda error magni eum ratione sed quam. Molestiae voluptatem itaque necessitatibus eveniet veniam nulla aliquam.</p>
+                      <div class="cardRow card-text">
+                          <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. d quam. Molestiae voluptatem itaque.</p>
                       </div>
-                      <div class="row signature">
-                          <img src="./images/visaName.png" width="80px" alt="visaName">
+                      <div class="cardRow signature">
+                          <img src="../assets/visaName.png" style="width: 70px;" alt="visaName">
                       </div>
                   </div>
               </div>
-          </div>
+            </div>
           `
         );
         break;
