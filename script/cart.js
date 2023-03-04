@@ -81,48 +81,37 @@ export class Cart {
                                         <input class="field__input" type="text" required id="city" />
                                       </label>
                                       <label class="field">
-                                        <span class="field__label" for="state">State</span>
-                                        <input class="field__input" type="text" required id="state" />
+                                        <span class="field__label" for="country">country</span>
+                                        <input class="field__input" type="text" required id="country" />
                                       </label>
                                     </div>  
                                   </div>
-                                  <fieldset class= "p-0">
+                                  <fieldset class= "p-0 pt-3">
                                     <h5 class="payment-method1 p-0">Payment Method</h5>
-                                    <div class="form__radios col-6 col-md-5 d-flex flex-column gap-1">
+                                    <div class="form__radios d-flex justify-content-evenly">
                                       <div class="form__radio p-1">
                                         <input checked id="visa" name="payment-method" type="radio" />
                                         <label class="ps-2" for="visa">
-                                          <img src="../assets/visa.png" style="width: 20px" alt="payPal Img">
-                                          Visa
+                                          <img src="../assets/visa.png" style="width: 30px" alt="payPal Img">
+                                          <img src="../assets/master.png" style="width: 30px" alt="payPal Img">
                                         </label>
                                       </div>
                                       <div class="form__radio p-1" style="relative">
                                         <input id="paypal" name="payment-method" type="radio" />
                                         <label class="ps-2" for="paypal">
-                                          <img src="../assets/payPal.png" style="width: 20px" alt="payPal Img">
-                                          PayPal
-                                        </label>
-                                      </div>
-                              
-                                      <div class="form__radio p-1">
-                                        <input id="mastercard" name="payment-method" type="radio" />
-                                        <label class="ps-2" for="mastercard">
-                                          <img src="../assets/master.png" style="width: 20px" alt="payPal Img">
-                                          Master card
+                                          <img src="../assets/payPal.png" style="width: 30px" alt="payPal Img">
                                         </label>
                                       </div>
 
                                       <div class="form__radio p-1">
                                         <input id="cash" name="payment-method" type="radio" />
                                         <label class="ps-2" for="cash">
-                                          <img src="../assets/cash.png" style="width: 20px" alt="payPal Img">
-                                          cash
+                                          <img src="../assets/cash.png" style="width: 30px" alt="payPal Img">
                                         </label>
                                       </div>
                                     </div>
                                   </fieldset>
-                                  <div class="cardPayment">
-                                    
+                                  <div class="payBlock">
                                   </div>
                                   <div class="btn1">
                                     <button id="conf-btn1" class="button button--full"  type="button"  data-bs-dismiss="modal">
@@ -343,11 +332,79 @@ export class Cart {
     itemsCount.innerHTML = `${AllProductcount} items`;
   }
 
+  payMethod() {
+    let container = document.querySelector(".payBlock");
+    let options = document.getElementsByName("payment-method");
+    console.log(options);
+    let option = 0;
+    options.forEach((e) => {
+      console.log(e);
+      if (e.checked) {
+        option = e.id;
+        console.log(option);
+      }
+    });
+
+    switch (option) {
+      case "cash":
+        container.style.display = "none";
+        break;
+
+      case "credit":
+        container.style.display = "block";
+        container.insertAdjacentHTML(
+          "afterbegin",
+          `<p class="text-muted">Your card details</p>
+            <div class="fields ">
+              <label class="field my-2">
+                <input class="field__input" type="text" required id="cardNum" placeholder="Number on card " />
+              </label>
+            </div>
+            <div class="fields fields--3">
+              <label class="field">
+                <input class="field__input" type="text" maxlength="2" minlength="2" required id="month" placeholder="MM"/>
+              </label>
+              <label class="field">
+                <input class="field__input" type="text" maxlength="2" minlength="2" required id="year" placeholder="YY"/>
+              </label>
+              <label class="field">
+                <input class="field__input" type="text" maxlength="3" minlength="3" required id="cvv" placeholder="CVV"/>
+              </label>
+            </div>
+          `
+        );
+        break;
+
+      case "payPal":
+        container.style.display = "block";
+        break;
+
+      default:
+        break;
+    }
+  }
+
   togglee() {
-    var popup2 = document.getElementById("conf-pop-up");
-    popup2.classList.toggle("active");
+      var popup2 = document.getElementById("conf-pop-up");
+      popup2.classList.toggle("active");
   }
 }
+
+// class ShippingInfo{
+//   constructor(){
+//     this.payMethod();
+//   }
+
+//   userInfo(){
+//     let fName = document.querySelector(".firstname");
+//     let lName = document.querySelector(".lastname");
+//     let number = document.querySelector(".address");
+//     let address = document.querySelector(".phoneNum");
+//     let city = document.querySelector(".city");
+//     let country = document.querySelector(".country");
+//   }
+// }
+
 
 // document.querySelector(".cartBtn").addEventListener("click", () => {
 //   let cart = new Cart();

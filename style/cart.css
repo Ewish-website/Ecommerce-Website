@@ -59,7 +59,7 @@
     height: 520px !important;
   }
 
-  .cartLargeScreen .shopping-cart{
+  .cartLargeScreen .cart-items-checkout{
     overflow-y: inherit !important;
     height: 500px !important;
   }
