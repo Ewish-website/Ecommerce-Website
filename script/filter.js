@@ -1,9 +1,9 @@
 import { ProductDetails } from "./ProductDetails.js";
 import { User } from "./user.js";
-
+import {productsData} from "../script/fetch_module.js";
 var wantedProducts = []; //array that matched products stored in to be displayed
 var filteredProducts = { category: 0, price: 0, rating: 0 }; //cheked filter features
-let productsData;
+
 
 document.querySelector("#filter").addEventListener("click", function () {
   document.querySelector(".filter-btns").classList.toggle("control-btns");
@@ -238,74 +238,57 @@ function filterProducts(allData, wantedData) {
   }
 }
 
-/***********************************************Fetch Data**********************************************/
-fetch("../script/products.json")
-  .then(function (response) {
-    let jsonData = response.json();
-    //console.log(jsonData);
-    return jsonData;
-  })
-  .then(function (jsonData) {
-    productsData = jsonData.products;
-    appendCards(productsData);
-    return productsData;
-  })
-  .then(function (productsData) {
-    /******************************************Filter Button************************************************ */
-    document
-      .querySelector(".applyFilter")
-      .addEventListener("click", function () {
-        var category = document.getElementsByName("flexRadioDefault1");
-        var rates = document.getElementsByName("stars");
-        var price = document.getElementsByName("flexRadioDefault3");
-        var flag = 0;
-        for (let i = 0; i < category.length && flag == 0; i++) {
-          if (category[i].checked) {
-            filteredProducts["category"] = category[i].value;
-            flag = 1;
-          }
-        }
-        flag = 0;
-        for (let i = 0; i < rates.length && flag == 0; i++) {
-          if (rates[i].checked) {
-            filteredProducts["rating"] = rates[i].value;
-            flag = 1;
-          }
-        }
-        flag = 0;
-        for (let i = 0; i < price.length && flag == 0; i++) {
-          if (price[i].checked) {
-            filteredProducts["price"] = price[i].value;
-            flag = 1;
-          }
-        }
-        resetPage();
-        filterProducts(productsData, filteredProducts);
-      });
-    /*****************************************************All Button************************************************************** */
-    document.querySelector("#all").addEventListener("click", function (e) {
-      var category = document.getElementsByName("flexRadioDefault1");
-      var rates = document.getElementsByName("stars");
-      var price = document.getElementsByName("flexRadioDefault3");
-      for (let i = 0; i < category.length; i++) {
-        category[i].checked = false;
+function applyFilter(){
+  document.querySelector(".applyFilter").addEventListener("click", function () {
+    var category = document.getElementsByName("flexRadioDefault1");
+    var rates = document.getElementsByName("stars");
+    var price = document.getElementsByName("flexRadioDefault3");
+    var flag = 0;
+    for (let i = 0; i < category.length && flag == 0; i++) {
+      if (category[i].checked) {
+        filteredProducts["category"] = category[i].value;
+        flag = 1;
       }
-      for (let i = 0; i < rates.length; i++) {
-        rates[i].checked = false;
+    }
+    flag = 0;
+    for (let i = 0; i < rates.length && flag == 0; i++) {
+      if (rates[i].checked) {
+        filteredProducts["rating"] = rates[i].value;
+        flag = 1;
       }
-      for (let i = 0; i < price.length; i++) {
-        price[i].checked = false;
+    }
+    flag = 0;
+    for (let i = 0; i < price.length && flag == 0; i++) {
+      if (price[i].checked) {
+        filteredProducts["price"] = price[i].value;
+        flag = 1;
       }
-      resetPage();
-      appendCards(productsData);
-    });
-    cardEventListner();
-  })
-  .catch(function (err) {
-    console.log("error: " + err);
+    }
+    resetPage();
+    filterProducts(productsData, filteredProducts);
   });
+}
 
-/***********************************************************connect to product details******************************************************************** */
+function getAllProducts(){
+  document.querySelector("#all").addEventListener("click", function (e) {
+    var category = document.getElementsByName("flexRadioDefault1");
+    var rates = document.getElementsByName("stars");
+    var price = document.getElementsByName("flexRadioDefault3");
+    for (let i = 0; i < category.length; i++) {
+      category[i].checked = false;
+    }
+    for (let i = 0; i < rates.length; i++) {
+      rates[i].checked = false;
+    }
+    for (let i = 0; i < price.length; i++) {
+      price[i].checked = false;
+    }
+    resetPage();
+    appendCards(productsData);
+  });
+}
+
+
 function SearchForProduct(ClickedId) {
   let clickedProduct;
   productsData.forEach((product) => {
@@ -347,3 +330,5 @@ function cardEventListner() {
     });
   }
 }
+
+export {appendCards,applyFilter,getAllProducts,cardEventListner};
