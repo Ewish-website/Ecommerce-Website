@@ -336,36 +336,15 @@ export class Cart {
     itemsCount.innerHTML = `${AllProductcount} items`;
   }
 
-  payMethod() {
-    let container = document.querySelector(".payBlock");
-    let options = document.getElementsByName("payment-method");
-    console.log(options);
-    let option = 0;
-    options.forEach((e) => {
-      console.log(e);
-      if (e.checked) {
-        option = e.id;
-        console.log(option);
-      }
-    });
-
-    switch (option) {
-      case "cash":
-        container.style.display = "none";
-        break;
-
-      case "credit":
-        container.style.display = "block";
-        container.insertAdjacentHTML(
-          "afterbegin",
-          `
+  payCard(img, name){
+    let card = `
             <div class="paymentCard col-12 col-sm-11 col-md-10 mx-auto">
               <div class="card-inner">
                   <div class="front">
                       <img src="../assets/map.png" class="map-img" alt="map">
                       <div class="cardRow">
                           <img src="../assets/chip.png" style="width: 45px; height: 40px;" alt="chip">
-                          <img src="../assets/visaName.png" style="width: 80px;" alt="visaName">
+                          <img src="${img}" style="width: 80px;" alt="${name}">
                       </div>
                       <div class="cardRow card-no">
                           <input type="text" name="numOnCard" id="numOnCard" maxlength="16" placeholder="enter your card number">
@@ -396,12 +375,47 @@ export class Cart {
                           <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. d quam. Molestiae voluptatem itaque.</p>
                       </div>
                       <div class="cardRow signature">
-                          <img src="../assets/visaName.png" style="width: 70px;" alt="visaName">
+                          <img src="${img}" style="width: 70px;" alt="${name}">
                       </div>
                   </div>
               </div>
             </div>
-          `
+          `;
+    return card;
+  }
+
+  payMethod() {
+    let container = document.querySelector(".payBlock");
+    let options = document.getElementsByName("payment-method");
+    console.log(options);
+    let option = 0;
+    options.forEach((e) => {
+      console.log(e);
+      if (e.checked) {
+        option = e.id;
+        console.log(option);
+      }
+    });
+
+    switch (option) {
+      case "cash":
+        container.style.display = "none";
+
+        break;
+
+      case "visa":
+        container.style.display = "block";
+        container.insertAdjacentHTML(
+          "afterbegin",
+          this.payCard("../assets/visaLogo.png", "visa")
+        );
+        break;
+
+      case "master":
+        container.style.display = "block";
+        container.insertAdjacentHTML(
+          "afterbegin",
+          this.payCard("../assets/MasterLogo.png", "master")
         );
         break;
 
