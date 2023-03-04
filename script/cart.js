@@ -222,6 +222,7 @@ export class Cart {
 
     this.#checkoutBtn.addEventListener("click", () => {
       if (this.#userList.cartList.length > 0) {
+        this.payMethod();
         this.#cartItems.classList.toggle("d-none");
         checkoutFormElm.classList.toggle("d-none");
         document.querySelector(".cart-heading").classList.toggle("d-none");
@@ -337,17 +338,22 @@ export class Cart {
   }
 
   payMethod() {
+    var option = 0;
     let container = document.querySelector(".payBlock");
     let options = document.getElementsByName("payment-method");
-    console.log(options);
-    let option = 0;
-    options.forEach((e) => {
-      console.log(e);
-      if (e.checked) {
-        option = e.id;
-        console.log(option);
-      }
-    });
+
+      options.forEach((element) => {
+        element.addEventListener('change', function () {
+          if (element.checked) {
+            option = element.id;
+            console.log(element.id);
+          } 
+
+        })
+
+  
+      });
+
 
     switch (option) {
       case "cash":
