@@ -132,6 +132,7 @@
     width: 35px;
     height: 100%;
     margin: 0;
+    color: black;
 }
 
 .paymentCard .back #cvv::placeholder{
