@@ -237,7 +237,7 @@ function filterProducts(allData, wantedData) {
   }
 }
 
-function applyFilter(productsData) {
+function applyFilter(products) {
   document.querySelector(".applyFilter").addEventListener("click", function () {
     var category = document.getElementsByName("flexRadioDefault1");
     var rates = document.getElementsByName("stars");
@@ -264,11 +264,11 @@ function applyFilter(productsData) {
       }
     }
     resetPage();
-    filterProducts(productsData, filteredProducts);
+    filterProducts(products, filteredProducts);
   });
 }
 
-function getAllProducts(productsData) {
+function getAllProducts(products) {
   document.querySelector("#all").addEventListener("click", function (e) {
     var category = document.getElementsByName("flexRadioDefault1");
     var rates = document.getElementsByName("stars");
@@ -283,7 +283,7 @@ function getAllProducts(productsData) {
       price[i].checked = false;
     }
     resetPage();
-    appendCards(productsData);
+    appendCards(products);
   });
 }
 

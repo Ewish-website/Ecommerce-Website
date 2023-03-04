@@ -1,18 +1,20 @@
-import { ProductDetails } from "./ProductDetails.js";
+/*import { ProductDetails } from "./ProductDetails.js";
 import { User } from "./user.js";
 
 let productsData;
-
-function appendCards(products) {
+*/
+function appendCardsBestSellers(products) {
+  console.log(products);
+  let count = 0;
   var productsContainer = document.querySelector(".product");
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < products.length && count != 8; i += 2) {
     var item = document.createElement("div");
     productsContainer.appendChild(item);
     item.classList.add("col-12", "col-md-4", "col-lg-3", "item", "my-2");
 
     var card = document.createElement("div");
     item.appendChild(card);
-    card.classList.add("card", "box-shadow", "my-5", "px-5","py-2");
+    card.classList.add("card", "box-shadow", "my-5", "px-5", "py-2");
     /*
       var detailsLink = document.createElement('a')
       detailsLink.href = "_blank";
@@ -54,7 +56,7 @@ function appendCards(products) {
     var ratings = document.createElement("span");
     cardBody.appendChild(ratings);
     ratings.classList.add("rates");
-    ratings.style.fontSize="0.8rem";
+    ratings.style.fontSize = "0.8rem";
 
     for (let j = 0; j < 5; j++) {
       var star = document.createElement("i");
@@ -95,64 +97,8 @@ function appendCards(products) {
     var cart = document.createElement("i");
     cartButton.appendChild(cart);
     cart.classList.add("bi", "bi-cart-plus", "d-block", "w-100", "cart");
+    count++;
   }
 }
 
-/***********************************************Fetch Data**********************************************/
-fetch("../script/products.json")
-  .then(function (response) {
-    let jsonData = response.json();
-    console.log(jsonData);
-    return jsonData;
-  })
-  .then(function (jsonData) {
-    productsData = jsonData.products;
-    appendCards(productsData);
-    cardEventListner();
-  })
-  .catch(function (err) {
-    console.log("error: " + err);
-  });
-
-/***********************************************************connect to product details******************************************************************** */
-function SearchForProduct(ClickedId) {
-  let clickedProduct;
-  productsData.forEach((product) => {
-    if (product.id == ClickedId) {
-      clickedProduct = product;
-    }
-  });
-  return clickedProduct;
-}
-
-function cardEventListner() {
-  let productsContainer = document.querySelector(".product");
-  if (productsContainer) {
-    productsContainer.addEventListener("click", (e) => {
-      if (e.target.classList.contains("card-img-top")) {
-        let imageSource = e.target.src.split('/');
-        let ClickedId = imageSource[imageSource.length - 2]
-        let clickedProduct = SearchForProduct(ClickedId);
-        let product = new ProductDetails(clickedProduct);
-        
-      }else if(e.target.classList.contains("cart")){
-        let imageSource = e.target.closest(".card").firstChild.src.split("/");
-        let ClickedId = imageSource[imageSource.length - 2];
-        let clickedProduct = SearchForProduct(ClickedId);
-        let item = {
-            id: clickedProduct.id,
-            title: clickedProduct.title,
-            images: clickedProduct.images,
-            category: clickedProduct.category,
-            price: clickedProduct.price,
-            quantity: 1,
-        };
-        if (clickedProduct.stock > 0) {
-          let user = new User();
-          let loggedInUser = user.isUserLoggedIn();
-          if (loggedInUser) user.AddToCart(item);
-        }
-      }
-    });
-  }
-}
+export { appendCardsBestSellers };

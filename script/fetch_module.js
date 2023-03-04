@@ -5,6 +5,11 @@ import {
   cardEventListner,
 } from "../script/filter.js";
 
+import {
+    appendCardsBestSellers
+} from "../script/productHome.js"
+
+
 var productsData; //All data in the json file
 fetch("../script/products.json")
   .then(function (response) {
@@ -15,6 +20,7 @@ fetch("../script/products.json")
   .then(function (jsonData) {
     productsData = jsonData.products;
     appendCards(productsData);
+    appendCardsBestSellers(productsData);
     return productsData;
   })
   .then(function (productsData) {
