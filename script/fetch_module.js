@@ -1,5 +1,11 @@
-import {appendCards,applyFilter,getAllProducts,cardEventListner} from '../script/filter.js';
-var productsData;
+import {
+  appendCards,
+  applyFilter,
+  getAllProducts,
+  cardEventListner,
+} from "../script/filter.js";
+
+var productsData; //All data in the json file
 fetch("../script/products.json")
   .then(function (response) {
     let jsonData = response.json();
@@ -12,14 +18,15 @@ fetch("../script/products.json")
     return productsData;
   })
   .then(function (productsData) {
-    /******************************************Filter Button************************************************ */
+    /****************Filter Button***************** */
     applyFilter();
-    /*****************************************************All Button************************************************************** */
+    /**********All Button******* ***************** */
     getAllProducts();
+    /*************Products Cart******************************* */
     cardEventListner();
   })
   .catch(function (err) {
     console.log("error: " + err);
   });
 
-  export {productsData};
+export { productsData };
