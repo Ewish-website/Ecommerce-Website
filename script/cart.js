@@ -267,12 +267,16 @@ export class Cart {
   }
 
   RemoveItem(e) {
+    const cartNotificationBox = document.querySelector("#cartCount");
+    const cartNotification = document.querySelector("#cartCount #number");
     let child = e.target.closest(".item");
     this.user.DeleteFromCart(this.#userList, child.id);
     this.#cartItems.removeChild(child);
     this.displayPrice();
+    cartNotification.innerText = this.user.ItemsCount();
     if (this.#userList.cartList.length == 0) {
       document.querySelector(".emptyCart").classList.remove("d-none");
+      cartNotificationBox.style.display = "none";
     }
     this.displayPrice();
   }
