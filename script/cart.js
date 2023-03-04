@@ -331,13 +331,62 @@ export class Cart {
     discountValue *= -productPrice;
     discount.innerHTML = `${"$ " + discountValue.toFixed(2)}`;
     Shipping.innerHTML = `${"$ " + ShippingPrice.toFixed(2)}`;
-    total.innerHTML = ` ${
-      "$ " + (productPrice + discountValue + ShippingPrice).toFixed(2)
-    }`;
+    total.innerHTML = ` ${"$ " + (productPrice + discountValue + ShippingPrice).toFixed(2)
+      }`;
     itemsCount.innerHTML = `${AllProductcount} items`;
   }
 
-  payCard(img, name){
+
+
+  payMethod() {
+    let options = document.getElementsByName("payment-method");
+    console.log(options);
+    let option = 0;
+    let that = this;
+
+    options.forEach((element) => {
+
+      element.addEventListener('change', function () {
+        if (element.checked) {
+          option = element.id;
+          that.checkOption(option);
+        }
+      })
+      
+    });
+  }
+
+  checkOption(option) {
+    let container = document.querySelector(".payBlock");
+
+    switch (option) {
+      case "cash":
+        container.style.display = "none";
+        break;
+
+      case "visa":
+        container.style.display = "block";
+        container.innerHTML = this.payCard("../assets/visaLogo.png", "visa")
+
+        break;
+
+      case "master":
+        container.style.display = "block";
+        container.innerHTML = this.payCard("../assets/MasterLogo.png", "master")
+
+        break;
+
+      case "payPal":
+        container.style.display = "block";
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  payCard(img, name, pattern) {
+    console.log("in paycard");
     let card = `
             <div class="paymentCard col-12 col-sm-11 col-md-10 mx-auto">
               <div class="card-inner">
@@ -345,10 +394,10 @@ export class Cart {
                       <img src="../assets/map.png" class="map-img" alt="map">
                       <div class="cardRow">
                           <img src="../assets/chip.png" style="width: 45px; height: 40px;" alt="chip">
-                          <img src="${img}" style="width: 80px;" alt="${name}">
+                          <img src=${img} style="width: 80px;" alt=${name}>
                       </div>
                       <div class="cardRow card-no">
-                          <input type="text" name="numOnCard" id="numOnCard" maxlength="16" placeholder="enter your card number">
+                          <input type="text" name="numOnCard" id="numOnCard" maxlength="16" pattern=${pattern} placeholder="enter your card number">
                       </div>
                       <div class="cardRow-2">
                           <div class="cardRow card-holder">
@@ -376,7 +425,7 @@ export class Cart {
                           <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. d quam. Molestiae voluptatem itaque.</p>
                       </div>
                       <div class="cardRow signature">
-                          <img src="${img}" style="width: 70px;" alt="${name}">
+                          <img src=${img} style="width: 70px;" alt=${name}>
                       </div>
                   </div>
               </div>
@@ -384,55 +433,12 @@ export class Cart {
           `;
     return card;
   }
-
-  payMethod() {
-    let container = document.querySelector(".payBlock");
-    let options = document.getElementsByName("payment-method");
-    console.log(options);
-    let option = 0;
-    options.forEach((e) => {
-      console.log(e);
-      if (e.checked) {
-        option = e.id;
-        console.log(option);
-      }
-    });
-
-    switch (option) {
-      case "cash":
-        container.style.display = "none";
-
-        break;
-
-      case "visa":
-        container.style.display = "block";
-        container.insertAdjacentHTML(
-          "afterbegin",
-          this.payCard("../assets/visaLogo.png", "visa")
-        );
-        break;
-
-      case "master":
-        container.style.display = "block";
-        container.insertAdjacentHTML(
-          "afterbegin",
-          this.payCard("../assets/MasterLogo.png", "master")
-        );
-        break;
-
-      case "payPal":
-        container.style.display = "block";
-        break;
-
-      default:
-        break;
-    }
-  }
-
   togglee() {
-      var popup2 = document.getElementById("conf-pop-up");
-      popup2.classList.toggle("active");
+    var popup2 = document.getElementById("conf-pop-up");
+    popup2.classList.toggle("active");
   }
+
+
 }
 
 // class ShippingInfo{
