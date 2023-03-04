@@ -249,7 +249,7 @@ export class Cart {
           <div class="w-100 mb-4 d-flex justify-content-between align-items-center">
             <div class="col-2 p-0">
                 <img
-                    src="${item.images[0]}"
+                    src="${item.image}"
                     class="cart-product-image img-fluid rounded-3" alt="${item.title}">
             </div>
             <div class="col-2 col-lg-3 p-0">
@@ -279,7 +279,7 @@ export class Cart {
     this.displayPrice();
   }
 
-  RemoveItem(e, i) {
+  RemoveItem(e) {
     let child = e.target.closest(".item");
     this.user.DeleteFromCart(this.#userList, child.id);
     this.#cartItems.removeChild(child);

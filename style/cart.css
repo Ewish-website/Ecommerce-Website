@@ -66,6 +66,7 @@
   .cartLargeScreen .cartItems,
   .cartLargeScreen .cartCheckout{
     overflow-y: auto !important;
+    overflow-x:hidden !important;
     height: 390px !important;
   }
 }
