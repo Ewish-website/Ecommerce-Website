@@ -122,7 +122,7 @@
 }
 
 .card{
-  border:0.01px solid var(--primary-color);
+  border:0.01px solid rgb(217, 217, 217);
 }
 
 .card:hover svg {
