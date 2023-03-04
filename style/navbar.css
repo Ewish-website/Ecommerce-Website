@@ -34,7 +34,7 @@ nav {
   display: none;
   z-index: 99 !important;
   position: fixed;
-  opacity: 0.8;
+  opacity: 0.9;
   right: 17rem;
 
 
@@ -67,12 +67,12 @@ nav {
   width: 100%;
   height: 0;
   border-radius: 50%;
-  background-color: #7393A7;
+  background-color: rgb(61, 61, 61);
   position: absolute;
   bottom: 135%;
   right: 0;
   left: 0;
-  opacity: 0.9;
+  opacity: 0.95;
   transform: scale(3);
   transition: all 0.3s linear 0s;
 }
@@ -86,7 +86,7 @@ nav {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #7393A7;
+  background-color: rgb(81, 81, 81);
   position: absolute;
   top: 0;
   left: 0;
@@ -99,6 +99,7 @@ nav {
   border-radius: 50%;
   transform: scale(1);
   transition: all 0.9s ease 0s;
+ 
 }
 
 .our-user:hover .user-picture img {
@@ -106,10 +107,11 @@ nav {
   transform: scale(0.7);
 }
 
-.our-user .title {
+.user-content p  {
   display: block;
   font-size: 15px;
-  color: #4e5052;
+  color: black;
+  font-weight: 700;
   text-transform: capitalize;
 }
 
@@ -117,7 +119,7 @@ nav {
   width: 100%;
   padding: 0;
   margin: 0;
-  background-color: #7393A7;
+  background-color: rgb(81, 81, 81);
   position: absolute;
   bottom: -100px;
   left: 0;
@@ -163,7 +165,7 @@ nav {
 #cartCount p{
   font-size: 15px;
   font-weight: 800;
-  color: black;
+  color: rgb(27, 27, 27);
 }
 
 @media (max-width: 990px) {
