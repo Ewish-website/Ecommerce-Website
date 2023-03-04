@@ -5,11 +5,12 @@
 }
 
 .paymentCard {
-    /* width: 400px; */
     height: 200px;
     color: #fff;
     cursor: pointer;
     perspective: 1000px;
+    margin: 25px 0;
+    position: relative;
 }
 
 .paymentCard .card-inner {
@@ -18,13 +19,12 @@
     position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
-
 }
 
-.paymentCard .front,.back {
+.paymentCard .front,
+.paymentCard .back {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(45deg, #0045c7, #ff2c7d);
     position: absolute;
     top: 0;
     left: 0;
@@ -36,6 +36,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.visa .front,
+.visa .back{
+    background-image: linear-gradient(45deg, #0045c7, #ff2c7d);
+}
+
+.master .front,
+.master .back{
+    background-image: linear-gradient(45deg, #2b5876, #4e4376);
 }
 
 .paymentCard .cardRow {
@@ -62,6 +72,8 @@
 .paymentCard .back input{
     background-color: transparent;
     border: none;
+    color: white;
+    text-transform: uppercase;
 }
 
 .paymentCard .card-no #numOnCard{
@@ -135,11 +147,17 @@ opacity: 0.8;
 .paymentCard .back{
     transform: rotateY(180deg);
 }
-.paymentCard:hover .card-inner{
-    transform: rotateY(-180deg);
-}
 
 .paymentCard .back .signature{
     margin-left: 80%;
     opacity: 0.5;
+}
+
+.paymentCard .arrow{
+    position: absolute;
+    top: 0;
+    right: -30px;
+    transform: translateY(70px) rotate(45deg);
+    z-index: 50;
+    color: var(--dark-color) !important;
 }

@@ -61,10 +61,10 @@
 
   .cartLargeScreen .cart-items-checkout{
     overflow-y: inherit !important;
-    height: 500px !important;
   }
 
-  .cartLargeScreen .cartItems{
+  .cartLargeScreen .cartItems,
+  .cartLargeScreen .cartCheckout{
     overflow-y: auto !important;
     height: 390px !important;
   }
@@ -98,7 +98,6 @@
   visibility: visible;
   opacity: 1;
   transition: 1s;
-  /* this line  */
   z-index: 10000;
 }
 

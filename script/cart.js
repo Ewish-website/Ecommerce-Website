@@ -86,32 +86,25 @@ export class Cart {
                                       </label>
                                     </div>  
                                   </div>
-                                  <fieldset class= "p-0 pt-3">
+                                  <fieldset class= "p-0 pt-4">
                                     <h5 class="payment-method1 p-0">Payment Method</h5>
                                     <div class="form__radios d-flex justify-content-evenly">
                                       <div class="form__radio p-1">
-                                        <input checked id="visa" name="payment-method" type="radio" />
+                                        <input id="cash" name="payment-method" type="radio" checked/>
+                                        <label class="ps-2" for="cash">
+                                          <img src="../assets/cash.png" style="width: 30px" alt="payPal Img">
+                                        </label>
+                                      </div>
+                                      <div class="form__radio p-1">
+                                        <input id="visa" name="payment-method" type="radio" />
                                         <label class="ps-2" for="visa">
                                           <img src="../assets/visa.png" style="width: 30px" alt="VISA">
                                         </label>
                                       </div>
                                       <div class="form__radio p-1">
-                                        <input checked id="master" name="payment-method" type="radio" />
+                                        <input id="master" name="payment-method" type="radio" />
                                         <label class="ps-2" for="master">
                                           <img src="../assets/master.png" style="width: 30px" alt="MASTER">
-                                        </label>
-                                      </div>
-                                      <div class="form__radio p-1" style="relative">
-                                        <input id="paypal" name="payment-method" type="radio" />
-                                        <label class="ps-2" for="paypal">
-                                          <img src="../assets/payPal.png" style="width: 30px" alt="payPal Img">
-                                        </label>
-                                      </div>
-
-                                      <div class="form__radio p-1">
-                                        <input id="cash" name="payment-method" type="radio" />
-                                        <label class="ps-2" for="cash">
-                                          <img src="../assets/cash.png" style="width: 30px" alt="payPal Img">
                                         </label>
                                       </div>
                                     </div>
@@ -222,6 +215,7 @@ export class Cart {
 
     this.#checkoutBtn.addEventListener("click", () => {
       if (this.#userList.cartList.length > 0) {
+        this.payMethod();
         this.#cartItems.classList.toggle("d-none");
         checkoutFormElm.classList.toggle("d-none");
         document.querySelector(".cart-heading").classList.toggle("d-none");
@@ -256,10 +250,8 @@ export class Cart {
                 <button class="minusbtn btn btn-link p-0 pe-2">
                     <i class="bi bi-dash fs-5"></i>
                 </button>
-
                 <input id="form1" min="0" name="quantity" value="${item.quantity}" type="number"
                     class="quantityBtn form-control form-control-sm" />
-
                 <button class="plusbtn btn btn-link p-0 ps-2">
                     <i class="bi bi-plus fs-5"></i>
                 </button>
@@ -336,18 +328,75 @@ export class Cart {
     itemsCount.innerHTML = `${AllProductcount} items`;
   }
 
-  payCard(img, name){
+  payMethod() {
+    let options = document.getElementsByName("payment-method");
+    let option = 0;
+    let that = this;
+
+    options.forEach((element) => {
+      element.addEventListener("change", function () {
+        if (element.checked) {
+          option = element.id;
+          that.checkOption(option);
+        }
+      });
+    });
+  }
+
+  checkOption(option) {
+    let container = document.querySelector(".payBlock");
+
+    switch (option) {
+      case "cash":
+        container.style.display = "none";
+        break;
+
+      case "visa":
+        container.style.display = "block";
+        container.innerHTML = this.payCard("../assets/visaLogo.png", "visa");
+        break;
+
+      case "master":
+        container.style.display = "block";
+        container.innerHTML = this.payCard(
+          "../assets/MasterLogo.png",
+          "master"
+        );
+        break;
+
+      case "payPal":
+        container.style.display = "block";
+        break;
+
+      default:
+        break;
+    }
+
+    if (option == "visa" || option == "master") {
+      let arrowBtn = document.querySelector(".arrow");
+      let front = document.querySelector(".paymentCard .card-inner");
+      arrowBtn.addEventListener("click", () => {
+        if (front.style.transform == "rotateY(0deg)") {
+          front.style.transform = "rotateY(180deg)";
+        } else {
+          front.style.transform = "rotateY(0deg)";
+        }
+      });
+    }
+  }
+
+  payCard(img, name, pattern) {
     let card = `
-            <div class="paymentCard col-12 col-sm-11 col-md-10 mx-auto">
-              <div class="card-inner">
+            <div class="paymentCard ${name} col-12 col-sm-11 col-md-10 mx-auto">
+              <div class="card-inner" style="transform: rotateY(0deg);" >
                   <div class="front">
                       <img src="../assets/map.png" class="map-img" alt="map">
                       <div class="cardRow">
                           <img src="../assets/chip.png" style="width: 45px; height: 40px;" alt="chip">
-                          <img src="${img}" style="width: 80px;" alt="${name}">
+                          <img src=${img} style="width: 80px;" alt=${name}>
                       </div>
                       <div class="cardRow card-no">
-                          <input type="text" name="numOnCard" id="numOnCard" maxlength="16" placeholder="enter your card number">
+                          <input type="text" name="numOnCard" id="numOnCard" maxlength="16" pattern=${pattern} placeholder="enter your card number">
                       </div>
                       <div class="cardRow-2">
                           <div class="cardRow card-holder">
@@ -375,61 +424,17 @@ export class Cart {
                           <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. d quam. Molestiae voluptatem itaque.</p>
                       </div>
                       <div class="cardRow signature">
-                          <img src="${img}" style="width: 70px;" alt="${name}">
+                          <img src=${img} style="width: 70px;" alt=${name}>
                       </div>
                   </div>
               </div>
+              <i class="bi bi-arrow-90deg-left arrow fs-2"></i>
             </div>
           `;
     return card;
   }
-
-  payMethod() {
-    let container = document.querySelector(".payBlock");
-    let options = document.getElementsByName("payment-method");
-    console.log(options);
-    let option = 0;
-    options.forEach((e) => {
-      console.log(e);
-      if (e.checked) {
-        option = e.id;
-        console.log(option);
-      }
-    });
-
-    switch (option) {
-      case "cash":
-        container.style.display = "none";
-
-        break;
-
-      case "visa":
-        container.style.display = "block";
-        container.insertAdjacentHTML(
-          "afterbegin",
-          this.payCard("../assets/visaLogo.png", "visa")
-        );
-        break;
-
-      case "master":
-        container.style.display = "block";
-        container.insertAdjacentHTML(
-          "afterbegin",
-          this.payCard("../assets/MasterLogo.png", "master")
-        );
-        break;
-
-      case "payPal":
-        container.style.display = "block";
-        break;
-
-      default:
-        break;
-    }
-  }
-
   togglee() {
-      var popup2 = document.getElementById("conf-pop-up");
-      popup2.classList.toggle("active");
+    var popup2 = document.getElementById("conf-pop-up");
+    popup2.classList.toggle("active");
   }
 }
