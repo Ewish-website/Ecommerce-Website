@@ -14,7 +14,11 @@
   * Rating
 * Logged in user can add to cart
 * Logged in user can review his cart and add or remove items easily
+* Notifications when adding to cart
 * Checkout page
+  * using credit card
+  * using master card
+  * using cash
 * Contact us page for feedbacks
 ## Collaborators
 * [Nada Saeed](https://github.com/Nada98Sakr)
