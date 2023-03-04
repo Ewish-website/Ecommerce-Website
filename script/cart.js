@@ -55,34 +55,34 @@ export class Cart {
                               </div>
                             </div>
                             <div class="cartCheckout checkout-from iphone h-100 w-100 d-none py-2">
-                              <form action="https://httpbin.org/post" class="form" method="POST">
+                              <form class="form">
                                   <div class="addressBlock">
                                     <div class="fields fields--2">
                                       <label class="field">
                                         <span class="field__label" for="firstname">First name</span>
-                                        <input class="field__input" type="text" required id="firstname"/>
+                                        <input class="field__input" type="text" id="firstname" required/>
                                       </label>
                                       <label class="field">
                                         <span class="field__label" for="lastname">Last name</span>
-                                        <input class="field__input" type="text" required id="lastname"/>
+                                        <input class="field__input" type="text" id="lastname" required/>
                                       </label>
                                     </div>
                                     <label class="field my-2">
                                       <span class="field__label" for="address">Address</span>
-                                      <input class="field__input" type="text" required id="address" />
+                                      <input class="field__input" type="text" id="address" required/>
                                     </label>
                                     <div class="fields fields--3">
                                       <label class="field">
                                         <span class="field__label" for="phoneNum">phone number</span>
-                                        <input class="field__input" type="text" required id="phoneNum" />
+                                        <input class="field__input" type="text" id="phoneNum" required/>
                                       </label>
                                       <label class="field">
                                         <span class="field__label" for="city">City</span>
-                                        <input class="field__input" type="text" required id="city" />
+                                        <input class="field__input" type="text" id="city" required/>
                                       </label>
                                       <label class="field">
                                         <span class="field__label" for="country">country</span>
-                                        <input class="field__input" type="text" required id="country" />
+                                        <input class="field__input" type="text" id="country" required />
                                       </label>
                                     </div>  
                                   </div>
@@ -111,8 +111,8 @@ export class Cart {
                                   </fieldset>
                                   <div class="payBlock"></div>
                                   <div class="btn1">
-                                    <button id="conf-btn1" class="button button--full"  type="button"  data-bs-dismiss="modal">
-                                      Confirm
+                                    <button id="conf-btn1" class="button button--full"  type="submit">
+                                    submit
                                     </button>
                                   </div>
                                 </form>
@@ -187,7 +187,9 @@ export class Cart {
     this.#promoButtom = document.querySelector(".prompCodeBtn");
     this.#checkoutBtn = document.querySelector(".checkoutBtn");
     const checkoutFormElm = document.querySelector(".checkout-from");
-    const confBtm = document.querySelector("#conf-btn1");
+    const submitForm = document.querySelector(".checkout-from form");
+    console.log(submitForm);
+    const confBtn = document.querySelector("#conf-btn1");
 
     this.#QuantityContainer.forEach((container, i) => {
       container.addEventListener("change", (e) => {
@@ -223,13 +225,16 @@ export class Cart {
       }
     });
 
-    confBtm.addEventListener("click", () => {
-      this.togglee();
-    });
+    // confBtm.addEventListener("click", (e) => {
+    //   //validation
+    //   e.preventDefault()
+    //   console.log("hi");
+    //   this.togglee();
+    // });
 
-    document.querySelector("#conf-btn").addEventListener("click", () => {
-      this.togglee();
-    });
+    submitForm.addEventListener("submit", function () {
+  console.log("in submit");
+})
   }
 
   AddItem(item) {
@@ -339,7 +344,7 @@ export class Cart {
           option = element.id;
           that.checkOption(option);
         }
-      });
+      })
     });
   }
 
@@ -353,15 +358,12 @@ export class Cart {
 
       case "visa":
         container.style.display = "block";
-        container.innerHTML = this.payCard("../assets/visaLogo.png", "visa");
+        container.innerHTML = this.payCard("../assets/visaLogo.png", "visa", "^4[0-9]{12}(?:[0-9]{3})?$")
         break;
 
       case "master":
         container.style.display = "block";
-        container.innerHTML = this.payCard(
-          "../assets/MasterLogo.png",
-          "master"
-        );
+        container.innerHTML = this.payCard("../assets/MasterLogo.png", "master", "^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$")
         break;
 
       case "payPal":
@@ -396,7 +398,7 @@ export class Cart {
                           <img src=${img} style="width: 80px;" alt=${name}>
                       </div>
                       <div class="cardRow card-no">
-                          <input type="text" name="numOnCard" id="numOnCard" maxlength="16" pattern=${pattern} placeholder="enter your card number">
+                          <input type="text" name="numOnCard" id="numOnCard" maxlength="16" pattern=${pattern} placeholder="enter your card number" required>
                       </div>
                       <div class="cardRow-2">
                           <div class="cardRow card-holder">
@@ -404,11 +406,11 @@ export class Cart {
                               <p class="m-0">VALID TILL</p>
                           </div>
                           <div class="cardRow name">
-                              <input type="text" name="NameOnCard" id="nameOnCard" placeholder="Name on card">
+                              <input type="text" name="NameOnCard" id="nameOnCard" placeholder="Name on card" required/>
                               <div class="expDate">
-                                  <input type="text" name="cardMonth" maxlength="2" placeholder="MM" id="month">
+                                  <input type="text" name="cardMonth" maxlength="2" placeholder="MM" id="month" required/>
                                   <p class="my-auto"> / </p>
-                                  <input type="text" name="cardYear" maxlength="2" placeholder="YY" id="year">
+                                  <input type="text" name="cardYear" maxlength="2" placeholder="YY" id="year" required/>
                               </div>
                           </div>
                       </div>
@@ -418,7 +420,7 @@ export class Cart {
                       <div class="bar"></div>
                           <div class="cardRow card-cvv">
                               <img src="../assets/pattern.png" alt="">
-                              <input type="text" name="cardCVV" maxlength="3" placeholder="CVV" id="cvv">
+                              <input type="text" name="cardCVV" maxlength="3" placeholder="CVV" id="cvv" required> 
                           </div>
                       <div class="cardRow card-text">
                           <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. d quam. Molestiae voluptatem itaque.</p>
@@ -433,8 +435,30 @@ export class Cart {
           `;
     return card;
   }
+  
   togglee() {
     var popup2 = document.getElementById("conf-pop-up");
     popup2.classList.toggle("active");
   }
+
+  validatePaymentInfo() {
+    var cardNum = document.querySelectorAll(".cardRow input");
+    var form__radios  = document.querySelectorAll(".form__radios  input")
+    console.log(cardNum, addressBlock);
+    let flag = true;
+    for (let i = 0; i < cardNum.length; i++) {
+      if (cardNum[i].value == 0 || cardNum[i].value == undefined || addressBlock[i].value == null) {
+        flag = false;
+      }
+    }
+
+    for (let i = 0; i < form__radios.length; i++) {
+      if (form__radios[i].value == 0 || form__radios[i].value == undefined || form__radios[i].value == null) {
+        flag = false;
+      }
+    }
+    return flag;
+  }
+
+
 }
