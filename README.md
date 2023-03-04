@@ -16,5 +16,11 @@
 * Logged in user can review his cart and add or remove items easily
 * Checkout page
 * Contact us page for feedbacks
+## Collaborators
+* @Nada98Sakr
+* @RadwaHassan99
+* @MariamSMoustafa
+* @Esraamohamed0
+* @radwanabil
 
 
