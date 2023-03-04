@@ -60,11 +60,11 @@ export class Cart {
                                     <div class="fields fields--2">
                                       <label class="field">
                                         <span class="field__label" for="firstname">First name</span>
-                                        <input class="field__input" type="text" id="firstname" required/>
+                                        <input class="field__input" type="text" pattern="[A-Za-z ]{1,}" id="firstname" required/>
                                       </label>
                                       <label class="field">
                                         <span class="field__label" for="lastname">Last name</span>
-                                        <input class="field__input" type="text" id="lastname" required/>
+                                        <input class="field__input" type="text" pattern="[A-Za-z ]{1,}" id="lastname" required/>
                                       </label>
                                     </div>
                                     <label class="field my-2">
@@ -74,15 +74,15 @@ export class Cart {
                                     <div class="fields fields--3">
                                       <label class="field">
                                         <span class="field__label" for="phoneNum">phone number</span>
-                                        <input class="field__input" type="text" id="phoneNum" required/>
+                                        <input class="field__input" type="text" pattern="[0-9]{11}" id="phoneNum" maxlength="11" required/>
                                       </label>
                                       <label class="field">
                                         <span class="field__label" for="city">City</span>
-                                        <input class="field__input" type="text" id="city" required/>
+                                        <input class="field__input" type="text" pattern="[A-Za-z ]{1,}" id="city" required/>
                                       </label>
                                       <label class="field">
                                         <span class="field__label" for="country">country</span>
-                                        <input class="field__input" type="text" id="country" required />
+                                        <input class="field__input" type="text" pattern="[A-Za-z ]{1,}" id="country" required />
                                       </label>
                                     </div>  
                                   </div>
@@ -188,9 +188,9 @@ export class Cart {
     this.#checkoutBtn = document.querySelector(".checkoutBtn");
     const checkoutFormElm = document.querySelector(".checkout-from");
     const submitForm = document.querySelector(".checkout-from form");
-    console.log(submitForm);
     const confBtn = document.querySelector("#conf-btn1");
-
+    const city = document.querySelector("#city");
+    const country = document.querySelector("#country");
     this.#QuantityContainer.forEach((container, i) => {
       container.addEventListener("change", (e) => {
         this.changeQuantity(e, i);
@@ -224,7 +224,11 @@ export class Cart {
         document.querySelector(".shipping-heading").classList.toggle("d-none");
       }
     });
-
+    city.addEventListener('focusout', function () {
+      if (city.value == "alex" || city.value == "cairo") {
+       country.value = "egypt"
+     }
+   })
     // confBtm.addEventListener("click", (e) => {
     //   //validation
     //   e.preventDefault()
@@ -233,6 +237,7 @@ export class Cart {
     // });
 
     submitForm.addEventListener("submit", function () {
+
   console.log("in submit");
 })
   }
@@ -441,24 +446,11 @@ export class Cart {
     popup2.classList.toggle("active");
   }
 
-  validatePaymentInfo() {
-    var cardNum = document.querySelectorAll(".cardRow input");
-    var form__radios  = document.querySelectorAll(".form__radios  input")
-    console.log(cardNum, addressBlock);
-    let flag = true;
-    for (let i = 0; i < cardNum.length; i++) {
-      if (cardNum[i].value == 0 || cardNum[i].value == undefined || addressBlock[i].value == null) {
-        flag = false;
-      }
-    }
-
-    for (let i = 0; i < form__radios.length; i++) {
-      if (form__radios[i].value == 0 || form__radios[i].value == undefined || form__radios[i].value == null) {
-        flag = false;
-      }
-    }
-    return flag;
-  }
+  // validatePaymentInfo() {
+  //   const city = document.querySelector("#city");
+  //   const country = document.querySelector("#country");
+  //   console.log(city.value,country.value);
+  // }
 
 
 }
