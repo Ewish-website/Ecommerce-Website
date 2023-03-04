@@ -112,6 +112,48 @@ export class Cart {
                                     </div>
                                   </fieldset>
                                   <div class="payBlock">
+                                    <div class="paymentCard">
+              <div class="card-inner">
+                  <div class="front">
+                      <img src="./images/map.png" class="map-img" alt="map">
+                      <div class="row">
+                          <img src="./images/chip.png" width="60px" alt="chip">
+                          <img src="./images/visaName.png" width="80px" alt="visaName">
+                      </div>
+                      <div class="row card-no">
+                          <input type="text" name="numOnCard" id="numOnCard" maxlength="16" placeholder="enter your card number">
+                      </div>
+                      <div class="row-2">
+                          <div class="row card-holder">
+                              <p>CARD HOLDER</p>
+                              <p>VALID TILL</p>
+                          </div>
+                          <div class="row name">
+                              <input type="text" name="NameOnCard" id="nameOnCard" placeholder="Name on card">
+                              <div class="expDate">
+                                  <input type="text" name="cardMonth" maxlength="2" placeholder="MM" id="month">
+                                  <p>/</p>
+                                  <input type="text" name="cardYear" maxlength="2" placeholder="YY" id="year">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="back">
+                      <img src="./images/map.png" class="map-img" alt="map">
+                      <div class="bar"></div>
+                          <div class="row card-cvv">
+                              <img src="./images/pattern.png" alt="">
+                              <input type="text" name="cardCVV" maxlength="3" placeholder="CVV" id="cvv">
+                          </div>
+                      <div class="row card-text">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, eum quasi? Amet doloremque corrupti nesciunt assumenda error magni eum ratione sed quam. Molestiae voluptatem itaque necessitatibus eveniet veniam nulla aliquam.</p>
+                      </div>
+                      <div class="row signature">
+                          <img src="./images/visaName.png" width="80px" alt="visaName">
+                      </div>
+                  </div>
+              </div>
+          </div>
                                   </div>
                                   <div class="btn1">
                                     <button id="conf-btn1" class="button button--full"  type="button"  data-bs-dismiss="modal">
@@ -354,23 +396,49 @@ export class Cart {
         container.style.display = "block";
         container.insertAdjacentHTML(
           "afterbegin",
-          `<p class="text-muted">Your card details</p>
-            <div class="fields ">
-              <label class="field my-2">
-                <input class="field__input" type="text" required id="cardNum" placeholder="Number on card " />
-              </label>
-            </div>
-            <div class="fields fields--3">
-              <label class="field">
-                <input class="field__input" type="text" maxlength="2" minlength="2" required id="month" placeholder="MM"/>
-              </label>
-              <label class="field">
-                <input class="field__input" type="text" maxlength="2" minlength="2" required id="year" placeholder="YY"/>
-              </label>
-              <label class="field">
-                <input class="field__input" type="text" maxlength="3" minlength="3" required id="cvv" placeholder="CVV"/>
-              </label>
-            </div>
+          `
+            <div class="paymentCard">
+              <div class="card-inner">
+                  <div class="front">
+                      <img src="./images/map.png" class="map-img" alt="map">
+                      <div class="row">
+                          <img src="./images/chip.png" width="60px" alt="chip">
+                          <img src="./images/visaName.png" width="80px" alt="visaName">
+                      </div>
+                      <div class="row card-no">
+                          <input type="text" name="numOnCard" id="numOnCard" maxlength="16" placeholder="enter your card number">
+                      </div>
+                      <div class="row-2">
+                          <div class="row card-holder">
+                              <p>CARD HOLDER</p>
+                              <p>VALID TILL</p>
+                          </div>
+                          <div class="row name">
+                              <input type="text" name="NameOnCard" id="nameOnCard" placeholder="Name on card">
+                              <div class="expDate">
+                                  <input type="text" name="cardMonth" maxlength="2" placeholder="MM" id="month">
+                                  <p>/</p>
+                                  <input type="text" name="cardYear" maxlength="2" placeholder="YY" id="year">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="back">
+                      <img src="./images/map.png" class="map-img" alt="map">
+                      <div class="bar"></div>
+                          <div class="row card-cvv">
+                              <img src="./images/pattern.png" alt="">
+                              <input type="text" name="cardCVV" maxlength="3" placeholder="CVV" id="cvv">
+                          </div>
+                      <div class="row card-text">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, eum quasi? Amet doloremque corrupti nesciunt assumenda error magni eum ratione sed quam. Molestiae voluptatem itaque necessitatibus eveniet veniam nulla aliquam.</p>
+                      </div>
+                      <div class="row signature">
+                          <img src="./images/visaName.png" width="80px" alt="visaName">
+                      </div>
+                  </div>
+              </div>
+          </div>
           `
         );
         break;
