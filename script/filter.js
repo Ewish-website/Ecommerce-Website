@@ -1,6 +1,6 @@
 import { ProductDetails } from "./ProductDetails.js";
 import { User } from "./user.js";
-import { productsData } from "../script/fetch_module.js";
+//import { productsData } from "../script/fetch_module.js";
 var wantedProducts = []; //array that matched products stored in to be displayed
 var filteredProducts = { category: 0, price: 0, rating: 0 }; //cheked filter features
 
@@ -126,7 +126,7 @@ function intializeData(allData) {
     price: allPrices,
     rating: allRatings,
   };
-  console.log(filteredProducts);
+  //console.log(filteredProducts);
   return filteredProducts;
 }
 
@@ -237,7 +237,7 @@ function filterProducts(allData, wantedData) {
   }
 }
 
-function applyFilter() {
+function applyFilter(productsData) {
   document.querySelector(".applyFilter").addEventListener("click", function () {
     var category = document.getElementsByName("flexRadioDefault1");
     var rates = document.getElementsByName("stars");
@@ -268,7 +268,7 @@ function applyFilter() {
   });
 }
 
-function getAllProducts() {
+function getAllProducts(productsData) {
   document.querySelector("#all").addEventListener("click", function (e) {
     var category = document.getElementsByName("flexRadioDefault1");
     var rates = document.getElementsByName("stars");

@@ -19,9 +19,9 @@ fetch("../script/products.json")
   })
   .then(function (productsData) {
     /****************Filter Button***************** */
-    applyFilter();
+    applyFilter(productsData);
     /**********All Button******* ***************** */
-    getAllProducts();
+    getAllProducts(productsData);
     /*************Products Cart******************************* */
     cardEventListner();
   })
