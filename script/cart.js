@@ -188,7 +188,6 @@ export class Cart {
     this.#checkoutBtn = document.querySelector(".checkoutBtn");
     const checkoutFormElm = document.querySelector(".checkout-from");
     const submitForm = document.querySelector(".checkout-from form");
-    console.log(submitForm);
     const confBtn = document.querySelector("#conf-btn1");
 
     this.#QuantityContainer.forEach((container, i) => {
@@ -225,16 +224,9 @@ export class Cart {
       }
     });
 
-    // confBtm.addEventListener("click", (e) => {
-    //   //validation
-    //   e.preventDefault()
-    //   console.log("hi");
-    //   this.togglee();
-    // });
-
     submitForm.addEventListener("submit", function () {
-  console.log("in submit");
-})
+      console.log("in submit");
+    })
   }
 
   AddItem(item) {
@@ -244,7 +236,7 @@ export class Cart {
           <div class="w-100 mb-4 d-flex justify-content-between align-items-center">
             <div class="col-2 p-0">
                 <img
-                    src="${item.images[0]}"
+                    src="${item.image}"
                     class="cart-product-image img-fluid rounded-3" alt="${item.title}">
             </div>
             <div class="col-2 col-lg-3 p-0">
@@ -274,7 +266,7 @@ export class Cart {
     this.displayPrice();
   }
 
-  RemoveItem(e, i) {
+  RemoveItem(e) {
     let child = e.target.closest(".item");
     this.user.DeleteFromCart(this.#userList, child.id);
     this.#cartItems.removeChild(child);
@@ -444,7 +436,6 @@ export class Cart {
   validatePaymentInfo() {
     var cardNum = document.querySelectorAll(".cardRow input");
     var form__radios  = document.querySelectorAll(".form__radios  input")
-    console.log(cardNum, addressBlock);
     let flag = true;
     for (let i = 0; i < cardNum.length; i++) {
       if (cardNum[i].value == 0 || cardNum[i].value == undefined || addressBlock[i].value == null) {
