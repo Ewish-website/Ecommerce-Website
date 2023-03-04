@@ -83,7 +83,7 @@ fieldset {
     place-items: center;
   }
   
-  .btn1 button {
+  .btn1 input {
     align-items: center;
     background-color: var(--dark-color);
     border-radius: 999em;
