@@ -5,7 +5,7 @@ export function AddToCart(product, quantity) {
   const cartNotificationBox = document.querySelector("#cartCount");
   const cartNotification = document.querySelector("#cartCount #number");
   let loggedInUser = user.isUserLoggedIn();
-  if (loggedInUser.active) {
+  if (loggedInUser != false) {
     if (product.stock >= quantity) {
       let item = {
         id: product.id,
