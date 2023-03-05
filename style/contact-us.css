@@ -125,10 +125,17 @@
 .contactForm .inputBox input:valid ~ span,
 .contactForm .inputBox textarea:focus ~ span,
 .contactForm .inputBox textarea:valid ~ span{
-  color: rgb(198, 63, 63);
+  color: rgb(156, 86, 86);
   font-size: 12px;
   transform: translate(-20px);
 }
+/* .error-msg{
+  color: red;
+  font-size: small;
+  display: none;
+  
+} */
+
 .contactForm .inputBox #popup-send{
   width: 100px; 
   background-color: var(--dark-color);
@@ -139,34 +146,44 @@
   font-size: 18px;
 }
 #popup{
-  position: fixed;
-  top: 40%;
+  /* position: fixed; */
+  top: 0;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%) scale(0.1);
   width: 350px;
   padding: 50px;
-  box-shadow: 0 5px 30px rg(0, 0, 0,0.30);
+  /* box-shadow: 0 5px 30px rgba(0, 0, 0,0.30); */
   background: white;
   border-radius: 6px;
-  visibility: hidden;
+  /* visibility: hidden; */
   opacity: 0;
-  transition: 0.5s;
+  transition: transform 0.4s, top 0.4s;
   color: var(--dark-color);
   position: absolute;
   box-shadow: 0 4px 8px 0 var(--dark-color), 0 6px 20px 0  var(--dark-color);
   
+}
+.open-popup{
+  /* visibility: visible; */
+  top: 40% !important;
+  transform: translate(-50%,-50%) scale(1) !important;
+  opacity: 1 !important;
+}
+.activee{
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
 }
 #popup h2,
 #popup p{
   text-align: center;
 }
 
-#popup.active{
+/* #popup.active{
   top: 50%;
   visibility: visible;
   opacity: 1;
   transition: 0.5s;
-}
+} */
 #ok-btn{
   width: 70px;
   height: 30px;
@@ -210,6 +227,6 @@
     width: 100%;
   }
   #popup{
-    width: 100%;
+    width: 50%;
   }
 }

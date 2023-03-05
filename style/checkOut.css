@@ -2,23 +2,6 @@
 @import url("reset-min.css");
 @import url("paymentCard.css");
 
-.btn1 button {
-  border: 0;
-  color: inherit;
-  cursor: pointer;
-  font: inherit;
-}
-  
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-  
-.iphone h2 {
-  line-height: 1.2;
-  color: var(--dark-color);
-}
 
 .field {
   width: 100%;
@@ -48,6 +31,7 @@ fieldset {
   appearance: none;
   background-color: transparent;
 }
+
 .field:focus-within {
   border-color: #000;
 }
@@ -72,70 +56,34 @@ fieldset {
 .form__radios input[type="radio"] {
   accent-color: var(--medium-color);
 }
-  
-  table {
-    border-collapse: collapse;
-    inline-size: 100%;
-  }
- 
-  .align {
-    display: grid;
-    place-items: center;
-  }
-  
-  .btn1 input {
-    align-items: center;
-    background-color: var(--dark-color);
-    border-radius: 999em;
-    color: white;
-    display: flex;
-    gap: 0.5em;
-    justify-content: center;
-    padding-block: 0.75em;
-    padding-inline: 1em;
-    transition: 0.3s;
-    font-weight: bold;
-  }
-  
-  .button:focus,
-  .button:hover {
-    background-color:var(--medium-color);
-    color: var(--dark-color);
-  }
-  
-  .button--full {
-    inline-size: 100%;
-  }
-  
-  .form__radio {
-    align-items: center;
-    /* background-color: var(--primary-color); */
-    border-radius: 10px;
-    display: flex;
-    color: var(--dark-color);
-  }
-  
-  .form__radio label {
-    align-items: center;
-    display: flex;
-    flex: 1;
-    gap: 6px; 
-    color: var(--paimary-color);
-  }
-  
-  .iphone .header {
-    display: flex;
-    /* problem is here justify center */
-    justify-content: left;
-    margin-top: -10px;
-    color: var(--dark-color);
-  }
 
-  .payment-method1{
-    color: var(--dark-color);
-  }
+#conf-btn1{
+  color: white;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--dark-color);
+  margin: 20px;
+  border: none;
+}
+  
+.form__radio {
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  color: var(--dark-color);
+}
 
- @media (max-width:991px) {
+.form__radio label {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  gap: 6px; 
+  color: var(--paimary-color);
+}
+
+
+@media (max-width:991px) {
   .conf-pop-up{
     width: 100%;
     flex-direction: column;

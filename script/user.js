@@ -11,7 +11,7 @@ export class User {
     }
 
     isUserLoggedIn() {
-        let loggedInUser;
+        let loggedInUser = false;
         if (this.#users == null) {
             loggedInUser = false;
         } else {

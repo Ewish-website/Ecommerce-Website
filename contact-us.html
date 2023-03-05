@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce contact-us</title>
+    <title>E-Wish contact-us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style/contact-us.css" />
     <link rel="stylesheet" href="style/cart.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -136,8 +137,8 @@
       
     <!--End of Nav-->
    
-    <section class="contact" id="blur">
-        <div class="content-contact-form">
+    <section class="contact" id="blur" >
+        <div class="content-contact-form" >
             <h2 >Contact Us</h2>
             <p >Email us with any question or inquiries or call 999-999-999-9999. We eould be happy to 
                 answer your questions and set up a meeting with you. Black Sheep Web Design can help 
@@ -175,22 +176,22 @@
                 </div>
             </div>
             <div class="contactForm">
-                <form>
+                <form name="custom_form" onsubmit="openPopup(event)" >
                     <h2>Send Message</h2>
-                    <div class="inputBox">
-                        <input type="text-contact-form" name="" required/>
+                    <div class="inputBox" >
+                        <input id="fname" type="text-contact-form" name="" required  />
                         <span>Full Name</span>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="" required/>
+                        <input id="email" type="text" name="" required/>
                         <span>Email</span>
                     </div>
                     <div class="inputBox">
-                        <textarea required="required"></textarea>
+                        <textarea id="msg" required="required"></textarea>
                         <span>Type your Message...</span>
                     </div>
                     <div class="inputBox">
-                        <button id="popup-send" type="button" name="" onclick="toggle()">Send</button>
+                        <button id="popup-send" value="submit" type="submit" name=""  >Send</button>
                     </div>
                 </form>
             </div>
@@ -201,7 +202,7 @@
         <img src="assets/pop-up.png">
         <h2>Thank You!</h2>
         <p>Your Message has been successfully submited.</p>
-        <button id="ok-btn" onclick="toggle()">OK</button>
+        <button id="ok-btn" onclick="closePopup()">OK</button>
     </div>
 
 
