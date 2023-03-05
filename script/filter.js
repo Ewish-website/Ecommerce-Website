@@ -1,6 +1,8 @@
 import { ProductDetails } from "./ProductDetails.js";
-import { User } from "./user.js";
+//import { User } from "./user.js";
 //import { productsData } from "../script/fetch_module.js";
+import { AddToCart } from "./AddToCart.js";
+
 var wantedProducts = []; //array that matched products stored in to be displayed
 var filteredProducts = { category: 0, price: 0, rating: 0 }; //cheked filter features
 
@@ -9,6 +11,7 @@ document.querySelector("#filter").addEventListener("click", function () {
 });
 
 function appendCards(products) {
+  //console.log(products);
   var productsContainer = document.querySelector(".product");
   for (let i = 0; i < products.length; i++) {
     var item = document.createElement("div");
@@ -287,42 +290,32 @@ function getAllProducts(products) {
   });
 }
 
-function SearchForProduct(ClickedId) {
+function SearchForProduct(ClickedId, productsData) {
   let clickedProduct;
-  productsData.forEach((product) => {
-    if (product.id == ClickedId) {
-      clickedProduct = product;
-    }
-  });
+  if (productsData) {
+    productsData.forEach((product) => {
+      if (product.id == ClickedId) {
+        clickedProduct = product;
+      }
+    });
+  }
   return clickedProduct;
 }
 
-function cardEventListner() {
+function cardEventListner(productsData) {
   let productsContainer = document.querySelector(".product");
   if (productsContainer) {
     productsContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("card-img-top")) {
         let imageSource = e.target.src.split("/");
         let ClickedId = imageSource[imageSource.length - 2];
-        let clickedProduct = SearchForProduct(ClickedId);
+        let clickedProduct = SearchForProduct(ClickedId, productsData);
         let product = new ProductDetails(clickedProduct);
       } else if (e.target.classList.contains("cart")) {
         let imageSource = e.target.closest(".card").firstChild.src.split("/");
         let ClickedId = imageSource[imageSource.length - 2];
         let clickedProduct = SearchForProduct(ClickedId);
-        let item = {
-          id: clickedProduct.id,
-          title: clickedProduct.title,
-          images: clickedProduct.images,
-          category: clickedProduct.category,
-          price: clickedProduct.price,
-          quantity: 1,
-        };
-        if (clickedProduct.stock > 0) {
-          let user = new User();
-          let loggedInUser = user.isUserLoggedIn();
-          if (loggedInUser) user.AddToCart(item);
-        }
+        AddToCart(clickedProduct, 1);
       }
     });
   }

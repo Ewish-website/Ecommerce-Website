@@ -1,10 +1,10 @@
-/*import { ProductDetails } from "./ProductDetails.js";
-import { User } from "./user.js";
+import { ProductDetails } from "./ProductDetails.js";
+//import { User } from "./user.js";
+import { AddToCart } from "./AddToCart.js";
+//import {productsData} from "../script/BestSellers_module.js";
 
-let productsData;
-*/
 function appendCardsBestSellers(products) {
-  console.log(products);
+  //console.log(products);
   let count = 0;
   var productsContainer = document.querySelector(".product");
   for (let i = 0; i < products.length && count != 8; i += 2) {
@@ -101,4 +101,39 @@ function appendCardsBestSellers(products) {
   }
 }
 
-export { appendCardsBestSellers };
+
+/***********************************************************connect to product details******************************************************************** */
+function SearchForProduct(ClickedId,productsData) {
+  let clickedProduct;
+  if(productsData){
+  productsData.forEach((product) => {
+    if (product.id == ClickedId) {
+      clickedProduct = product;
+    }
+  });
+}
+  return clickedProduct;
+}
+
+function cardEventListner(productsData) {
+  let productsContainer = document.querySelector(".product");
+  if (productsContainer) {
+    productsContainer.addEventListener("click", (e) => {
+      if (e.target.classList.contains("card-img-top")) {
+        let imageSource = e.target.src.split('/');
+        let ClickedId = imageSource[imageSource.length - 2]
+        let clickedProduct = SearchForProduct(ClickedId,productsData);
+        let product = new ProductDetails(clickedProduct);
+        
+      }else if(e.target.classList.contains("cart")){
+        let imageSource = e.target.closest(".card").firstChild.src.split("/");
+        let ClickedId = imageSource[imageSource.length - 2];
+        let clickedProduct = SearchForProduct(ClickedId);
+        AddToCart(clickedProduct, 1);
+      }
+    });
+  }
+}
+
+
+export { appendCardsBestSellers, cardEventListner};

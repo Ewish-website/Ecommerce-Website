@@ -1,4 +1,5 @@
 @import url("root.css");
+@import url("checkOut.css");
 
 .cart-model-close{
   position: absolute;
@@ -36,7 +37,7 @@
   background-color: var(--primary-color);
 }
 
- .form3 input {
+.form3 input {
   border: 1px solid #ced4da !important;
 } 
 
@@ -58,13 +59,79 @@
     height: 520px !important;
   }
 
-  .cartLargeScreen .shopping-cart{
+  .cartLargeScreen .cart-items-checkout{
+    padding-right: 5px;
     overflow-y: inherit !important;
-    height: 500px !important;
   }
 
-  .cartLargeScreen .cart-items-checkout{
-    overflow-y: scroll !important;
+  .cartLargeScreen .cartCheckout,
+  .cartLargeScreen .cartItems{
+    padding-right: 5px;
+    overflow-y: auto !important;
+    overflow-x:hidden !important;
     height: 390px !important;
+    padding-bottom: 30px !important;
   }
+
+  .cartLargeScreen .cartCheckout::-webkit-scrollbar,
+  .cartLargeScreen .cartItems::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+    margin-right: -10px;
+  }
+  
+  .cartLargeScreen .cartCheckout::-webkit-scrollbar-thumb,
+  .cartLargeScreen .cartItems::-webkit-scrollbar-thumb {
+    background-color: #7e888d;
+  }
+
+  .cartLargeScreen .cartCheckout::-webkit-scrollbar-track,
+  .cartLargeScreen .cartItems::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+  }
+}
+
+#conf-pop-up{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 350px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rg(0, 0, 0,0.30);
+  background: white;
+  border-radius: 6px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  color: var(--dark-color);
+  position: absolute;
+  box-shadow: 0 4px 8px 0 var(--dark-color), 0 6px 20px 0  var(--dark-color);
+}
+
+#conf-pop-up h2,
+#conf-pop-up p{
+  text-align: center;
+}
+
+#conf-pop-up.active{
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 1s;
+  z-index: 10000;
+}
+
+#conf-btn{
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  border-radius: 6px;
+  border: 2px solid var(--medium-color);
+  background-color: var(--dark-color);
+  color: var(--primary-color);
+  margin: 0;
+  position: absolute;
+  margin-left: 90px;
 }
