@@ -223,11 +223,11 @@
     font-weight: 200;
     font-size: large;
   }
-  .card-img-top{
-    height: 20rem !important;
-  }
   .card-body span{
     font-size: 0.7rem !important;
+  }
+  .card-img-top{
+    height: 15rem !important;
   }
 
 }

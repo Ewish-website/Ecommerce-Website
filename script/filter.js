@@ -14,7 +14,7 @@ function appendCards(products) {
   for (let i = 0; i < products.length; i++) {
     var item = document.createElement("div");
     productsContainer.appendChild(item);
-    item.classList.add("col-6", "col-md-6", "col-lg-3", "item", "my-2");
+    item.classList.add("col-12", "col-md-6", "col-lg-3", "item", "my-2");
 
     var card = document.createElement("div");
     item.appendChild(card);
@@ -64,21 +64,21 @@ function appendCards(products) {
       star.classList.add(`rate${i}`);
     }
 
-    if (products[i].rating > 4.5) {
+    if (products[i].rating >= 4.5) {
       for (let x = 0; x < 5; x++) {
         document.getElementsByClassName(`rate${i}`)[x].style.color = "gold";
       }
-    } else if (products[i].rating > 3.5 && products[i].rating <= 4.5) {
+    } else if (products[i].rating >= 3.5 && products[i].rating < 4.5) {
       for (let x = 0; x < 4; x++) {
         document.getElementsByClassName(`rate${i}`)[x].style.color = "gold";
       }
-    } else if (products[i].rating <= 3.5 && products[i].rating > 2.5) {
+    } else if (products[i].rating < 3.5 && products[i].rating >= 2.5) {
       for (let x = 0; x < 3; x++) {
         document.getElementsByClassName(`rate${i}`)[x].style.color = "gold";
       }
     } else if (
-      products[i].rating <= 3.5 &&
-      Math.roundproducts[i].rating > 2.5
+      products[i].rating < 3.5 &&
+      Math.roundproducts[i].rating >= 2.5
     ) {
       for (let x = 0; x < 2; x++) {
         document.getElementsByClassName(`rate${i}`)[x].style.color = "gold";
