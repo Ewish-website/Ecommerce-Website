@@ -1,18 +1,17 @@
 import { ProductDetails } from "./ProductDetails.js";
-import { User } from "./user.js";
+//import { User } from "./user.js";
+//import { productsData } from "../script/fetch_module.js";
 import { AddToCart } from "./AddToCart.js";
 
 var wantedProducts = []; //array that matched products stored in to be displayed
 var filteredProducts = { category: 0, price: 0, rating: 0 }; //cheked filter features
-let productsData;
 
 document.querySelector("#filter").addEventListener("click", function () {
   document.querySelector(".filter-btns").classList.toggle("control-btns");
-  document.querySelector("#sidebar").classList.toggle("side-bar");
-  document.querySelector(".product").classList.toggle("product-toggle");
 });
 
 function appendCards(products) {
+  //console.log(products);
   var productsContainer = document.querySelector(".product");
   for (let i = 0; i < products.length; i++) {
     var item = document.createElement("div");
@@ -21,7 +20,7 @@ function appendCards(products) {
 
     var card = document.createElement("div");
     item.appendChild(card);
-    card.classList.add("card", "box-shadow", "my-5", "p-2");
+    card.classList.add("card", "box-shadow", "my-5", "px-5", "py-2");
     /*
       var detailsLink = document.createElement('a')
       detailsLink.href = "_blank";
@@ -50,17 +49,17 @@ function appendCards(products) {
     title.appendChild(productName);
     productName.classList.add("pname");
     productName.textContent = products[i].title;
-    productName.style.fontSize = "15px";
+    productName.style.fontSize = "1rem";
     productName.style.fontWeight = "900";
 
     var productPrice = document.createElement("span");
     title.appendChild(productPrice);
     productPrice.classList.add("card-text", "price");
     productPrice.textContent = products[i].price + "$";
-    productPrice.style.fontSize = "18px";
-    productPrice.style.fontWeight = "900";
+    productPrice.style.fontSize = "1rem";
+    productPrice.style.fontWeight = "700";
 
-    var ratings = document.createElement("rates");
+    var ratings = document.createElement("span");
     cardBody.appendChild(ratings);
     ratings.classList.add("rates");
 
@@ -98,9 +97,11 @@ function appendCards(products) {
     cardBody.appendChild(productPrand);
     productPrand.classList.add("card-text", "prand");
     productPrand.textContent = products[i].brand;
+    productPrand.style.fontSize = "0.8rem";
+    productPrand.style.fontWeight = "700";
 
     var cartButton = document.createElement("button");
-    cartButton.classList.add("cartBtn")
+    cartButton.classList.add("cartBtn");
     cardBody.appendChild(cartButton);
 
     var cart = document.createElement("i");
@@ -128,7 +129,7 @@ function intializeData(allData) {
     price: allPrices,
     rating: allRatings,
   };
-  console.log(filteredProducts);
+  //console.log(filteredProducts);
   return filteredProducts;
 }
 
@@ -239,100 +240,85 @@ function filterProducts(allData, wantedData) {
   }
 }
 
-/***********************************************Fetch Data**********************************************/
-fetch("../script/products.json")
-  .then(function (response) {
-    let jsonData = response.json();
-    //console.log(jsonData);
-    return jsonData;
-  })
-  .then(function (jsonData) {
-    productsData = jsonData.products;
-    appendCards(productsData);
-    return productsData;
-  })
-  .then(function (productsData) {
-    /******************************************Filter Button************************************************ */
-    document
-      .querySelector(".applyFilter")
-      .addEventListener("click", function () {
-        var category = document.getElementsByName("flexRadioDefault1");
-        var rates = document.getElementsByName("stars");
-        var price = document.getElementsByName("flexRadioDefault3");
-        var flag = 0;
-        for (let i = 0; i < category.length && flag == 0; i++) {
-          if (category[i].checked) {
-            filteredProducts["category"] = category[i].value;
-            flag = 1;
-          }
-        }
-        flag = 0;
-        for (let i = 0; i < rates.length && flag == 0; i++) {
-          if (rates[i].checked) {
-            filteredProducts["rating"] = rates[i].value;
-            flag = 1;
-          }
-        }
-        flag = 0;
-        for (let i = 0; i < price.length && flag == 0; i++) {
-          if (price[i].checked) {
-            filteredProducts["price"] = price[i].value;
-            flag = 1;
-          }
-        }
-        resetPage();
-        filterProducts(productsData, filteredProducts);
-      });
-    /*****************************************************All Button************************************************************** */
-    document.querySelector("#all").addEventListener("click", function (e) {
-      var category = document.getElementsByName("flexRadioDefault1");
-      var rates = document.getElementsByName("stars");
-      var price = document.getElementsByName("flexRadioDefault3");
-      for (let i = 0; i < category.length; i++) {
-        category[i].checked = false;
+function applyFilter(products) {
+  document.querySelector(".applyFilter").addEventListener("click", function () {
+    var category = document.getElementsByName("flexRadioDefault1");
+    var rates = document.getElementsByName("stars");
+    var price = document.getElementsByName("flexRadioDefault3");
+    var flag = 0;
+    for (let i = 0; i < category.length && flag == 0; i++) {
+      if (category[i].checked) {
+        filteredProducts["category"] = category[i].value;
+        flag = 1;
       }
-      for (let i = 0; i < rates.length; i++) {
-        rates[i].checked = false;
-      }
-      for (let i = 0; i < price.length; i++) {
-        price[i].checked = false;
-      }
-      resetPage();
-      appendCards(productsData);
-    });
-    cardEventListner();
-  })
-  .catch(function (err) {
-    console.log("error: " + err);
-  });
-
-/***********************************************************connect to product details******************************************************************** */
-function SearchForProduct(ClickedId) {
-  let clickedProduct;
-  productsData.forEach((product) => {
-    if (product.id == ClickedId) {
-      clickedProduct = product;
     }
+    flag = 0;
+    for (let i = 0; i < rates.length && flag == 0; i++) {
+      if (rates[i].checked) {
+        filteredProducts["rating"] = rates[i].value;
+        flag = 1;
+      }
+    }
+    flag = 0;
+    for (let i = 0; i < price.length && flag == 0; i++) {
+      if (price[i].checked) {
+        filteredProducts["price"] = price[i].value;
+        flag = 1;
+      }
+    }
+    resetPage();
+    filterProducts(products, filteredProducts);
   });
+}
+
+function getAllProducts(products) {
+  document.querySelector("#all").addEventListener("click", function (e) {
+    var category = document.getElementsByName("flexRadioDefault1");
+    var rates = document.getElementsByName("stars");
+    var price = document.getElementsByName("flexRadioDefault3");
+    for (let i = 0; i < category.length; i++) {
+      category[i].checked = false;
+    }
+    for (let i = 0; i < rates.length; i++) {
+      rates[i].checked = false;
+    }
+    for (let i = 0; i < price.length; i++) {
+      price[i].checked = false;
+    }
+    resetPage();
+    appendCards(products);
+  });
+}
+
+function SearchForProduct(ClickedId, productsData) {
+  let clickedProduct;
+  if (productsData) {
+    productsData.forEach((product) => {
+      if (product.id == ClickedId) {
+        clickedProduct = product;
+      }
+    });
+  }
   return clickedProduct;
 }
 
-function cardEventListner() {
+function cardEventListner(productsData) {
   let productsContainer = document.querySelector(".product");
   if (productsContainer) {
     productsContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("card-img-top")) {
-        let imageSource = e.target.src.split('/');
-        let ClickedId = imageSource[imageSource.length - 2]
-        let clickedProduct = SearchForProduct(ClickedId);
+        let imageSource = e.target.src.split("/");
+        let ClickedId = imageSource[imageSource.length - 2];
+        let clickedProduct = SearchForProduct(ClickedId, productsData);
         let product = new ProductDetails(clickedProduct);
-
       } else if (e.target.classList.contains("cart")) {
         let imageSource = e.target.closest(".card").firstChild.src.split("/");
         let ClickedId = imageSource[imageSource.length - 2];
         let clickedProduct = SearchForProduct(ClickedId);
-        AddToCart(clickedProduct,1);
+        AddToCart(clickedProduct, 1);
       }
     });
   }
 }
+
+export { appendCards, applyFilter, getAllProducts, cardEventListner };

@@ -32,7 +32,6 @@ export class User {
             }
         });
         localStorage.setItem("users", JSON.stringify(this.#users));
-        this.ItemsCount();
     }
 
     AddToCart(item) {
@@ -48,7 +47,6 @@ export class User {
             loggedInUser.cartList.push(item);
         }
         localStorage.setItem("users", JSON.stringify(this.#users));
-        this.ItemsCount();
     }
 
     DeleteFromCart(user, itemId) {
@@ -62,7 +60,6 @@ export class User {
         }
         });
         localStorage.setItem("users", JSON.stringify(this.#users));
-        this.ItemsCount();
     }
 
     ItemsCount() {

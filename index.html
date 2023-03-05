@@ -91,9 +91,9 @@
   </section>
 
 
-  <!-----------products--------------->
+  <!-----------slider--------------->
   <div class="container-fluid py-5">
-    <div id="carouselExampleCaption" class="carousel slide col-12  col-lg-9" data-bs-ride="false" data-interval="100">
+    <div id="carouselExampleCaption" class="carousel slide col-12  col-lg-9" data-bs-ride="carousel" data-interval="1000">
       <div class="carousel-inner col-12">
         <div class="carousel-item active col-12">
           <img src="assets/slide1.jpg"
@@ -101,7 +101,7 @@
           <div class="carousel-caption h-100 my-0 d-flex justify-content-center flex-column">
             <div class="custom-carousel-content">
               <!-- <h2> -->
-                <span style="left: 0;"><img src="assets/newCollection.png" alt="" height="450px"></span>
+                <span style="left: 0;"><img class="offer w-100" src="assets/newCollection.png" alt=""></span>
               <!-- </h2> -->
               <!-- <p>
                 powerful new collection of laptops and smartphones with attractive prices is available now
@@ -150,17 +150,19 @@
       </button>
     </div>
   </div>
-
-  <div class="container-fluid my-0 all-products px-lg-5">
+<!-----------------Best Sellers------------------>
+  <div class="container-fluid my-0 px-lg-5">
     <div class="featured" style="text-align: center">
       <h4 class="product-title">BEST SELLERS</h4>
       <span class="word">Collection of best seller products from all categories</span>
-    </div>
+    
     <div class="row form-group justify-content-between product">
 
     </div>
   </div>
-   <!-- about as -->
+  </div>
+  
+   <!-- about as --------------------------------------------->
    <div class="sectionnn">
     <div class="containerrrr">
       <div class="content-sectionn">
@@ -180,6 +182,7 @@
       </div>
     </div>
 </div>
+
   <!-- end of about as -->
 
   <div id="conf-pop-up">
@@ -269,6 +272,7 @@
     crossorigin="anonymous"></script>
 
   <script src="./script/productHome.js" type="module" defer></script>
+  <script src="./script/BestSellers_module.js" type="module" defer></script>
   <script src="./script/navbar.js" type="module" defer></script>
   <script src="./script/cart.js" type="module" defer></script>
   <script src="./script/productDetails.js" type="module" defer></script>

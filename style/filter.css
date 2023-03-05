@@ -4,54 +4,59 @@
 .side-bar {
   border: 2px solid var(--dark-color);
   border-top: none;
-  border-left: none;
-  position: sticky;
+  border-left: none;  
   top: 0;
 }
 #sidebar{
+  top: 0;
+  left: 0;
+  position: sticky;
   border: 2px solid var(--primary-color);
   border-top: none;
   border-left: none;
   background-color: whitesmoke;
 }
+/*.filter{
+  left: 0;
+}*/
+
+/*
 .card-img-top{
   width: 100%;
-  height: 15rem;
+  height: 18rem;
   cursor: pointer;
-}
+}*/
 
 .filter-container{
   margin-top: 4.6rem;
 }
 
 .control-btns{    
- 
-  bottom:0px;  
-  margin-left: 10.8rem;
+  bottom:0px;   
   z-index:10;
-  margin-top: 5rem;
-  position: sticky;
+  /* position: sticky; */
   top: 0;
 }
+/*
 .filter-btns{ 
-  position: fixed;  
+  position: fixed;   
   z-index:1000;
   left: 0;
-}
+}*/
 
-#sidebarToggle{
+/*#sidebarToggle{
   border: 2px solid var(--primary-color);
   display: none;
-}
+}*/
 
 .control-btns a,.filter-btns a{
   background-color: var(--primary-color);
   color: var(--dark-color);
 }
-
+/*
 .product{
   margin-left: 0;
-}
+}*/
 
 #notFound{
   margin-top: 10%;
@@ -60,13 +65,14 @@
   opacity: 0.5;
 }
 
-
+/*
 .card{
-  height: 30rem;
-}
+  height: 28rem;
+  height: auto;
+}*/
 
 .cart{
-  font-size: 20px;
+  font-size: 25px;
 }
 
 
@@ -96,6 +102,7 @@ label{
   color: var(--dark-color);
   font-weight: 900;
 }
+
 .rating {
   margin-top: 1rem;
   display: inline-block;
@@ -104,6 +111,7 @@ label{
   line-height: 50px;
   font-size: 50px;
 }
+
 
 .rating label {
   position: absolute;
@@ -181,7 +189,7 @@ label{
   cursor: pointer;
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   margin: 5% auto;
   height: 40px;
@@ -202,18 +210,28 @@ label{
   background-color:var(--dark-color);
 }
 
+
+/*
 .all-products{
   scale: 0.8;
   transform-origin: top center;
-} 
-
-.footer-container{
-  z-index: 200000;
+} */
+/*
+#filter-container{
+  height: fit-content;
 }
-
-@media only screen and (max-width:1000px){
-
+#test, .filter{
+  box-sizing: border-box;
+  height: auto;
+}*/
+/*
+.filter-container {
+  box-sizing: border-box;
+  height: -moz-fit-content;
+}*/
+@media only screen and (max-width:1500px){
   .card-img-top{
     width: 100%;
+    height: 10rem;
   }
 }

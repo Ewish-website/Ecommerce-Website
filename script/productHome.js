@@ -1,18 +1,20 @@
 import { ProductDetails } from "./ProductDetails.js";
+//import { User } from "./user.js";
 import { AddToCart } from "./AddToCart.js";
+//import {productsData} from "../script/BestSellers_module.js";
 
-let productsData;
-
-function appendCards(products) {
+function appendCardsBestSellers(products) {
+  //console.log(products);
+  let count = 0;
   var productsContainer = document.querySelector(".product");
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < products.length && count != 8; i += 2) {
     var item = document.createElement("div");
     productsContainer.appendChild(item);
     item.classList.add("col-12", "col-md-4", "col-lg-3", "item", "my-2");
 
     var card = document.createElement("div");
     item.appendChild(card);
-    card.classList.add("card", "box-shadow", "my-5", "p-2");
+    card.classList.add("card", "box-shadow", "my-5", "px-5", "py-2");
     /*
       var detailsLink = document.createElement('a')
       detailsLink.href = "_blank";
@@ -41,19 +43,20 @@ function appendCards(products) {
     title.appendChild(productName);
     productName.classList.add("pname");
     productName.textContent = products[i].title;
-    productName.style.fontSize = "15px";
+    productName.style.fontSize = "1rem";
     productName.style.fontWeight = "900";
 
     var productPrice = document.createElement("span");
     title.appendChild(productPrice);
     productPrice.classList.add("card-text", "price");
     productPrice.textContent = products[i].price + "$";
-    productPrice.style.fontSize = "18px";
-    productPrice.style.fontWeight = "900";
+    productPrice.style.fontSize = "1rem";
+    productPrice.style.fontWeight = "700";
 
-    var ratings = document.createElement("rates");
+    var ratings = document.createElement("span");
     cardBody.appendChild(ratings);
     ratings.classList.add("rates");
+    ratings.style.fontSize = "0.8rem";
 
     for (let j = 0; j < 5; j++) {
       var star = document.createElement("i");
@@ -94,43 +97,32 @@ function appendCards(products) {
     var cart = document.createElement("i");
     cartButton.appendChild(cart);
     cart.classList.add("bi", "bi-cart-plus", "d-block", "w-100", "cart");
+    count++;
   }
 }
 
-/***********************************************Fetch Data**********************************************/
-fetch("../script/products.json")
-  .then(function (response) {
-    let jsonData = response.json();
-    return jsonData;
-  })
-  .then(function (jsonData) {
-    productsData = jsonData.products;
-    appendCards(productsData);
-    cardEventListner();
-  })
-  .catch(function (err) {
-    console.log("error: " + err);
-  });
 
 /***********************************************************connect to product details******************************************************************** */
-function SearchForProduct(ClickedId) {
+function SearchForProduct(ClickedId,productsData) {
   let clickedProduct;
+  if(productsData){
   productsData.forEach((product) => {
     if (product.id == ClickedId) {
       clickedProduct = product;
     }
   });
+}
   return clickedProduct;
 }
 
-function cardEventListner() {
+function cardEventListner(productsData) {
   let productsContainer = document.querySelector(".product");
   if (productsContainer) {
     productsContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("card-img-top")) {
         let imageSource = e.target.src.split('/');
         let ClickedId = imageSource[imageSource.length - 2]
-        let clickedProduct = SearchForProduct(ClickedId);
+        let clickedProduct = SearchForProduct(ClickedId,productsData);
         let product = new ProductDetails(clickedProduct);
         
       }else if(e.target.classList.contains("cart")){
@@ -142,3 +134,6 @@ function cardEventListner() {
     });
   }
 }
+
+
+export { appendCardsBestSellers, cardEventListner};
