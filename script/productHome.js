@@ -101,19 +101,16 @@ function appendCardsBestSellers(products) {
   }
 }
 
-
-
-
 /***********************************************************connect to product details******************************************************************** */
 function SearchForProduct(ClickedId) {
   let clickedProduct;
-  if(productsData){
-  productsData.forEach((product) => {
-    if (product.id == ClickedId) {
-      clickedProduct = product;
-    }
-  });
-}
+  if (productsData) {
+    productsData.forEach((product) => {
+      if (product.id == ClickedId) {
+        clickedProduct = product;
+      }
+    });
+  }
   return clickedProduct;
 }
 
@@ -122,12 +119,11 @@ function cardEventListner() {
   if (productsContainer) {
     productsContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("card-img-top")) {
-        let imageSource = e.target.src.split('/');
-        let ClickedId = imageSource[imageSource.length - 2]
+        let imageSource = e.target.src.split("/");
+        let ClickedId = imageSource[imageSource.length - 2];
         let clickedProduct = SearchForProduct(ClickedId);
         let product = new ProductDetails(clickedProduct);
-        
-      }else if(e.target.classList.contains("cart")){
+      } else if (e.target.classList.contains("cart")) {
         let imageSource = e.target.closest(".card").firstChild.src.split("/");
         let ClickedId = imageSource[imageSource.length - 2];
         let clickedProduct = SearchForProduct(ClickedId);
@@ -138,13 +134,11 @@ function cardEventListner() {
 }
 
 fetchJson()
-.then(function (data) {
-  //console.log(data);
-  appendCardsBestSellers(data.products);
-  return data.products;
-})
-.catch(function (err) {
-  console.log("error: " + err);
-});
-
-
+  .then(function (data) {
+    //console.log(data);
+    appendCardsBestSellers(data.products);
+    return data.products;
+  })
+  .catch(function (err) {
+    console.log("error: " + err);
+  });
