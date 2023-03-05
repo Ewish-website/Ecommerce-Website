@@ -1,6 +1,6 @@
 import { ProductDetails } from "./ProductDetails.js";
 //import { User } from "./user.js";
-//import { productsData } from "../script/fetch_module.js";
+import fetchJson  from "../script/fetch_module.js";
 import { AddToCart } from "./AddToCart.js";
 
 var wantedProducts = []; //array that matched products stored in to be displayed
@@ -321,4 +321,23 @@ function cardEventListner(productsData) {
   }
 }
 
-export { appendCards, applyFilter, getAllProducts, cardEventListner };
+fetchJson()
+.then(function (data) {
+  //console.log(data);
+  appendCards(data.products);
+  return data.products;
+}).then(function (data) {
+  console.log(data);
+  /****************Filter Button***************** */
+  applyFilter(data);
+  /**********All Button******* ***************** */
+  getAllProducts(data);
+  /*************Products Details******************************* */
+  cardEventListner(data);
+})
+.catch(function (err) {
+  console.log("error: " + err);
+});
+
+
+

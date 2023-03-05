@@ -1,7 +1,7 @@
 import { ProductDetails } from "./ProductDetails.js";
 //import { User } from "./user.js";
 import { AddToCart } from "./AddToCart.js";
-//import {productsData} from "../script/BestSellers_module.js";
+import fetchJson from "../script/fetch_module.js";
 
 function appendCardsBestSellers(products) {
   //console.log(products);
@@ -102,8 +102,10 @@ function appendCardsBestSellers(products) {
 }
 
 
+
+
 /***********************************************************connect to product details******************************************************************** */
-function SearchForProduct(ClickedId,productsData) {
+function SearchForProduct(ClickedId) {
   let clickedProduct;
   if(productsData){
   productsData.forEach((product) => {
@@ -115,14 +117,14 @@ function SearchForProduct(ClickedId,productsData) {
   return clickedProduct;
 }
 
-function cardEventListner(productsData) {
+function cardEventListner() {
   let productsContainer = document.querySelector(".product");
   if (productsContainer) {
     productsContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("card-img-top")) {
         let imageSource = e.target.src.split('/');
         let ClickedId = imageSource[imageSource.length - 2]
-        let clickedProduct = SearchForProduct(ClickedId,productsData);
+        let clickedProduct = SearchForProduct(ClickedId);
         let product = new ProductDetails(clickedProduct);
         
       }else if(e.target.classList.contains("cart")){
@@ -135,5 +137,14 @@ function cardEventListner(productsData) {
   }
 }
 
+fetchJson()
+.then(function (data) {
+  //console.log(data);
+  appendCardsBestSellers(data.products);
+  return data.products;
+})
+.catch(function (err) {
+  console.log("error: " + err);
+});
 
-export { appendCardsBestSellers, cardEventListner};
+
