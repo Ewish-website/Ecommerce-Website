@@ -19,7 +19,7 @@
     },
     {
       "id": 32,
-      "title": "T-Shirt",
+      "title": "TShirt",
       "description": "Bolo cotton T-Shirt",
       "price": 30,
       "discountPercentage": 5,
@@ -87,7 +87,7 @@
     },
     {
       "id": 36,
-      "title": "child-Outfit",
+      "title": "Outfit",
       "description": "Printed outdoor shirt short for childrens",
       "price": 150,
       "discountPercentage": 10,
@@ -104,7 +104,7 @@
     },
     {
       "id": 37,
-      "title": "Mini-Dress",
+      "title": "Dress",
       "description": "womens Short Sleeve lined Casual Midi Dress",
       "price": 150,
       "discountPercentage": 20,
@@ -121,7 +121,7 @@
     },
     {
       "id": 38,
-      "title": "Bag&Heels",
+      "title": "Heels",
       "description": "Women lather matched heels and bags",
       "price": 170,
       "discountPercentage": 20,
@@ -155,7 +155,7 @@
     },
     {
       "id": 40,
-      "title": "Hoodies",
+      "title": "Hoodie",
       "description": "Art Gallery Women Hoodie",
       "price": 90,
       "discountPercentage": 10,
@@ -208,7 +208,7 @@
     },
     {
       "id": 3,
-      "title": "Samsung9",
+      "title": "Note9",
       "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
       "price": 1249,
       "discountPercentage": 15.46,
@@ -244,7 +244,7 @@
     },
     {
       "id": 5,
-      "title": "HuaweiP30",
+      "title": "P30",
       "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
       "price": 499,
       "discountPercentage": 10.58,
@@ -272,10 +272,10 @@
       "category": "laptops",
       "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
       "images": [
-        "https://i.dummyjson.com/data/products/6/1.png",
-        "https://i.dummyjson.com/data/products/6/2.jpg",
-        "https://i.dummyjson.com/data/products/6/3.png",
-        "https://i.dummyjson.com/data/products/6/4.jpg"
+        "../assets/more products/6/1.jpg",
+        "../assets/more products/6/2.jpg",
+        "../assets/more products/6/3.jpg",
+        "../assets/more products/6/4.jpg"
       ]
     },
     {
@@ -290,10 +290,10 @@
       "category": "laptops",
       "thumbnail": "https://i.dummyjson.com/data/products/7/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/7/1.jpg",
-        "https://i.dummyjson.com/data/products/7/2.jpg",
-        "https://i.dummyjson.com/data/products/7/3.jpg",
-        "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
+        "../assets/more products/7/1.jpg",
+        "../assets/more products/7/2.jpg",
+        "../assets/more products/7/3.jpg",
+        "../assets/more products/7/4.jpg"
       ]
     },
     {
@@ -308,11 +308,10 @@
       "category": "laptops",
       "thumbnail": "https://i.dummyjson.com/data/products/8/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/8/1.jpg",
-        "https://i.dummyjson.com/data/products/8/2.jpg",
-        "https://i.dummyjson.com/data/products/8/3.jpg",
-        "https://i.dummyjson.com/data/products/8/4.jpg",
-        "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
+        "../assets/more products/8/1.jpg",
+        "../assets/more products/8/2.jpg",
+        "../assets/more products/8/3.jpg",
+        "../assets/more products/8/4.jpg"
       ]
     },
     {
@@ -327,11 +326,10 @@
       "category": "laptops",
       "thumbnail": "https://i.dummyjson.com/data/products/9/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/9/1.jpg",
-        "https://i.dummyjson.com/data/products/9/2.png",
-        "https://i.dummyjson.com/data/products/9/3.png",
-        "https://i.dummyjson.com/data/products/9/4.jpg",
-        "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
+        "../assets/more products/9/1.jpg",
+        "../assets/more products/9/2.jpg",
+        "../assets/more products/9/3.jpg",
+        "../assets/more products/9/4.jpg"
       ]
     },
     {
@@ -346,10 +344,10 @@
       "category": "laptops",
       "thumbnail": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
       "images": [
-        "https://i.dummyjson.com/data/products/10/1.jpg",
-        "https://i.dummyjson.com/data/products/10/2.jpg",
-        "https://i.dummyjson.com/data/products/10/3.jpg",
-        "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"
+        "../assets/more products/10/1.jpg",
+        "../assets/more products/10/2.jpg",
+        "../assets/more products/10/3.jpg",
+        "../assets/more products/10/4.jpg"
       ]
     },
     {
@@ -364,10 +362,10 @@
       "category": "fragrances",
       "thumbnail": "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/11/1.jpg",
-        "https://i.dummyjson.com/data/products/11/2.jpg",
-        "https://i.dummyjson.com/data/products/11/3.jpg",
-        "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
+        "../assets/more products/11/1.jpg",
+        "../assets/more products/11/2.jpg",
+        "../assets/more products/11/3.jpg",
+        "../assets/more products/11/4.jpg"
       ]
     },
     {
@@ -409,37 +407,37 @@
     {
       "id": 14,
       "title": "Perfume",
-      "description": "Original Al Munakh® by Mahal Al Musk | Our Impression of Climate | 6ml Non-Alcoholic Concentrated Perfume Oil",
+      "description": "Coco Mademoiselle Intense by Chanel for Women",
       "price": 120,
       "discountPercentage": 15.6,
       "rating": 4.21,
       "stock": 114,
-      "brand": "Al Munakh",
+      "brand": "Chanel",
       "category": "fragrances",
       "thumbnail": "https://i.dummyjson.com/data/products/14/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/14/1.jpg",
-        "https://i.dummyjson.com/data/products/14/2.jpg",
-        "https://i.dummyjson.com/data/products/14/3.jpg",
-        "https://i.dummyjson.com/data/products/14/thumbnail.jpg"
+        "../assets/more products/14/1.jpg",
+        "../assets/more products/14/2.jpg",
+        "../assets/more products/14/3.jpg",
+        "../assets/more products/14/4.jpg"
       ]
     },
     {
       "id": 15,
       "title": "Spray",
-      "description": "Genuine  Al-Rehab spray perfume from UAE/Saudi Arabia/Yemen High Quality",
+      "description": "Avon Soft Musk Eau de Toilette EDT for Her, 50ml",
       "price": 30,
       "discountPercentage": 10.99,
       "rating": 4.7,
       "stock": 105,
-      "brand": "Lord-AlRehab",
+      "brand": "Avon",
       "category": "fragrances",
       "thumbnail": "https://i.dummyjson.com/data/products/15/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/15/1.jpg",
-        "https://i.dummyjson.com/data/products/15/2.jpg",
-        "https://i.dummyjson.com/data/products/15/3.jpg",
-        "https://i.dummyjson.com/data/products/15/4.jpg"
+        "../assets/more products/15/1.jpg",
+        "../assets/more products/15/2.jpg",
+        "../assets/more products/15/3.jpg",
+        "../assets/more products/15/4.jpg"
       ]
     },
     {
@@ -472,10 +470,10 @@
       "category": "skincare",
       "thumbnail": "https://i.dummyjson.com/data/products/17/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/17/1.jpg",
-        "https://i.dummyjson.com/data/products/17/2.jpg",
-        "https://i.dummyjson.com/data/products/17/3.jpg",
-        "https://i.dummyjson.com/data/products/17/thumbnail.jpg"
+        "../assets/more products/17/1.jpg",
+        "../assets/more products/17/2.jpg",
+        "../assets/more products/17/3.jpg",
+        "../assets/more products/17/4.jpg"
       ]
     },
     {
@@ -517,19 +515,19 @@
     {
       "id": 20,
       "title": "Cream",
-      "description": "Fair & Clear is Pakistan's only pure Freckle cream which helpsfade Freckles, Darkspots and pigments. Mercury level is 0%, so there are no side effects.",
+      "description": "Olay Natural White All-In-One Fairness Night Cream 50 g",
       "price": 70,
       "discountPercentage": 16.99,
       "rating": 4.06,
       "stock": 140,
-      "brand": "Fair&Clear",
+      "brand": "OLAY",
       "category": "skincare",
       "thumbnail": "https://i.dummyjson.com/data/products/20/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/20/1.jpg",
-        "https://i.dummyjson.com/data/products/20/2.jpg",
-        "https://i.dummyjson.com/data/products/20/3.jpg",
-        "https://i.dummyjson.com/data/products/20/4.jpg"
+        "../assets/more products/20/1.jpg",
+        "../assets/more products/20/2.jpg",
+        "../assets/more products/20/3.jpg",
+        "../assets/more products/20/4.jpg"
       ]
     },
     {
@@ -540,7 +538,7 @@
       "discountPercentage": 4.81,
       "rating": 4.44,
       "stock": 133,
-      "brand": "Saaf&Khaas",
+      "brand": "AIVA",
       "category": "groceries",
       "thumbnail": "https://i.dummyjson.com/data/products/21/thumbnail.png",
       "images": [
@@ -558,7 +556,7 @@
       "discountPercentage": 15.58,
       "rating": 4.57,
       "stock": 146,
-      "brand": "Bake-Parlor",
+      "brand": "KRAFT",
       "category": "groceries",
       "thumbnail": "https://i.dummyjson.com/data/products/22/thumbnail.jpg",
       "images": [
@@ -576,7 +574,7 @@
       "discountPercentage": 8.04,
       "rating": 4.85,
       "stock": 26,
-      "brand": "Baking Food",
+      "brand": "SAC",
       "category": "groceries",
       "thumbnail": "https://i.dummyjson.com/data/products/23/thumbnail.jpg",
       "images": [
@@ -594,32 +592,32 @@
       "discountPercentage": 16.8,
       "rating": 4.94,
       "stock": 113,
-      "brand": "fauji",
+      "brand": "Sante",
       "category": "groceries",
       "thumbnail": "https://i.dummyjson.com/data/products/24/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/24/1.jpg",
-        "https://i.dummyjson.com/data/products/24/2.jpg",
-        "https://i.dummyjson.com/data/products/24/3.jpg",
-        "https://i.dummyjson.com/data/products/24/4.jpg"
+        "../assets/more products/24/1.jpg",
+        "../assets/more products/24/2.jpg",
+        "../assets/more products/24/3.jpg",
+        "../assets/more products/24/4.jpg"
       ]
     },
     {
       "id": 25,
-      "title": "Gulab",
-      "description": "Dry Rose Flower Powder Gulab Powder 50 Gram • Treats Wounds",
+      "title": "COCO",
+      "description": "Powder Chocolate Frappie Foundation, 1 Pound",
       "price": 70,
       "discountPercentage": 13.58,
       "rating": 4.87,
       "stock": 47,
-      "brand": "Dry Rose",
+      "brand": "PRIVA",
       "category": "groceries",
       "thumbnail": "https://i.dummyjson.com/data/products/25/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/25/1.png",
-        "https://i.dummyjson.com/data/products/25/2.jpg",
-        "https://i.dummyjson.com/data/products/25/3.png",
-        "https://i.dummyjson.com/data/products/25/4.jpg"
+        "../assets/more products/25/1.jpg",
+        "../assets/more products/25/2.jpg",
+        "../assets/more products/25/3.jpg",
+        "../assets/more products/25/4.jpg"
       ]
     },
     {
@@ -716,5 +714,5 @@
   ],
   "total": 100,
   "skip": 0,
-  "limit": 30
+  "limit": 40
 }
