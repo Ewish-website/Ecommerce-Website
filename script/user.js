@@ -20,8 +20,8 @@ export class User {
                 loggedInUser = element;
                 }
             });
-            return loggedInUser;
         }
+        return loggedInUser;
     }
 
     updateUser(user) {

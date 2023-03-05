@@ -111,8 +111,8 @@ export class Cart {
                                   </fieldset>
                                   <div class="payBlock"></div>
                                   <div class="btn1  d-flex justify-content-center">
-                                    <button id="conf-btn1" class="button"  type="submit">
-                                    submit
+                                    <button id="conf-btn1" class="button">
+                                      confirm
                                     </button>
                                   </div>
                                 </form>
