@@ -175,22 +175,22 @@
                 </div>
             </div>
             <div class="contactForm">
-                <form>
+                <form name="custom_form" onsubmit="openPopup(event)" >
                     <h2>Send Message</h2>
-                    <div class="inputBox">
-                        <input type="text-contact-form" name="" required/>
+                    <div class="inputBox" >
+                        <input id="fname" type="text-contact-form" name="" required  />
                         <span>Full Name</span>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="" required/>
+                        <input id="email" type="text" name="" required/>
                         <span>Email</span>
                     </div>
                     <div class="inputBox">
-                        <textarea required="required"></textarea>
+                        <textarea id="msg" required="required"></textarea>
                         <span>Type your Message...</span>
                     </div>
                     <div class="inputBox">
-                        <button id="popup-send" type="button" name="" onclick="toggle()">Send</button>
+                        <button id="popup-send" value="submit" type="submit" name=""  >Send</button>
                     </div>
                 </form>
             </div>
@@ -201,7 +201,7 @@
         <img src="assets/pop-up.png">
         <h2>Thank You!</h2>
         <p>Your Message has been successfully submited.</p>
-        <button id="ok-btn" onclick="toggle()">OK</button>
+        <button id="ok-btn" onclick="closePopup()">OK</button>
     </div>
 
 
