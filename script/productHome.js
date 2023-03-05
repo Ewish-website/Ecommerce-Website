@@ -10,7 +10,7 @@ function appendCardsBestSellers(products) {
   for (let i = 0; i < products.length && count != 8; i += 2) {
     var item = document.createElement("div");
     productsContainer.appendChild(item);
-    item.classList.add("col-12", "col-md-4", "col-lg-3", "item", "my-2");
+    item.classList.add("col-6", "col-md-4", "col-lg-3", "item", "my-2");
 
     var card = document.createElement("div");
     item.appendChild(card);

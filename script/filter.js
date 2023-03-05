@@ -16,7 +16,7 @@ function appendCards(products) {
   for (let i = 0; i < products.length; i++) {
     var item = document.createElement("div");
     productsContainer.appendChild(item);
-    item.classList.add("col-12", "col-md-6", "col-lg-3", "item", "my-2");
+    item.classList.add("col-6", "col-md-6", "col-lg-3", "item", "my-2");
 
     var card = document.createElement("div");
     item.appendChild(card);
