@@ -21,51 +21,53 @@
 </head>
 
 <body>
-    <div class="cart-section"></div>
+   <!-- Modals Container -->
+  <div class="detailsModal"></div>
+  <div class="cart-section"></div>
 
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light p-3 col-12 col-md-12 px-5 sticky" id="nav">
-        <div class="container-fluid">
-            <a class="navbar-brand col-2" href="index.html">E-wish</a>
-            <button class="navbar-toggler" type="navbarNav" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse col-10 col-md-10 justify-content-between" id="navbarNav">
-                <div class="navbar-nav col-8 col-md-8 justify-content-evenly">
-                    <a class="nav-link" href="index.html">Home</a>
-                    <a class="nav-link active" href="about.html">About</a>
-                    <a class="nav-link" href="products.html">Products</a>
-                    <a class="nav-link" href="contact-us.html">Contact us</a>
-                </div>
-                <div class="loginCart col-2 d-flex justify-content-end gap-2">
-                    <a class="nav-link" id="cart"><i class="bi bi-cart3 fs-4 me-2"></i></a>
-                    <div id="cartCount"><p id="number"></p></div>
-                    <a class="nav-link" id="user"><i class="bi bi-person-circle fs-4"></i></a>
-                </div>
-            </div>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light p-3 col-12 col-md-12 px-5 sticky" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand col-2" href="index.html"><img src="assets/pngwing.com (2).png" width="40px" style="padding: 0; margin: 0%;">E-wish</a>
+      <button class="navbar-toggler" type="navbarNav" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text-white"></span>
+      </button>
+      <div class="collapse navbar-collapse col-10 col-md-10 justify-content-between" id="navbarNav">
+        <div class="navbar-nav col-8 col-md-8 justify-content-evenly">
+          <a class="nav-link " href="index.html">Home</a>
+          <a class="nav-link active" href="about.html">About</a>
+          <a class="nav-link" href="products.html">Products</a>
+          <a class="nav-link" href="contact-us.html">Contact us</a>
         </div>
-    </nav>
-
-    <!-- --------------------------------------------------------------------------------------------------- -->
-    <!-- user box -->
-    <div class="user-container">
-        <div class="our-user">
-            <div class="user-picture">
-                <img class="img-fluid" src="./assets/user.jpg">
-            </div>
-            <div class="user-content">
-                <p class="name"></p>
-
-            </div>
-            <ul class="user-social">
-                <li><a href="#" class="bi bi-facebook" aria-hidden="true"></a></li>
-                <li><a href="#" class="bi bi-twitter" aria-hidden="true"></a></li>
-                <li><a href="#" class="bi bi-google" aria-hidden="true"></a></li>
-                <li><a href="#" class="bi bi-box-arrow-right" aria-hidden="true" id="logOut"></a></li>
-            </ul>
+        <div class="loginCart col-2 d-flex justify-content-end gap-2">
+          <a class="nav-link" id="cart"><i class="bi bi-cart3 fs-4 me-2"></i></a>
+          <div id="cartCount"><p id="number"></p></div>
+          <a class="nav-link" id="user"><i class="bi bi-person-circle fs-4"></i></a>
         </div>
+      </div>
     </div>
+  </nav>
+
+  <!-- --------------------------------------------------------------------------------------------------- -->
+  <!-- user box -->
+  <div class="user-container">
+    <div class="our-user">
+      <div class="user-picture">
+        <img class="img-fluid" src="./assets/user.jpg">
+      </div>
+      <div class="user-content">
+        <p class="name"></p>
+
+      </div>
+      <ul class="user-social">
+        <li><a href="#" class="bi bi-facebook" aria-hidden="true"></a></li>
+        <li><a href="#" class="bi bi-twitter" aria-hidden="true"></a></li>
+        <li><a href="#" class="bi bi-google" aria-hidden="true"></a></li>
+        <li><a href="#" class="bi bi-box-arrow-right" aria-hidden="true" id="logOut"></a></li>
+      </ul>
+    </div>
+  </div>
 
     <!--End of Nav-->
     <div class="sectionn">
@@ -137,67 +139,68 @@
         </div>
     </div>
 
-    <!-- footer -->
     <footer>
-        <div class="footer-row">
-            <div class="footer-col">
-                <h3>E-Wish</h3>
-                <p>Ut enim ad minim veniam perspiciatis unde iste natus error voluptatem accusantium laudantium,totam
-                    rem aperiam,eaque ipsa isa ias mo .</p>
+        <div class="row footer-row">
+          <div class="col footer-col">
+            <h3>E-Wish</h3>
+            <p>“We see our customers as invited guests <br> to a party, and we are the hosts. It’s our job every day
+              to
+              make every important aspect of the customer experience a little bit better.”</p>
+          </div>
+          <div class="col footer-col">
+            <h3>Get in Touch <div class="underline"><span></span></div>
+            </h3>
+            <p>Alexandria, Egypt</p>
+            <p style="padding-top:11px">E-wish@gmail.com</p>
+            <p style="padding-top:11px">+00 111 222 3333</p>
+          </div>
+          <div class="col footer-col">
+            <h3>Pages <div class="underline"><span></span></div>
+            </h3>
+            <ul>
+              <li>
+                <i class='bx bxs-chevron-right'></i>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <i class='bx bxs-chevron-right'></i>
+                <a href="about.html">About</a>
+              </li>
+              <li>
+                <i class='bx bxs-chevron-right'></i>
+                <a href="products.html">Products</a>
+              </li>
+              <li>
+                <i class='bx bxs-chevron-right'></i>
+                <a href="contact-us.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col footer-col">
+            <h3>News letter <div class="underline"><span></span></div>
+            </h3>
+            <form class="form1">
+              <i class='bx bx-envelope'></i>
+              <input class="input2" type="email" placeholder=" Enter your email id">
+              <button type="submit"><i class='bx bxs-paper-plane'></i></button>
+            </form>
+            <div class="social-icons">
+              <i class='bx bxl-facebook'></i>
+              <i class='bx bxl-twitter'></i>
+              <i class='bx bxl-whatsapp'></i>
+              <i class='bx bxl-pinterest'></i>
             </div>
-            <div class="footer-col">
-                <h3>Get in Touch <div class="underline"><span></span></div>
-                </h3>
-                <p>34/8, East Hukupara,Gifirtok,Sadan.</p>
-                <p style="padding-top:11px">support@fruitkha.com</p>
-                <p style="padding-top:11px">+00 111 222 3333</p>
-            </div>
-            <div class="footer-col">
-                <h3>Pages <div class="underline"><span></span></div>
-                </h3>
-                <ul>
-                    <li>
-                        <i class='bx bxs-chevron-right'></i>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <i class='bx bxs-chevron-right'></i>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <i class='bx bxs-chevron-right'></i>
-                        <a href="products.html">Products</a>
-                    </li>
-                    <li>
-                        <i class='bx bxs-chevron-right'></i>
-                        <a href="#">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>News letter <div class="underline"><span></span></div>
-                </h3>
-                <form class="form1">
-                    <i class='bx bx-envelope'></i>
-                    <input class="input2" type="email" placeholder=" Enter your email id">
-                    <button type="submit"><i class='bx bxs-paper-plane'></i></button>
-                </form>
-                <div class="social-icons">
-                    <i class='bx bxl-facebook'></i>
-                    <i class='bx bxl-twitter'></i>
-                    <i class='bx bxl-whatsapp'></i>
-                    <i class='bx bxl-pinterest'></i>
-                </div>
-
-            </div>
+    
+          </div>
         </div>
         <hr>
         <p class="Copyrights">ITI © 2023 - All Rights Reserved.</p>
-    </footer>
-    <!--End of footer -->
+      </footer>
 
-    <script src="./script/cart.js" type="module" defer></script>
-    <script src="./script/navbarModule.js" type="module"></script>
+      <script src="./script/navbarmodule.js" type="module"></script>
+      <script src="./script/filter.js" type="module" defer></script>
+      <script src="./script/productDetails.js" type="module" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>
