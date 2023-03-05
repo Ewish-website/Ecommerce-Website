@@ -54,8 +54,8 @@ export class Cart {
                                 <p class="text-center text-muted"> Your cart is currently empty. </p>
                               </div>
                             </div>
-                            <div class="cartCheckout checkout-from iphone h-100 w-100 d-none py-2">
-                              <form class="form">
+                            <div class="cartCheckout h-100 w-100 d-none py-2">
+                              <form class="form d-flex flex-column justify-content-between h-100">
                                   <div class="addressBlock">
                                     <div class="fields fields--2">
                                       <label class="field">
@@ -110,8 +110,8 @@ export class Cart {
                                     </div>
                                   </fieldset>
                                   <div class="payBlock"></div>
-                                  <div class="btn1">
-                                    <button id="conf-btn1" class="button button--full"  type="submit">
+                                  <div class="btn1  d-flex justify-content-center">
+                                    <button id="conf-btn1" class="button"  type="submit">
                                     submit
                                     </button>
                                   </div>
@@ -186,8 +186,8 @@ export class Cart {
     this.#deleteCart = document.querySelectorAll(".cart-delete-product");
     this.#promoButtom = document.querySelector(".prompCodeBtn");
     this.#checkoutBtn = document.querySelector(".checkoutBtn");
-    const checkoutFormElm = document.querySelector(".checkout-from");
-    const submitForm = document.querySelector(".checkout-from form");
+    const checkoutFormElm = document.querySelector(".cartCheckout");
+    const submitForm = document.querySelector(".cartCheckout form");
     const confBtn = document.querySelector("#conf-btn1");
     const city = document.querySelector("#city");
     const country = document.querySelector("#country");
@@ -210,8 +210,8 @@ export class Cart {
     this.#promoButtom.addEventListener("click", (e) => {
       e.preventDefault();
       let input = document.querySelector(".promoInput").value;
-      if (input == "123") {
-        this.displayPrice(0.05);
+      if (input == "t20") {
+        this.displayPrice(0.2);
       }
     });
 
@@ -222,6 +222,11 @@ export class Cart {
         checkoutFormElm.classList.toggle("d-none");
         document.querySelector(".cart-heading").classList.toggle("d-none");
         document.querySelector(".shipping-heading").classList.toggle("d-none");
+        if(this.#cartItems.classList.contains("d-none")){
+          this.#checkoutBtn.innerHTML = "Back to Items";
+        }else{
+          this.#checkoutBtn.innerHTML = "checkout";
+        }
       }
     });
     city.addEventListener('focusout', function () {
@@ -229,17 +234,11 @@ export class Cart {
        country.value = "egypt"
      }
    })
-    // confBtm.addEventListener("click", (e) => {
-    //   //validation
-    //   e.preventDefault()
-    //   console.log("hi");
-    //   this.togglee();
-    // });
 
-    submitForm.addEventListener("submit", function () {
-
-  console.log("in submit");
-})
+    submitForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      this.togglee();
+    })
   }
 
   AddItem(item) {
@@ -432,7 +431,7 @@ export class Cart {
                               <input type="text" name="cardCVV" maxlength="3" placeholder="CVV" id="cvv" required> 
                           </div>
                       <div class="cardRow card-text">
-                          <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. d quam. Molestiae voluptatem itaque.</p>
+                          <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. d quam. Molestiae voluptatem.</p>
                       </div>
                       <div class="cardRow signature">
                           <img src=${img} style="width: 70px;" alt=${name}>
@@ -450,11 +449,9 @@ export class Cart {
     popup2.classList.toggle("active");
   }
 
-  // validatePaymentInfo() {
-  //   const city = document.querySelector("#city");
-  //   const country = document.querySelector("#country");
-  //   console.log(city.value,country.value);
-  // }
-
-
+  validatePaymentInfo() {
+    const city = document.querySelector("#city");
+    const country = document.querySelector("#country");
+    console.log(city.value,country.value);
+  }
 }

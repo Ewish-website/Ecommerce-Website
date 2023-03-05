@@ -1,10 +1,8 @@
 import { ProductDetails } from "./ProductDetails.js";
-//import { User } from "./user.js";
 import { AddToCart } from "./AddToCart.js";
-import fetchJson from "../script/fetch_module.js";
+import fetchJson from "./fetch_module.js";
 
 function appendCardsBestSellers(products) {
-  //console.log(products);
   let count = 0;
   var productsContainer = document.querySelector(".product");
   for (let i = 0; i < products.length && count != 8; i += 2) {
@@ -15,11 +13,7 @@ function appendCardsBestSellers(products) {
     var card = document.createElement("div");
     item.appendChild(card);
     card.classList.add("card", "box-shadow", "my-5", "px-5", "py-2");
-    /*
-      var detailsLink = document.createElement('a')
-      detailsLink.href = "_blank";
-      card.appendChild(detailsLink);
-*/
+    
     var image = document.createElement("img");
     card.appendChild(image);
     image.classList.add("card-img-top");
@@ -101,32 +95,31 @@ function appendCardsBestSellers(products) {
   }
 }
 
-/***********************************************************connect to product details******************************************************************** */
-function SearchForProduct(ClickedId) {
-  let clickedProduct;
-  if (productsData) {
-    productsData.forEach((product) => {
+function SearchForProduct(ClickedId, products) {
+  if (products) {
+    let clickedProduct;
+    products.forEach((product) => {
       if (product.id == ClickedId) {
         clickedProduct = product;
       }
     });
+    return clickedProduct;
   }
-  return clickedProduct;
 }
 
-function cardEventListner() {
+function cardEventListner(products) {
   let productsContainer = document.querySelector(".product");
   if (productsContainer) {
     productsContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("card-img-top")) {
         let imageSource = e.target.src.split("/");
         let ClickedId = imageSource[imageSource.length - 2];
-        let clickedProduct = SearchForProduct(ClickedId);
+        let clickedProduct = SearchForProduct(ClickedId, products);
         let product = new ProductDetails(clickedProduct);
       } else if (e.target.classList.contains("cart")) {
         let imageSource = e.target.closest(".card").firstChild.src.split("/");
         let ClickedId = imageSource[imageSource.length - 2];
-        let clickedProduct = SearchForProduct(ClickedId);
+        let clickedProduct = SearchForProduct(ClickedId, products);
         AddToCart(clickedProduct, 1);
       }
     });
@@ -135,8 +128,8 @@ function cardEventListner() {
 
 fetchJson()
   .then(function (data) {
-    //console.log(data);
     appendCardsBestSellers(data.products);
+    cardEventListner(data.products);
     return data.products;
   })
   .catch(function (err) {

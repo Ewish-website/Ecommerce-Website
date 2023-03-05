@@ -10,7 +10,7 @@ export class ProductDetails {
     counter = 1;
     constructor(product) {
         this.user = new User();
-        this.product = product
+        this.product =  product
         this.init();
     }
 
@@ -45,59 +45,62 @@ export class ProductDetails {
     }
 
     createProductDetaisModal() {
-        detailsModal.innerHTML = 
-        `<div class="modal fade modal-lg Details-modal mt-md-5" id="myModal">
+        detailsModal.innerHTML = `<div class="modal fade modal-md Details-modal mt-md-5" id="myModal">
             <div class="modal-dialog ">
-                <div class="modal-content p-4 p-lg-5">
+                <div class="modal-content py-5 px-4">
                     <button type="button" class="btn-close Details-model-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="modal-body row col-12 d-lg-flex justify-content-between p-0 py-4 ">
-                        <div class="col-12 col-md-5 DetailsImage my-auto ml-lg-auto">
-                            <div class="Image-container DetailsLargeScreen">
-                                <div class="ActiveDetailsImage">
-                                    <img src="${this.product.images[0]}" alt="${this.product.title}">
-                                </div>
-                                <div class="DetailsImageAlbum col-12 ">
-                                    <ul class="DetailsImageList p-0 m-0">
-                                        <li class="activeLiImage"><img src="${this.product.images[0]}" alt="${this.product.title}"></li>
-                                        <li><img src="${this.product.images[1]}" alt="${this.product.title}"></li>
-                                        <li><img src="${this.product.images[2]}" alt="${this.product.title}"></li>
-                                        <li><img src="${this.product.images[3]}" alt="${this.product.title}"></li>
-                                    </ul>
-                                </div>
+                    <div class="modal-body card border-0 w-100 col-12 p-0 ">
+                        <div class="row g-0 col-12">
+                            <div class="col-md-4 ActiveDetailsImage my-auto">
+                                <img src="${
+                                  this.product.images[0]
+                                }" alt="$this.product.title}">
                             </div>
-                        </div>
+                            <div class="col-md-8 ps-md-4 pt-4 pt-md-0">
+                                <div class="card-body DetailsText text-start p-0">
+                                    <h3 class="fs-3 text-uppercase">${
+                                      this.product.title
+                                    }</h3>
+                                    <div class="ProductDetails-rating pb-2"></div>
+                                    <p class="">${this.product.description}</p>
+                                    <p class="pb-1 m-0"><b>price: </b>$ ${
+                                      this.product.price
+                                    }</p>
+                                    <p class="pb-1 m-0"><b>Brand: </b>${
+                                      this.product.brand
+                                    }</p>
+                                    <p class="pb-1 m-0"><b>Category: </b>${
+                                      this.product.category
+                                    }</p>
+                                    <p class="pb-1 m-0"><b>stock: </b>${
+                                      this.product.stock > 0
+                                        ? "In stock"
+                                        : "out of stock"
+                                    }</p>
+                                    <div class="productDetailsForm d-sm-flex justify-content-between pt-3">
+                                        <div class="d-flex p-0 col-6 col-sm-5  productQuantityContainer">
+                                            <button class="minusbtn btn btn-link p-0 pe-2">
+                                                <i class="bi bi-dash fs-5"></i>
+                                            </button>
 
-                        <div class="col-12 col-md-7 DetailsText my-auto pt-4 p-md-0 ml-lg-auto">
-                            <h3 class="fs-3 text-uppercase">${this.product.title}</h3>
-                            <div class="ProductDetails-rating pb-2">
-                            </div>
-                            <p class="">${this.product.description}</p>
-                            <p class="pb-1 m-0"><b>price: </b>$ ${this.product.price}</p>
-                            <p class="pb-1 m-0"><b>Brand: </b>${this.product.brand}</p>
-                            <p class="pb-1 m-0"><b>Category: </b>${this.product.category}</p>
-                            <p class="pb-1 m-0"><b>stock: </b>${(this.product.stock> 0) ? "In stock" : "out of stock"}</p>
-                            <div class="productDetailsForm d-flex justify-content-between pt-3">
-                                <div class="d-flex p-0 col-5 col-md-6 col-lg-4 productQuantityContainer">
-                                    <button class="minusbtn btn btn-link p-0 pe-2">
-                                        <i class="bi bi-dash fs-5"></i>
-                                    </button>
+                                            <input id="form1" min="1" name="quantity" value="1" type="number"
+                                                class="quantityBtn form-control form-control-sm" />
 
-                                    <input id="form1" min="1" name="quantity" value="1" type="number"
-                                        class="quantityBtn form-control form-control-sm" />
-
-                                    <button class="plusbtn btn btn-link p-0 ps-2">
-                                        <i class="bi bi-plus fs-5"></i>
-                                    </button>
+                                            <button class="plusbtn btn btn-link p-0 ps-2">
+                                                <i class="bi bi-plus fs-5"></i>
+                                            </button>
+                                        </div>
+                                        <button type="button" class="btn btn-primary col-6 col-sm-5 mt-3 mt-md-0 addToCartBtn"> 
+                                            Add to cart
+                                        </button>
+                                    </div>
                                 </div>
-                                <button type="button" class="btn btn-primary col-5 col-md-6 col-lg-4 addToCartBtn"> 
-                                    Add to cart
-                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>`
+        </div>`;
     }
 
     ratingStars(){
@@ -125,16 +128,9 @@ export class ProductDetails {
         const ActiveDetailsImage = document.querySelector(
         ".ActiveDetailsImage img"
         );
-        const ImagesList = document.querySelectorAll(".DetailsImageAlbum li");
         var i = 0;
         setInterval(() => {
             ActiveDetailsImage.src = this.product.images[i];
-            ImagesList.forEach((li) => {
-                if(li.classList.contains("activeLiImage")){
-                    li.classList.remove("activeLiImage");
-                }
-            });
-            ImagesList[i].classList.add("activeLiImage");
             if (i < 3) {
                 i++;
             } else {

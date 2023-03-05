@@ -1,7 +1,6 @@
 import { ProductDetails } from "./ProductDetails.js";
-//import { User } from "./user.js";
-import fetchJson from "../script/fetch_module.js";
 import { AddToCart } from "./AddToCart.js";
+import fetchJson from "./fetch_module.js";
 
 var wantedProducts = []; //array that matched products stored in to be displayed
 var filteredProducts = { category: 0, price: 0, rating: 0 }; //cheked filter features
@@ -11,7 +10,6 @@ document.querySelector("#filter").addEventListener("click", function () {
 });
 
 function appendCards(products) {
-  //console.log(products);
   var productsContainer = document.querySelector(".product");
   for (let i = 0; i < products.length; i++) {
     var item = document.createElement("div");
@@ -21,11 +19,7 @@ function appendCards(products) {
     var card = document.createElement("div");
     item.appendChild(card);
     card.classList.add("card", "box-shadow", "my-5", "px-5", "py-2");
-    /*
-      var detailsLink = document.createElement('a')
-      detailsLink.href = "_blank";
-      card.appendChild(detailsLink);
-*/
+    
     var image = document.createElement("img");
     card.appendChild(image);
     image.classList.add("card-img-top");
@@ -129,7 +123,6 @@ function intializeData(allData) {
     price: allPrices,
     rating: allRatings,
   };
-  //console.log(filteredProducts);
   return filteredProducts;
 }
 
@@ -228,7 +221,6 @@ function filterProducts(allData, wantedData) {
     }
   }
   filteredProducts = { category: 0, price: 0, rating: 0 };
-  //console.log(wantedData);
   if (flag == 0) {
     //no products found
     var notFoundMsg = document.createElement("p");
@@ -290,31 +282,31 @@ function getAllProducts(products) {
   });
 }
 
-function SearchForProduct(ClickedId, productsData) {
-  let clickedProduct;
-  if (productsData) {
-    productsData.forEach((product) => {
+function SearchForProduct(ClickedId, products) {
+  if (products) {
+    let clickedProduct;
+    products.forEach((product) => {
       if (product.id == ClickedId) {
         clickedProduct = product;
       }
     });
+    return clickedProduct;
   }
-  return clickedProduct;
 }
 
-function cardEventListner(productsData) {
+function cardEventListner(products) {
   let productsContainer = document.querySelector(".product");
   if (productsContainer) {
     productsContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("card-img-top")) {
         let imageSource = e.target.src.split("/");
         let ClickedId = imageSource[imageSource.length - 2];
-        let clickedProduct = SearchForProduct(ClickedId, productsData);
+        let clickedProduct = SearchForProduct(ClickedId, products);
         let product = new ProductDetails(clickedProduct);
       } else if (e.target.classList.contains("cart")) {
         let imageSource = e.target.closest(".card").firstChild.src.split("/");
         let ClickedId = imageSource[imageSource.length - 2];
-        let clickedProduct = SearchForProduct(ClickedId);
+        let clickedProduct = SearchForProduct(ClickedId, products);
         AddToCart(clickedProduct, 1);
       }
     });
@@ -323,12 +315,10 @@ function cardEventListner(productsData) {
 
 fetchJson()
   .then(function (data) {
-    //console.log(data);
     appendCards(data.products);
     return data.products;
   })
   .then(function (data) {
-    console.log(data);
     /****************Filter Button***************** */
     applyFilter(data);
     /**********All Button******* ***************** */
