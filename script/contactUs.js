@@ -35,9 +35,9 @@ function openPopup(event){
     event.preventDefault();
     console.log('cliked')
     popup.classList.add("open-popup");
-    screen.classList.add("active");
+    screen.classList.add("activee");
 }
 function closePopup(){
     popup.classList.remove("open-popup");
-    screen.classList.remove("active");
+    screen.classList.remove("activee");
 }
