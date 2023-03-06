@@ -48,8 +48,6 @@ cart.addEventListener("click", function () {
   if (loggedInUser) {
     if (loggedInUser.active) {
       let cart = new Cart();
-      // console.log(userAccount.ItemsCount());
-      // cartNotification.innerText = `${userAccount.ItemsCount()}`;
     } else {
       location.assign("./log-in.html");
     }

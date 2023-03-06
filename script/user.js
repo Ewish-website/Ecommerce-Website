@@ -31,6 +31,8 @@ export class User {
                 element.cartList = user.cartList;
             }
         });
+        const cartNotification = document.querySelector("#cartCount #number");
+        cartNotification.innerText = this.ItemsCount();
         localStorage.setItem("users", JSON.stringify(this.#users));
     }
 

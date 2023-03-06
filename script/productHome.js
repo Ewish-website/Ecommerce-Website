@@ -17,7 +17,7 @@ function appendCardsBestSellers(products) {
 
       var image = document.createElement("img");
       card.appendChild(image);
-      image.classList.add("card-img-top");
+      image.classList.add("card-img-top","mx-5");
       image.src = products[i].images[0];
 
       var cardBody = document.createElement("div");
