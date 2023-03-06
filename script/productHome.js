@@ -1,6 +1,7 @@
 import { ProductDetails } from "./ProductDetails.js";
 import { AddToCart } from "./AddToCart.js";
 import fetchJson from "./fetch_module.js";
+import { Cart } from "./cart.js";
 
 function appendCardsBestSellers(products) {
   var productsContainer = document.querySelector(".product");
@@ -8,7 +9,7 @@ function appendCardsBestSellers(products) {
     if (products[i].rating >= 4.5) {
       var item = document.createElement("div");
       productsContainer.appendChild(item);
-      item.classList.add("col-6", "col-md-4", "col-lg-3", "item", "my-2");
+      item.classList.add("col-12", "col-md-4", "col-lg-3", "item", "my-2");
 
       var card = document.createElement("div");
       item.appendChild(card);
@@ -93,6 +94,10 @@ function SearchForProduct(ClickedId, products) {
 
 function cardEventListner(products) {
   let productsContainer = document.querySelector(".product");
+  document.querySelector("#viewCart").addEventListener("click",() =>{
+    let cart = new Cart();
+  })
+
   if (productsContainer) {
     productsContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("card-img-top")) {

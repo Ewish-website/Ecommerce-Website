@@ -159,7 +159,7 @@ nav {
   position: fixed;
   right: 72px;
   border-radius: 10px;
-  top: 12px;
+  top: 16px;
   text-align: center;
 }
 #cartCount p{
@@ -170,19 +170,6 @@ nav {
 
 @media (max-width: 990px) {
 
-  /* .loginCart{
-    display: flex;
-    flex-direction: row;
-    top: 0;
-    right: 0;
-
-  }
-  #cart,#user{
-    top: 0 !important;
-    right: 0 !important;
-    display: flex;
-    align-items: flex-end;
-  } */
   #cartCount {
     display: none;
   }
