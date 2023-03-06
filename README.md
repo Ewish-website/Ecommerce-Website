@@ -1,6 +1,8 @@
 # Ecommerce-Website
 ## Overview
 * Simple Ecommerce website to buy all kind of products; laptops, fragrances, smaprtphones, fragrances, clothes and skincare products 
+![Thumbnail](https://user-images.githubusercontent.com/65567343/223128547-1a59b2c5-c8aa-4edf-9e12-6bb89e859fa4.png)
+
 ## Technologies used
 * HTML
 * CSS
