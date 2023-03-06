@@ -1,6 +1,7 @@
 import { ProductDetails } from "./ProductDetails.js";
 import { AddToCart } from "./AddToCart.js";
 import fetchJson from "./fetch_module.js";
+import {Cart} from "./cart.js"
 
 var wantedProducts = []; //array that matched products stored in to be displayed
 var filteredProducts = { category: 0, price: 0, rating: 0 }; //cheked filter features
@@ -296,6 +297,9 @@ function SearchForProduct(ClickedId, products) {
 
 function cardEventListner(products) {
   let productsContainer = document.querySelector(".product");
+  document.querySelector("#viewCart").addEventListener("click",() =>{
+    let cart = new Cart();
+  })
   if (productsContainer) {
     productsContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("card-img-top")) {
