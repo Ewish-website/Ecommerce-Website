@@ -9,6 +9,7 @@ export class Cart {
   #deleteCart;
   #promoButtom;
   #checkoutBtn;
+  #modal;
 
   constructor() {
     this.showModalCart();
@@ -174,10 +175,10 @@ export class Cart {
 
   showModalCart() {
     this.createCartModal();
-    var modal = bootstrap.Modal.getOrCreateInstance(
+    this.#modal = bootstrap.Modal.getOrCreateInstance(
       cartModule.querySelector("#cartModal")
     );
-    modal.show();
+    this.#modal.show();
   }
 
   cartEventListener() {
@@ -188,9 +189,10 @@ export class Cart {
     this.#checkoutBtn = document.querySelector(".checkoutBtn");
     const checkoutFormElm = document.querySelector(".cartCheckout");
     const submitForm = document.querySelector(".cartCheckout form");
-    const confBtn = document.querySelector("#conf-btn1");
     const city = document.querySelector("#city");
     const country = document.querySelector("#country");
+    const confBtn = document.querySelector("#conf-btn") 
+
     this.#QuantityContainer.forEach((container, i) => {
       container.addEventListener("change", (e) => {
         this.changeQuantity(e, i);
@@ -237,7 +239,14 @@ export class Cart {
 
     submitForm.addEventListener("submit", (e) => {
       e.preventDefault();
+      this.#modal.hide();
+      this.#userList.cartList = [];
+      this.user.updateUser(this.#userList);
       this.togglee();
+    })
+
+    confBtn.addEventListener("click", () => {
+      this.togglee();    
     })
   }
 
