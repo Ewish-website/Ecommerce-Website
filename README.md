@@ -17,7 +17,7 @@
   * Rating
 * Order management
 * removing/adding items easily 
-* Notifications when adding to cart
+* Adding to cart notifications
 * Checkout page
   * using credit card
   * using master card
