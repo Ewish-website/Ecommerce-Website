@@ -23,6 +23,8 @@
   * using master card
   * using cash
 * Contact us page for feedbacks
+## Demo video
+[Watch our demo](https://youtu.be/iB9EDj1gmuk)
 ## Collaborators
 * [Nada Saeed](https://github.com/Nada98Sakr)
 * [Radwa Hassan](https://github.com/RadwaHassan99)
