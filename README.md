@@ -1,22 +1,31 @@
-# Ecommerce-Website
+# E-commerce Website
+
 ## Overview
-* Simple Ecommerce website to buy all kind of products; laptops, fragrances, smaprtphones, fragrances, clothes and skincare products 
+
+This is a simple e-commerce website designed to sell a variety of products such as laptops, fragrances, smartphones, clothes, and skincare products.
 
 ![Thumbnail](https://user-images.githubusercontent.com/65567343/223128547-1a59b2c5-c8aa-4edf-9e12-6bb89e859fa4.png)
 
-## Technologies used
+## Technologies Used
+
+The following technologies were used in developing this project:
+
 * HTML
 * CSS
 * JavaScript
 * Bootstrap
+
 ## Features
+
+The following features are available on this website:
+
 * Login and Sign up
-* Filtering products based on:
+* Product filtering based on:
   * Prices
   * Categories
   * Rating
 * Order management
-* removing/adding items easily 
+* Easy removal/addition of items
 * Adding to cart notifications
 * Checkout page
   * using credit card
